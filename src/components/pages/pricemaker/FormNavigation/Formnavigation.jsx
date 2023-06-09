@@ -3,8 +3,6 @@ import NavFirstLast from "./NavFirstLast";
 import NavInter from "./NavInter";
 
 const Formnavigation = ({ step, formData }) => {
-
-
   return (
     <div>
       <div className="flex w-full justify-center  items-center border-0 my-10">
@@ -16,7 +14,6 @@ const Formnavigation = ({ step, formData }) => {
                   <NavFirstLast step={step} index={index} item={item} />
                 ) : (
                   <>
-                    {" "}
                     <NavInter step={step} index={index} item={item} />
                   </>
                 )}
