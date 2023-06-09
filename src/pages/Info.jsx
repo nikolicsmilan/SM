@@ -4,6 +4,7 @@ const Info = () => {
   return (
     <div>
         Hello Kedves HR!
+        Tudtad?
     </div>
   )
 }
