@@ -5,6 +5,7 @@ const Info = () => {
     <div>
         Hello Kedves HR!
         Tudtad?
+        Az hogy ez mennyire zöld nem releváns!
     </div>
   )
 }
