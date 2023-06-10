@@ -7,7 +7,8 @@ const Info = () => {
         Tudtad?
         Az hogy ez mennyire zöld nem releváns!
         A github csak a public repositorykat és a main branchet figyeli, tehát semmi komolyabbat.
-       
+        Így akár napi 5 console.log meg lehet téveszteni másokat.
+      
         
     </div>
   )
