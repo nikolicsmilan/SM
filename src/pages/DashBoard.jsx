@@ -9,7 +9,7 @@ import { FaTools } from "react-icons/fa";
 import { FaThLarge } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa";
 import { FaRegImages } from "react-icons/fa";
-import Graphicon from "../components/dashboard/graphicon/Graphicon";
+//import Graphicon from "../components/dashboard/graphicon/Graphicon";
 
 const DashBoard = () => {
   return (
@@ -57,7 +57,7 @@ const DashBoard = () => {
       />
     </div>
     <div>
-      <Graphicon/>
+  
     </div>
     </div>
   );

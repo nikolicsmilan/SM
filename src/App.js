@@ -13,6 +13,7 @@ import Calculator from "./pages/Modeling";
 import DashBoard from "./pages/DashBoard";
 import Contact from "./pages/Contact";
 import NotReady from "./pages/NotReady";
+import ThreeD from "./pages/ThreeD";
 import "./App.css";
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/pricemaker" element={<NotReady />} />
-          <Route path="/calculator" element={<NotReady />} />
+          <Route path="/calculator" element={<ThreeD />} />
           <Route path="/dashboard" element={<NotReady />} />
           <Route path="/contact" element={<NotReady />} />
         </Route>
