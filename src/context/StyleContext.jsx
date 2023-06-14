@@ -8,10 +8,16 @@ export const StyleContextProvider = ({ children }) => {
   //hatnak mindenhol ahol felhasználásra kerülnek.
   const [style, setStyle] = useState("narancs");
   const [activeAside, setActiveAside] = useState(true);
+  const[snap,setSnap]= useState({  intro: true,
+    color: '#EFBD48',
+    isLogoTexture: true,
+    isFullTexture: false,
+    logoDecal: './threejs.png',
+    fullDecal: './threejs.png',})
 
   return (
     <StyleContext.Provider
-      value={{ style, setStyle, activeAside, setActiveAside }}
+      value={{ style, setStyle, activeAside, setActiveAside,snap,setSnap }}
     >
       {children}
     </StyleContext.Provider>

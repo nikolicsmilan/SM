@@ -21,6 +21,34 @@ export const slideAnimation = (direction) => {
     },
   };
 };
+/*
+export const slideAnimation = (direction, isLeaving) => {
+  const exitDirection = isLeaving
+    ? direction
+    : direction === "left"
+    ? "right"
+    : "left";
+
+  return {
+    initial: {
+      x: direction === "left" ? -100 : direction === "right" ? 100 : 0,
+      y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
+      opacity: 0,
+      transition: { ...transition, delay: 0.5 },
+    },
+    animate: {
+      x: 800,
+      y: 400,
+      opacity: 1,
+      transition: { ...transition, delay: 0 },
+    },
+    exit: {
+      x: exitDirection === "left" ? -100 : exitDirection === "right" ? 100 : 0,
+      y: exitDirection === "up" ? 100 : exitDirection === "down" ? -100 : 0,
+      transition: { ...transition, delay: 0 },
+    },
+  };
+};*/
 
 export const fadeAnimation = {
   initial: {
@@ -68,3 +96,37 @@ export const headContainerAnimation = {
   animate: { x: 0, opacity: 1, transition: { ...transition, delay: 0 } },
   exit: { x: -100, opacity: 0, transition: { ...transition, delay: 0 } },
 };
+
+
+export const textAnimation = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+export const myAnimation =(direction)=>{
+  return {
+    initial: {
+      x: direction === "left" ? -100 : direction === "right" ? 100 : 0,
+      y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
+      opacity: 0,
+      transition: { ...transition, delay: 0.5 },
+    },
+    animate: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: { ...transition, delay: 0 },
+    },
+    exit: {
+      x: direction === "left" ? -100 : direction === "right" ? 100 : 0,
+      y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
+      transition: { ...transition, delay: 0 },
+    },
+  };
+}
