@@ -61,7 +61,7 @@ html {
 }
 
 .app {
-  @apply relative w-full h-screen overflow-hidden;
+  /*@apply relative w-full h-screen overflow-hidden;*/
 }
 
 .home {

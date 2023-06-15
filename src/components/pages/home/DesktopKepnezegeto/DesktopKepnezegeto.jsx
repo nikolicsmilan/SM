@@ -57,7 +57,7 @@ const DesktopKepnezegeto = () => {
   };
 
   return (
-    <div className="m-5 ">
+    <div className="mx-5 ">
       <div className="relative overflow-hidden w-full" ref={galleryRef}>
         {gallery.isModalOpen && (
           <LightBox

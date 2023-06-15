@@ -35,7 +35,7 @@ const Layout = () => {
             </footer>
         </div>
       ) : (
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full ">
           <div className="bg-white">
           <NavBar />
           </div>
@@ -56,3 +56,4 @@ const Layout = () => {
 };
 
 export default Layout;
+//h-screen overflow-x-hidden overflow-y-hidden ha végeztem
