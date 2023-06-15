@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div
-      className={` flex font-sans text-base ${style}   w-full border-0 overflow-x-hidden overflow-y-hidden`}
+      className={` flex font-sans text-base ${style}   w-full border-0  overflow-x-hidden overflow-y-hidden `}
     >
       <Routes>
         <Route path="/" element={<Layout />}>

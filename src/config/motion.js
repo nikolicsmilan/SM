@@ -118,6 +118,29 @@ export const myAnimation =(direction)=>{
       transition: { ...transition, delay: 0.5 },
     },
     animate: {
+      x: direction === "left" ? -70 : direction === "right" ? 100 : 0,
+      y: direction === "up" ? 40 : direction === "down" ? -100 : 0,
+      opacity: 1,
+      transition: { ...transition, delay: 0 },
+    },
+    exit: {
+      x: direction === "left" ? -100 : direction === "right" ? 100 : 0,
+      y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
+      transition: { ...transition, delay: 0 },
+    },
+  };
+}
+
+/*
+export const myAnimation =(direction)=>{
+  return {
+    initial: {
+      x: direction === "left" ? -100 : direction === "right" ? 100 : 0,
+      y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
+      opacity: 0,
+      transition: { ...transition, delay: 0.5 },
+    },
+    animate: {
       x: 0,
       y: 0,
       opacity: 1,
@@ -130,3 +153,6 @@ export const myAnimation =(direction)=>{
     },
   };
 }
+
+
+*/

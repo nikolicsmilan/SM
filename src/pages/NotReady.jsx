@@ -7,7 +7,7 @@ const NotReady = () => {
     navigate("/");
   };
   return (
-    <div className="flex flex-col justify-center items-center h-full text-center">
+    <div className="flex flex-col justify-center items-center  text-center h-screen ">
       <div>
         <h1 className="text-2xl"> Az oldal ezen része fejlesztés alatt áll. </h1>
         <p>Jelenleg csak a Főoldalt tudod használni</p>

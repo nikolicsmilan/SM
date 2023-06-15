@@ -8,7 +8,7 @@ import DesktopKepnezegeto from "../components/pages/home/DesktopKepnezegeto/Desk
 const Home = () => {
   const { width } = useWindowSize();
   return (
-    <div className=" flex flex-col ">
+    <div className=" flex flex-col h-screen ">
       {width < 768 ? (
         <MobileHome
           Reklam={Advertise}
