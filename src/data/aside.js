@@ -97,7 +97,7 @@ export const links = [
       },
    
       {
-        name: "dió",
+        name: "dio",
         type: "style",
         icon: <GiCoconuts />,
         ownstyle: "text-yellow-800",

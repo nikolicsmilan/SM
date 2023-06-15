@@ -8,7 +8,7 @@ const Calculator = () => {
   }
 
   return (
-    <div className="border-4 w-1/3 mt-5 rounded-3xl bg-gradient">
+    <div className="border-2 w-1/3 mt-5 mb-2 rounded-3xl bg-gradient">
       <h1 className="text-2xl text-white mx-20 mt-5">
         Szeretne többet megtudni?
       </h1>

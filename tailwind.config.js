@@ -94,7 +94,7 @@ module.exports = {
           },
         },
         {
-          name: "dió",
+          name: "dio",
           extend: {
             colors: {
               primary: "rgb(253, 224, 71)",

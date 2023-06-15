@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { MyDataContext } from "../../../../../context/DataContext";
 import { useNavigate } from "react-router-dom";
+import { useStyleContext } from "../../../../../context/StyleContext";
 const AddContent = ({
   handlesSwitchUrlap,
   reklam,
@@ -10,12 +11,13 @@ const AddContent = ({
 }) => {
   const contentRef = useRef(null);
   const { size } = MyDataContext();
+  const { style} = useStyleContext();
   const navigate = useNavigate();
   useEffect(() => {
     handleSize(contentRef);
   }, [contentRef, size]);
   return (
-    <div className="flex overflow-hidden">
+    <div className="flex overflow-hidden border-0">
       {reklam?.map((item, index) => (
         <div
           key={index}

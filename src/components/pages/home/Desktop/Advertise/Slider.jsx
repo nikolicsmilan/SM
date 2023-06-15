@@ -27,7 +27,7 @@ const Slider = () => {
     
 
   return (
-    <div className="border-4 w-2/3 mt-5 rounded-3xl bg-gradient flex items-center justify-between ">
+    <div className="border-2 w-2/3 mt-5 m-2 rounded-3xl bg-gradient flex items-center justify-between ">
     <ButtonAdv text=" ‹" onClick={prevHandler} />
     <div className="flex-grow overflow-hidden">
       <AddContent
