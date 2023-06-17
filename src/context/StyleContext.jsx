@@ -8,16 +8,35 @@ export const StyleContextProvider = ({ children }) => {
   //hatnak mindenhol ahol felhasználásra kerülnek.
   const [style, setStyle] = useState("dio");
   const [activeAside, setActiveAside] = useState(true);
-  const[snap,setSnap]= useState({  intro: true,
-    color: '#EFBD48',
+  const [snap, setSnap] = useState({
+    intro: true,
+    color: "#EFBD48",
     isLogoTexture: true,
     isFullTexture: false,
-    logoDecal: './threejs.png',
-    fullDecal: './threejs.png',})
+    logoDecal: "./threejs.png",
+    fullDecal: "./threejs.png",
+  });
+
+  const [menu3D, setMenu3D] = useState({
+    size: 6,
+    color: "/tv_unit__furniture/textures/Material_5_baseColor.jpeg",
+    material: "fenyo",
+    roof: "serepes",
+    animation: "right",
+  });
 
   return (
     <StyleContext.Provider
-      value={{ style, setStyle, activeAside, setActiveAside,snap,setSnap }}
+      value={{
+        style,
+        setStyle,
+        activeAside,
+        setActiveAside,
+        snap,
+        setSnap,
+        menu3D,
+        setMenu3D,
+      }}
     >
       {children}
     </StyleContext.Provider>

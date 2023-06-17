@@ -118,8 +118,8 @@ export const myAnimation =(direction)=>{
       transition: { ...transition, delay: 0.5 },
     },
     animate: {
-      x: direction === "left" ? -70 : direction === "right" ? 100 : 0,
-      y: direction === "up" ? 40 : direction === "down" ? -100 : 0,
+      x: direction === "left" ? -80 : direction === "right" ? 100 : 0,
+      y: direction === "up" ? 60 : direction === "down" ? -100 : 0,
       opacity: 1,
       transition: { ...transition, delay: 0 },
     },

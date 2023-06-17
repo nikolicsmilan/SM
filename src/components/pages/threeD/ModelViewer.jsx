@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-function ModelViewer({ width, height }) {
+function ModelViewer({ width, height, menu3D }) {
+  console.log('ez a Modelviewer',menu3D)
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -15,6 +16,21 @@ function ModelViewer({ width, height }) {
     loader.load('/tv_unit__furniture/scene.gltf', function (gltf) {
       const model = gltf.scene;
 
+  // Traverse through the model's children to find materials
+  model.traverse((child) => {
+    if (child.isMesh) {
+      // Check if the material has a texture
+      if (child.material.map) {
+        // Load the new texture
+        const textureLoader = new THREE.TextureLoader();
+        const newTexture = textureLoader.load(menu3D.color);
+        child.material.map = newTexture;
+        child.material.needsUpdate = true;
+      }
+    }
+  });
+
+      
       // Adjust the model's position and scale
       model.position.set(0, -2, 0);
       model.scale.set(2.5, 2.5, 2.5);
@@ -36,7 +52,7 @@ function ModelViewer({ width, height }) {
 
     // Set the camera position
     camera.position.z = 5;
-  }, [width, height]);
+  }, [width, height,menu3D]);
 
   return <canvas ref={canvasRef} />;
 }
@@ -44,3 +60,4 @@ function ModelViewer({ width, height }) {
 export default ModelViewer;
 
 
+//Material_6_baseColor
