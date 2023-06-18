@@ -41,25 +41,25 @@ export const mainconsole = [
 
 export const sizeconsole = [
   {
-    name: "size6",
+    name: 1,
     property: "size",
     displayname: "6_személyes",
     icon: <BsFill1CircleFill />,
   },
   {
-    name: "size8",
+    name: 2,
     property: "size",
     displayname: "8_személyes",
     icon: <BsFill2CircleFill />,
   },
   {
-    name: "size10",
+    name: 2.5,
     property: "size",
     displayname: "10_személyes",
     icon: <BsFill3CircleFill />,
   },
   {
-    name: "size12",
+    name: 3,
     property: "size",
     displayname: "12_személyes",
     icon: <BsFill4CircleFill />,

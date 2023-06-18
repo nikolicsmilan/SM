@@ -33,7 +33,7 @@ function ModelViewer({ width, height, menu3D }) {
       
       // Adjust the model's position and scale
       model.position.set(0, -2, 0);
-      model.scale.set(2.5, 2.5, 2.5);
+      model.scale.set(menu3D.size, menu3D.size, menu3D.size);
 
       // Add the model to the scene
       scene.add(model);

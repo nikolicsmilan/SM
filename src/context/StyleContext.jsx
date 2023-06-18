@@ -18,7 +18,7 @@ export const StyleContextProvider = ({ children }) => {
   });
 
   const [menu3D, setMenu3D] = useState({
-    size: 6,
+    size: 2.5,
     color: "/tv_unit__furniture/textures/Material_5_baseColor.jpeg",
     material: "fenyo",
     roof: "serepes",
