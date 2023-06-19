@@ -41,25 +41,25 @@ export const mainconsole = [
 
 export const sizeconsole = [
   {
-    name: 1,
+    name:1.0,
     property: "size",
     displayname: "6_személyes",
     icon: <BsFill1CircleFill />,
   },
   {
-    name: 2,
+    name: 1.2,
     property: "size",
     displayname: "8_személyes",
     icon: <BsFill2CircleFill />,
   },
   {
-    name: 2.5,
+    name: 1.4,
     property: "size",
     displayname: "10_személyes",
     icon: <BsFill3CircleFill />,
   },
   {
-    name: 3,
+    name: 1.6,
     property: "size",
     displayname: "12_személyes",
     icon: <BsFill4CircleFill />,
@@ -91,4 +91,20 @@ export const colorconsole = [
     displayname: "Tölgy",
     icon: <BsFill4CircleFill />,
   },
+];
+
+export const roofconsole = [
+  {
+    name: "cserepes",
+    property: "roof",
+    displayname: "Cserepes",
+    icon: <BsFill1CircleFill />,
+  },
+  {
+    name: "lemezes",
+    property: "roof",
+    displayname: "Lemezes",
+    icon: <BsFill2CircleFill />,
+  },
+
 ];

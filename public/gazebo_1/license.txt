@@ -1,0 +1,11 @@
+Model Information:
+* title:	Gazebo 1
+* source:	https://sketchfab.com/3d-models/gazebo-1-9e1f69438b844f9e852d056892d29241
+* author:	Elasta Kristya (https://sketchfab.com/luca3d)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Gazebo 1" (https://sketchfab.com/3d-models/gazebo-1-9e1f69438b844f9e852d056892d29241) by Elasta Kristya (https://sketchfab.com/luca3d) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
