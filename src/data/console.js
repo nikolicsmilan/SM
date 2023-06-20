@@ -10,7 +10,9 @@ import {
   BsFill4CircleFill,
 } from "react-icons/bs";
 //GiWoodBeam
-
+import basecolor from "../assets/material/basecolor.jpeg";
+import pine1 from "../assets/material/pine1.jpg";
+import oak from "../assets/material/oak.jpg";
 export const mainconsole = [
   {
     name: "size",
@@ -43,27 +45,26 @@ export const sizeconsole = [
   {
     name:1.0,
     property: "size",
-    displayname: "6_személyes",
-    icon: <BsFill1CircleFill />,
+    displayname: "személyes",
+    icon: <p className="text-xl bg-stone-300 rounded-full w-8 text-center" >6</p>
   },
   {
     name: 1.2,
     property: "size",
-    displayname: "8_személyes",
-    icon: <BsFill2CircleFill />,
+    displayname: "személyes",
+    icon: <p className="text-xl bg-stone-300 rounded-full w-8 text-center" >8</p>
   },
   {
     name: 1.4,
     property: "size",
-    displayname: "10_személyes",
-    icon: <BsFill3CircleFill />,
+    displayname: "személyes",
+    icon: <p className="text-xl bg-stone-300 rounded-full w-8 text-center" >10</p>
   },
   {
     name: 1.6,
     property: "size",
-    displayname: "12_személyes",
-    icon: <BsFill4CircleFill />,
-  },
+    displayname: "személyes",
+    icon:<p className="text-xl bg-stone-300 rounded-full w-8 text-center" >12</p>}
 ];
 
 export const colorconsole = [
@@ -71,25 +72,20 @@ export const colorconsole = [
     name: "/tv_unit__furniture/textures/Material_5_baseColor.jpeg",
     property: "color",
     displayname: "Normál",
-    icon: <BsFill1CircleFill />,
+    icon: <img className="w-8 rounded-2xl" src={basecolor}/>,
   },
   {
     name: "/tv_unit__furniture/textures/pine1.jpg",
     property: "color",
-    displayname: "Fenyő1",
-    icon: <BsFill2CircleFill />,
+    displayname: "Fenyő",
+    icon:<img className="w-8 rounded-2xl" src={pine1}/>,
   },
-  {
-    name: "/tv_unit__furniture/textures/pine2.jpg",
-    property: "color",
-    displayname: "Fenyő2",
-    icon: <BsFill3CircleFill />,
-  },
+
   {
     name: "/tv_unit__furniture/textures/oak.jpg",
     property: "color",
     displayname: "Tölgy",
-    icon: <BsFill4CircleFill />,
+    icon: <img className="w-8 rounded-2xl" src={oak}/>
   },
 ];
 
@@ -108,3 +104,9 @@ export const roofconsole = [
   },
 
 ];
+/*  {
+    name: "/tv_unit__furniture/textures/pine2.jpg",
+    property: "color",
+    displayname: "Fenyő2",
+    icon: <BsFill3CircleFill />,
+  }, */
