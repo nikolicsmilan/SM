@@ -89,22 +89,22 @@ const ThreeD = () => {
 
 
       <p className="text-info text-base">
-        * This work is based
+        *
         <a
-          href="https://sketchfab.com/3d-models/tv-unit-furniture-cfb211faac924b978f3d0f6bc10cd55f"
+          href="https://sketchfab.com/3d-models/gazebo-1-9e1f69438b844f9e852d056892d29241"
           target="_blank"
           rel="noopener noreferrer"
         >
           {" "}
-          on "TV UNIT | FURNITURE"
+          This work is based on "Gazebo 1"
         </a>
         <a
-          href="https://sketchfab.com/SonerTIFTIK"
+          href="(https://sketchfab.com/luca3d"
           target="_blank"
           rel="noopener noreferrer"
         >
           {" "}
-          by SonerTIFTIK
+          by Elasta Kristya
         </a>
         <a
           href="http://creativecommons.org/licenses/by/4.0/"

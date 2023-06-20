@@ -1,42 +1,50 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/navigation/Layout";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 import Unauthorized from "./pages/Unathorized";
-import Calendar from "./pages/Calendar";
 import { UserAuth } from "./context/AuthContext";
 import { useStyleContext } from "./context/StyleContext";
-import Home from "./pages/Home";
-import PriceMaker from "./pages/PriceMaker";
-import Calculator from "./pages/Modeling";
-import DashBoard from "./pages/DashBoard";
-import Contact from "./pages/Contact";
-import NotReady from "./pages/NotReady";
-import ThreeD from "./pages/ThreeD";
+import ProgresBar from "./utility/ProgressBar"
 import "./App.css";
+
+// Lazy loaded components
+const Login = lazy(() => import("./pages/Login"));
+const Signup = lazy(() => import("./pages/Signup"));
+const Calendar = lazy(() => import("./pages/Calendar"));
+const Home = lazy(() => import("./pages/Home"));
+const PriceMaker = lazy(() => import("./pages/PriceMaker"));
+const Calculator = lazy(() => import("./pages/Modeling"));
+const DashBoard = lazy(() => import("./pages/DashBoard"));
+const Contact = lazy(() => import("./pages/Contact"));
+const NotReady = lazy(() => import("./pages/NotReady"));
+const ThreeD = lazy(() => import("./pages/ThreeD"));
 
 function App() {
   const { style, activeAside, setActiveAside } = useStyleContext();
 
   return (
-    <div
-      className={` flex font-sans text-base ${style}   w-full border-0  `}
-    >
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/pricemaker" element={<NotReady />} />
-          <Route path="/calculator" element={<ThreeD />} />
-          <Route path="/dashboard" element={<NotReady />} />
-          <Route path="/contact" element={<NotReady />} />
-        </Route>
-      </Routes>
+    <div className={`flex font-sans text-base ${style} w-full border-0`}>
+      <Suspense fallback={<ProgresBar/>}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/unauthorized" element={<Unauthorized />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/pricemaker" element={<NotReady />} />
+            <Route path="/calculator" element={<ThreeD />} />
+            <Route path="/dashboard" element={<NotReady />} />
+            <Route path="/contact" element={<NotReady />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </div>
   );
 }
 
 export default App;
+
 
 // overflow-x-hidden overflow-y-hidden
 
