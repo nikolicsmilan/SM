@@ -41,4 +41,3 @@ const LightFeed = ({ newimages, currentIndex, width, setSizes,sliderPosition }) 
 };
 
 export default LightFeed;
-/*<span className="text-info text-base ">       <span className="text-dark">{image.name} {image.price} {image.description} </span></span> */

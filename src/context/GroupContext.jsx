@@ -17,18 +17,10 @@ export const GroupContextProvider = ({ children }) => {
   const [activeMainButton, setActiveMainButton] = useState(null);
   const [activeSubButton, setActiveSubButton] = useState(null);
   const [activeSecondSubButton, setActiveSecondSubButton] = useState(null);
-  /*console.log(
-    "activeMainButton",
-    activeMainButton,
-    "activeSubButton",
-    activeSubButton,
-    "activeSecondSubButton",
-    activeSecondSubButton
-  );*/
 
   // ez az alcsoportok betöltődésért felelős
   useEffect(() => {
-    setActiveSubButton(null)
+    setActiveSubButton(null);
     const group = sub?.find((item) => {
       return main.some(() => activeMainButton?.id === item.mainid);
     });
@@ -43,7 +35,7 @@ export const GroupContextProvider = ({ children }) => {
 
   // ez 2. alcsoportok betöltődésért felelős
   useEffect(() => {
-    setActiveSecondSubButton(null)
+    setActiveSecondSubButton(null);
     const group = secondsub?.find((item) =>
       subgroup.some(() => activeSubButton?.id === item.subid)
     );

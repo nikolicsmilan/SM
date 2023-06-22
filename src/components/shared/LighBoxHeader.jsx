@@ -3,11 +3,9 @@ import { FaSearchPlus } from "react-icons/fa";
 import { FaSearchMinus } from "react-icons/fa";
 import { FaRegWindowClose } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
-import {SlBasketLoaded  } from "react-icons/sl";
 import { SlBasket } from "react-icons/sl";
 import Logo from "../navigation/Logo";
-import NavButton from "../navigation/NavButton";
-import Search from "../navigation/Search";
+
 const LighBoxHeader = ({ handleModalClose, handleImage, clicked }) => {
   return (
     <div className="flex border-0 bg-secondary w-full p-2 items-center h-14 ">
@@ -41,10 +39,3 @@ const LighBoxHeader = ({ handleModalClose, handleImage, clicked }) => {
 
 export default LighBoxHeader;
 
-/*
- <div className="text-center border-0 w-full h-20  bg-secondary">
-<FaSearchPlus/>
-         <p className="bg-secondary ">Üdvözöllek a LightBox ban!</p>
-         <p className="bg-secondary cursor-pointer"   onClick={() => handleModalClose()}>Zárd be</p>
-    </div>
-*/

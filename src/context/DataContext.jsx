@@ -21,10 +21,7 @@ export const DataContextProvider = ({ children }) => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  const [basket, setBasket] = useState({
-    fill: false,
-    items: [],
-  });
+
   useEffect(() => {
     const handleResize = () => {
       setSize({
@@ -108,35 +105,3 @@ export const DataContextProvider = ({ children }) => {
 export const MyDataContext = () => {
   return useContext(DataContext);
 };
-
-/* const filteredResults = newDataArray.filter(
-      (post) =>
-        post?.name?.toLowerCase().includes(search?.toLowerCase()) ||
-        post?.category?.toLowerCase().includes(search?.toLowerCase()) ||
-        post?.color?.toLowerCase().includes(search?.toLowerCase()) ||
-        post?.description?.toLowerCase().includes(search?.toLowerCase())
-    );*/
-/*  const filteredResults = newDataArray.filter(
-      (post, index, arr) => {
-        const searchTerms = search.split(' ');
-        const matchingProps = searchTerms.filter(term =>
-          (post?.name?.toLowerCase().includes(term.toLowerCase()) ||
-           post?.category?.toLowerCase().includes(term.toLowerCase()) ||
-           post?.color?.toLowerCase().includes(term.toLowerCase()) ||
-           post?.description?.toLowerCase().includes(term.toLowerCase()))
-        );
-        return (
-          matchingProps.length > 0 &&
-          arr.findIndex(p => p.name === post.name) === index
-        );
-      }
-    );*/
-//felesleges nem jó
-/*
-    newDataArray = images.reduce((acc, category) => {
-      const categoryItems = category.data.map((item) => ({
-        ...item,
-        category: category.name,
-      }));
-      return [...acc, ...categoryItems];
-    }, []);*/

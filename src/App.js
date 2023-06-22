@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Layout from "./components/navigation/Layout";
 import Unauthorized from "./pages/Unathorized";
 import { UserAuth } from "./context/AuthContext";
@@ -20,7 +20,7 @@ const NotReady = lazy(() => import("./pages/NotReady"));
 const ThreeD = lazy(() => import("./pages/ThreeD"));
 
 function App() {
-  const { style, activeAside, setActiveAside } = useStyleContext();
+  const { style } = useStyleContext();
 
   return (
     <div className={`flex font-sans text-base ${style} w-full border-0`}>
@@ -46,16 +46,3 @@ function App() {
 export default App;
 
 
-// overflow-x-hidden overflow-y-hidden
-
-
-/*
-  <Route path="/pricemaker" element={<PriceMaker />} />
-          <Route path="/calculator" element={<Calculator />} />
-          <Route path="/dashboard" element={<DashBoard />} />
-          <Route path="/contact" element={<Contact />} />
-*/
-
-/* <div className="w-72 fixed sidebar  bg-white border-0 shadow border-red-400">
-        {activeAside && <SideBar />}
-      </div> */
