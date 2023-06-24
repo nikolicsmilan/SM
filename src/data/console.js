@@ -69,20 +69,20 @@ export const sizeconsole = [
 
 export const colorconsole = [
   {
-    name: "/mygazebo/textures/Material_5_baseColor.jpeg",
+    name: "/gazebo_1/textures/Material_5_baseColor.jpeg",
     property: "color",
     displayname: "Normál",
     icon: <img className="w-8 rounded-2xl" src={basecolor}/>,
   },
   {
-    name: "/mygazebo/textures/pine1.jpg",
+    name: "/gazebo_1/textures/pine1.jpg",
     property: "color",
     displayname: "Fenyő",
     icon:<img className="w-8 rounded-2xl" src={pine1}/>,
   },
 
   {
-    name: "/mygazebo/textures/oak.jpg",
+    name: "/gazebo_1/textures/oak.jpg",
     property: "color",
     displayname: "Tölgy",
     icon: <img className="w-8 rounded-2xl" src={oak}/>
