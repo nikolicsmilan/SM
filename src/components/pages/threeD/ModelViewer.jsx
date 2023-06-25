@@ -1,14 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { useAnimation } from '../utils/animations'; // Importáld be az animációhoz szükséges függvényt
+import React, { useEffect, useRef, useState } from "react";
+import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+
 
 function ModelViewer({ width, height, menu3D }) {
   const canvasRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
-  const { animate } = useAnimation(); // Használd az animációhoz szükséges függvényt
+
 
   useEffect(() => {
+    setIsLoading(true);
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xffffff);
     const camera = new THREE.PerspectiveCamera(80, width / height, 0.1, 1000);
@@ -16,7 +17,7 @@ function ModelViewer({ width, height, menu3D }) {
     renderer.setSize(width, height);
 
     const loader = new GLTFLoader();
-    loader.load('/gazebo_1/scene.gltf', function (gltf) {
+    loader.load("/gazebo_1/scene.gltf", function (gltf) {
       const model = gltf.scene;
 
       // Adjust the model's position and scale
@@ -30,11 +31,15 @@ function ModelViewer({ width, height, menu3D }) {
       const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
       scene.add(ambientLight);
 
-      setIsLoading(false);
-      animate(renderer, scene, camera); // Indítsd el az animációt a modellel
+   
+      const animate = function () {
+        requestAnimationFrame(animate);
+        model.rotation.y += 0.01;
+        renderer.render(scene, camera);
+      };
 
-      // Ha nem szükséges az animáció folyamatos frissítése, akkor hozd létre csak egyszer és hívd meg egyszer
-      // Ha folyamatos frissítésre van szükség, akkor helyezd a requestAnimationFrame hívást az useEffect függvénybe, és az animate függvényt hívd meg ott
+      animate();
+      setIsLoading(false);
     });
 
     // Set the camera position
@@ -44,16 +49,15 @@ function ModelViewer({ width, height, menu3D }) {
   return (
     <>
       {isLoading && <p>Töltés...</p>}
-      <canvas ref={canvasRef} style={{ display: isLoading ? 'none' : 'block' }} />
+      <canvas
+        ref={canvasRef}
+        style={{ display: isLoading ? "none" : "block" }}
+      />
     </>
   );
 }
 
 export default ModelViewer;
-
-
-
-
 
 //return <div><canvas ref={canvasRef} /></div>;
 
