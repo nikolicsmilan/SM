@@ -89,6 +89,7 @@ export const colorconsole = [
   },
 ];
 
+
 export const roofconsole = [
   {
     name: "cserepes",
@@ -110,3 +111,25 @@ export const roofconsole = [
     displayname: "Fenyő2",
     icon: <BsFill3CircleFill />,
   }, */
+
+  /*export const colorconsole = [
+  {
+    name: "/mygazebo/textures/Material_5_baseColor.jpeg",
+    property: "color",
+    displayname: "Normál",
+    icon: <img className="w-8 rounded-2xl" src={basecolor}/>,
+  },
+  {
+    name: "/gazebo_1/textures/pine1.jpg",
+    property: "color",
+    displayname: "Fenyő",
+    icon:<img className="w-8 rounded-2xl" src={pine1}/>,
+  },
+
+  {
+    name: "/gazebo_1/textures/oak.jpg",
+    property: "color",
+    displayname: "Tölgy",
+    icon: <img className="w-8 rounded-2xl" src={oak}/>
+  },
+]; */

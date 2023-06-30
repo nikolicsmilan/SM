@@ -19,7 +19,7 @@ export const StyleContextProvider = ({ children }) => {
 
   const [menu3D, setMenu3D] = useState({
     size: 1.0,
-    color: "/gazebo_1/textures/Luca3D_Gazebo_1_baseColor.png",
+    color: "/tv_unit__furniture/textures/Material_5_baseColor.jpeg",
     material: "fenyo",
     roof: "serepes",
     animation: "right",
