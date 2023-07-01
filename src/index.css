@@ -31,20 +31,8 @@ body {
   }
   /*activeClassName={`${style}active`}*/
 
-  .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-  /*  border:10px solid orange*/
-  }
 
-  .meret{
-    height: 50px!important;
-    /*border:30px solid blue!important;*/
-    /*footer w-full bg-secondary fixed bottom-0 flex-1 flex items-center justify-center*/
-  }
+
 
 
 
