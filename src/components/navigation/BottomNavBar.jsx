@@ -32,8 +32,7 @@ const MyNavLink = ({ link }) => {
 
 const BottomNavBar = () => {
   return (
-    <div className="border-0">
-      <div className="border-0 ">
+
         <div className="flex justify-center border-0 m-0 mt-0  text-info ">
           {newarray.map((link) =>
             link.type === "route" ? (
@@ -41,8 +40,8 @@ const BottomNavBar = () => {
             ) : null
           )}
         </div>
-      </div>
-    </div>
+
+ 
   );
 };
 

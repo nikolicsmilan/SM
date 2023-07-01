@@ -12,6 +12,34 @@ const Search = () => {
 
   return (
     <div className="flex border-0">
+    <div className="xl:w-96">
+      <div className="flex items-center w-full flex-wrap rounded-2xl bg-success p-2" id="search-field">
+        <FaSearch
+          className="text-xl text-info bg-success rounded cursor-pointer mx-2"
+          title="left button"
+        />
+        <div>
+          <input
+            type="search"
+            className="focus:border-0 outline-none bg-success"
+            placeholder="keresés"
+            aria-label="keresés"
+            aria-describedby="search-field"
+            value={search}
+            onChange={handleInputChange}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  );
+}
+export default Search;
+
+
+/*
+  <div className="flex border-0">
       <div className="xl:w-96">
         <div className="flex items-center w-full flex-wrap rounded-2xl bg-success p-2" id="search-field">
           <FaSearch
@@ -32,9 +60,8 @@ const Search = () => {
         </div>
       </div>
     </div>
-  );
-}
-export default Search;
+
+*/
 
 /*
 import React from "react";

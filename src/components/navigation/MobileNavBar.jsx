@@ -12,7 +12,7 @@ const MobileNavBar = ({
   const { activeAside, setActiveAside } = useStyleContext();
   return (
     <div className="flex flex-col">
-      <div className="flex border-0 bg-white w-full px-2 items-center h-14">
+      <div className="flex border-0 bg-white w-full px-2 items-center ">
         <div className=" border-0 ">
           <Link to="/">
             <Logo />
@@ -33,7 +33,7 @@ const MobileNavBar = ({
         </div>
       </div>
       <div>
-        <div className="w-full mx-2 flex justify-center border-0 bg-white">
+        <div className=" mx-2 flex justify-center border-0 bg-white h-8">
           <Search />
         </div>
       </div>
@@ -42,6 +42,8 @@ const MobileNavBar = ({
 };
 
 export default MobileNavBar;
+
+/*For some reason, if w-full is on the outer div of search, it causes a problem in the BottomNavbar. It is not fixed at the bottom but moves slightly lower.*/
 
 /* <div className="w-full mx-2 flex">
         <Search />
