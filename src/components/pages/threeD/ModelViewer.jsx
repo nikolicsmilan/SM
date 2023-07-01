@@ -17,7 +17,7 @@ function ModelViewer({ width, height, menu3D }) {
     renderer.setSize(width, height);
 
     const loader = new GLTFLoader();
-    loader.load("/cube/cube.gltf", function (gltf) {
+    loader.load("/tv_unit__furniture/scene.gltf", function (gltf) {
       const model = gltf.scene;
     // Traverse through the model's children to find materials
     model.traverse((child) => {

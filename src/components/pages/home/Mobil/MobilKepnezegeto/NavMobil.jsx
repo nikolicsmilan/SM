@@ -15,7 +15,7 @@ const NavMobil = ({ sliderPosition, setSliderPosition, numImages }) => {
 
   return (
     <>
-      <div className=" border-0 m-0 p-0">
+      <div className=" border-0 border-lime-400 m-0 p-0 h-8">
         <button
           className={`bg-transparent text-primary text-2xl md:text-4xl font-bold mx-5 ${
             sliderPosition === 0 ? "opacity-50 cursor-not-allowed" : ""

@@ -7,8 +7,8 @@ const MainMobileButton = () => {
     navigate('pricemaker')
   }
   return (
-    <div className="flex justify-center my-3 ">
-      <button className="bg-gradient w-40 rounded p-2 text-white" onClick={handleNavigate}>Vásárlás most!</button>
+    <div className="flex justify-center my-0 ">
+     <button className="bg-gradient w-40 rounded p-2 text-white" onClick={handleNavigate}>Vásárlás most!</button>
     </div>
   );
 };

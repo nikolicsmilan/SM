@@ -106,6 +106,11 @@ module.exports = {
             fontFamily: {
               sans: "Arial",
             },
+            backgroundImage: {
+              'gradient': 'linear-gradient(130deg, rgb(253, 224, 71) 23.41%, #1A1918 88.02%)',
+              'gradient2': 'linear-gradient(130deg, #EB8814, black 95%, #000000)',
+              'gradient3': 'linear-gradient(130deg, #EB8814 15.41%, #1A1918 78.02%)'
+            },
           },
         },
         {
@@ -130,6 +135,11 @@ module.exports = {
               "3xl": "2.369rem",
               "4xl": "3.157rem",
               "5xl": "4.209rem",
+            },
+            backgroundImage: {
+              'gradient': 'linear-gradient(130deg, #EB8814 23.41%, #1A1918 88.02%)',
+              'gradient2': 'linear-gradient(130deg, #EB8814, black 95%, #000000)',
+              'gradient3': 'linear-gradient(130deg, #EB8814 15.41%, #1A1918 78.02%)'
             },
           },
         },

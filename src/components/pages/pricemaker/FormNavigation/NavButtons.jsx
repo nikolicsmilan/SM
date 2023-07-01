@@ -19,7 +19,7 @@ const NavButtons = ({ step, setStep, max }) => {
     <div className="flex my-10 justify-between">
       {step.num >= 2 ? (
         <button
-          className="p-2 border-2 rounded-2xl bg-primary w-24 text-white"
+          className="p-2 border-0 rounded-2xl bg-primary w-24 text-white"
           onClick={handleDecrease}
           disabled={!step.isClicked}
         >
@@ -30,7 +30,7 @@ const NavButtons = ({ step, setStep, max }) => {
       )}
 
       <button
-        className="p-2 border-2 rounded-2xl bg-primary w-24 text-white"
+        className="p-2 border-0 rounded-2xl bg-primary w-24 text-white"
         onClick={handleIncrease}
         disabled={!step.isClicked}
       >

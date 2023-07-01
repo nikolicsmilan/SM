@@ -8,8 +8,8 @@ const MobileHome = ({ DesktopKepnezegeto }) => {
   const { size } = MyDataContext();
 
   return (
-    <div>
-      <div className={`${size.width < 667 || size.width < size.height || 500 > size.height? "mt-5 border-0" : ""}`}>
+    <div className="border-0 border-orange-500">
+      <div className={`${size.width < 667 || size.width < size.height || 500 > size.height? "mt-0 border-0  " : ""}`}>
         <MainMobileButton />
       </div>
 

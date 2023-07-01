@@ -12,7 +12,7 @@ const MobileNavBar = ({
   const { activeAside, setActiveAside } = useStyleContext();
   return (
     <div className="flex flex-col">
-      <div className="flex border-0 bg-white w-full p-2 items-center h-14">
+      <div className="flex border-0 bg-white w-full px-2 items-center h-14">
         <div className=" border-0 ">
           <Link to="/">
             <Logo />
@@ -28,9 +28,7 @@ const MobileNavBar = ({
               onClick={() => setActiveAside((prevState) => !prevState)}
             />
           ) : (
-            <AiOutlineClose
-              onClick={() => setActiveAside((prevState) => !prevState)}
-            />
+          ""
           )}
         </div>
       </div>

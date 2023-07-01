@@ -12,17 +12,17 @@ const Layout = () => {
   return (
     <>
       { width < 667 || width < height || 300 > height? (
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full h-screen border-0 border-red-400 m-0 p-0">
           <div className="bg-white">
             <NavBar />
           </div>
 
           {!activeAside && (
-            <div className="w-72 fixed  bg-secondary z-50 h-full">
+            <div className="w-full h-full fixed  bg-secondary z-50 opacity-95">
               <Aside />
             </div>
           )}
-          <div className="w-full ">
+          <div className="w-full h-full border-0 flex flex-col justify-center">
             <Outlet
               onClick={() => {
                 console.log("hozé");
@@ -30,7 +30,7 @@ const Layout = () => {
             />
           </div>
 
-          <footer class="fixed bottom-0 w-full p-0 bg-secondary">
+          <footer class=" bg-secondary fixed bottom-0 w-full ">
               <BottomNavBar />
             </footer>
         </div>
