@@ -1,14 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useStyleContext } from "../../../../../context/StyleContext";
 const Calculator = () => {
+  const { style } = useStyleContext();
   const navigate = useNavigate();
   function handleSwitchCalculator() {
     navigate("/calculator");
   }
 
   return (
-    <div className="border-2 w-1/3 mt-5 mb-2 rounded-3xl bg-gradient">
+    <div className={`border-2 w-1/3 mt-5 mb-2 rounded-3xl ${style!=='dio'?'bg-gradient':''}`}>
       <h1 className="text-2xl text-white mx-20 mt-5">
         Szeretne többet megtudni?
       </h1>

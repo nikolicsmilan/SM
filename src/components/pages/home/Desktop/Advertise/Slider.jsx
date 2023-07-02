@@ -3,11 +3,13 @@ import ButtonAdv from "./ButtonAdv";
 import { useNavigate } from "react-router-dom";
 import { reklam } from "../../../../../data/reklam";
 import AddContent from "./AddContent";
+import { useStyleContext } from "../../../../../context/StyleContext";
 const Slider = () => {
     const navigate = useNavigate();
     const [contentsize, setContentSize] = useState({});
     const [currentIndex, setCurrentIndex] = useState(0);
     const contentRef = useRef(null);
+    const { style } = useStyleContext();
   
     function handlesSwitchUrlap() {
       navigate("/pricemaker");
@@ -27,7 +29,7 @@ const Slider = () => {
     
 
   return (
-    <div className="border-2 w-2/3 mt-5 m-2 rounded-3xl bg-gradient flex items-center justify-between ">
+    <div className={`border-2 w-2/3 mt-5 m-2 rounded-3xl  flex items-center justify-between ${style!=='dio'?'bg-gradient':''}`}>
     <ButtonAdv text=" ‹" onClick={prevHandler} />
     <div className="flex-grow overflow-hidden">
       <AddContent
