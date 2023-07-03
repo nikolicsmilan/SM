@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
-import LightBox from "../../../shared/LightBox";
+import LightBox from "../../../../shared/LightBox";
 import Feed from "./Feed";
 import Info from "./Info";
-import { MyDataContext } from "../../../../context/DataContext";
+import { MyDataContext } from "../../../../../context/DataContext";
 
 const DesktopKepnezegeto = () => {
   const { newimages, sliderPosition, setSliderPosition } = MyDataContext();

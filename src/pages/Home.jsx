@@ -3,7 +3,7 @@ import useWindowSize from "../hooks/use-windowsize";
 import Advertise from "../components/pages/home/Desktop/Advertise/Advertise";
 import MobileHome from "../components/pages/home/Mobil/MobileHome";
 import DesktopHome from "../components/pages/home/Desktop/DesktopHome";
-import DesktopKepnezegeto from "../components/pages/home/DesktopKepnezegeto/DesktopKepnezegeto";
+import DesktopKepnezegeto from "../components/pages/home/Desktop/DesktopKepnezegeto/DesktopKepnezegeto";
 
 const Home = () => {
   const { width } = useWindowSize();
