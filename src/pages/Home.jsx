@@ -6,10 +6,12 @@ import DesktopHome from "../components/pages/home/Desktop/DesktopHome";
 import DesktopKepnezegeto from "../components/pages/home/Desktop/DesktopKepnezegeto/DesktopKepnezegeto";
 
 const Home = () => {
-  const { width } = useWindowSize();
+  const { width, height } = useWindowSize();
+
+  console.log(width);
   return (
     <div className=" flex flex-col ">
-      {width < 768 ? (
+      {width < 1024  ? (
         <MobileHome
           Reklam={Advertise}
           DesktopKepnezegeto={DesktopKepnezegeto}
@@ -25,5 +27,5 @@ const Home = () => {
 };
 
 export default Home;
-
+//lg 1024
 // h-screen overflow-x-hidden overflow-y-hidden

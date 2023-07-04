@@ -9,15 +9,16 @@ import { useStyleContext } from "../../context/StyleContext";
 const Layout = () => {
   const { width,height } = useWindowSize();
   const { activeAside, setActiveAside } = useStyleContext();
+  console.log('ez mi? 0',activeAside)
   return (
     <>
-      { width < 667 || width < height || 300 > height? (
+      { width < 1024|| width < height || 300 > height? (
         <div className="flex flex-col w-full border-0 border-lime-400">
           <div className="bg-white">
             <NavBar />
           </div>
 
-          {!activeAside && (
+          {activeAside && (
             <div className="w-full fixed  bg-secondary z-50 h-screen opacity-95 ">
               <Aside />
             </div>

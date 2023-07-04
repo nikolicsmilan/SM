@@ -9,7 +9,7 @@ import { NavLink, useMatch } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 
 const MyNavLink = ({ link }) => {
-  const { setActiveAside } = useStyleContext();
+  const { activeAside,setActiveAside } = useStyleContext();
   const path = link?.to || "/";
   const match = useMatch(path);
   const isActive = (match) => {
@@ -22,6 +22,7 @@ const MyNavLink = ({ link }) => {
       key={link.name}
       onClick={(prevState) => {
         setActiveAside(!prevState);
+        console.log('kattintottam',activeAside)
       }}
       className={`flex items-center m-0 ${
         isActive(match) ? "text-primary" : ""
@@ -48,7 +49,7 @@ const MyNavLink = ({ link }) => {
 const Aside = () => {
   const { setSearch, setSliderPosition } = MyDataContext();
 
-  const { setStyle,activeAside, setActiveAside } = useStyleContext();
+  const { setStyle, activeAside, setActiveAside } = useStyleContext();
   const navigate = useNavigate();
   // const match = useMatch(path);
   const handleSearch = (category) => {
@@ -88,7 +89,10 @@ const Aside = () => {
           </div>
         ))}
       </div>
-   <AiOutlineClose className="text-primary absolute top-4 right-6" onClick={() => setActiveAside((prevState) => !prevState)}/>
+      <AiOutlineClose
+        className="text-primary absolute top-4 right-6 lg:hidden"
+        onClick={() => setActiveAside((prevState) => !prevState)}
+      />
     </div>
   );
 };

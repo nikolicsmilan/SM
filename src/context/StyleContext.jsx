@@ -7,7 +7,7 @@ export const StyleContextProvider = ({ children }) => {
   // Csak azokat itt amik globálisan egyformán
   //hatnak mindenhol ahol felhasználásra kerülnek.
   const [style, setStyle] = useState("dio");
-  const [activeAside, setActiveAside] = useState(true);
+  const [activeAside, setActiveAside] = useState(false);
   const [snap, setSnap] = useState({
     intro: true,
     color: "#EFBD48",

@@ -23,7 +23,7 @@ const MobileNavBar = ({
         </div>
 
         <div className=" flex justify-end border-0 p-2">
-          {activeAside ? (
+          {!activeAside ? (
             <GiHamburgerMenu
               onClick={() => setActiveAside((prevState) => !prevState)}
             />
@@ -33,7 +33,7 @@ const MobileNavBar = ({
         </div>
       </div>
       <div>
-        <div className=" mx-2 flex justify-center border-0 bg-white h-8">
+        <div className="my-2 mx-2 flex justify-center border-0 bg-white h-8">
           <Search />
         </div>
       </div>
