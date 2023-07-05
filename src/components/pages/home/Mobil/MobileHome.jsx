@@ -3,6 +3,8 @@ import MainMobileButton from "./MainMobileButton";
 import FurnitureTypeChoose from "./FurnitureTypeChoose";
 import MobilKepnezegeto from "./MobilKepnezegeto/MobilKepnezegeto";
 //import { MyDataContext } from "../../../../context/DataContext";
+
+import MobileDragingTeszt from "../Mobil/MobilKepnezegeto/MobileDragingTeszt"
 //Full Home page in Mobilview
 const MobileHome = ({ DesktopKepnezegeto }) => {
  // const { size } = MyDataContext();
@@ -22,6 +24,7 @@ const MobileHome = ({ DesktopKepnezegeto }) => {
       </div>
 
       <div className="flex-1 flex items-center justify-center"></div>
+      <MobileDragingTeszt/>
     </div>
   );
 };
