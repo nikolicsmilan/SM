@@ -24,7 +24,7 @@ const MobileHome = ({ DesktopKepnezegeto }) => {
       </div>
 
       <div className="flex-1 flex items-center justify-center"></div>
-      <MobileDragingTeszt/>
+    
     </div>
   );
 };
@@ -35,3 +35,4 @@ export default MobileHome;
             ? "mt-5"
             : ""
         }`} */
+        //  <MobileDragingTeszt/>
