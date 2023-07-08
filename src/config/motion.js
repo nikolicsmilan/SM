@@ -97,7 +97,6 @@ export const headContainerAnimation = {
   exit: { x: -100, opacity: 0, transition: { ...transition, delay: 0 } },
 };
 
-
 export const textAnimation = {
   initial: { opacity: 0 },
   animate: {
@@ -109,7 +108,7 @@ export const textAnimation = {
   },
 };
 
-export const myAnimation =(direction)=>{
+export const myAnimation = (direction) => {
   return {
     initial: {
       x: direction === "left" ? -100 : direction === "right" ? 100 : 0,
@@ -118,7 +117,7 @@ export const myAnimation =(direction)=>{
       transition: { ...transition, delay: 0.5 },
     },
     animate: {
-      x: direction === "left" ? -60 : direction === "right" ? 100 : 0,
+      x: direction === "left" ? -60 : direction === "right" ? 60 : 0,
       y: direction === "up" ? 20 : direction === "down" ? -100 : 0,
       opacity: 1,
       transition: { ...transition, delay: 0 },
@@ -129,7 +128,7 @@ export const myAnimation =(direction)=>{
       transition: { ...transition, delay: 0 },
     },
   };
-}
+};
 
 /*
 export const myAnimation =(direction)=>{

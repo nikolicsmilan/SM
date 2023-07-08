@@ -6,13 +6,16 @@ import {
   sizeconsole,
   colorconsole,
   roofconsole,
+  rotateconsole,
 } from "../data/console";
-import { myAnimation } from "../config/motion";
+import { myAnimation, mymobileAnimation } from "../config/motion";
 import { useStyleContext } from "../context/StyleContext";
+import { MyDataContext } from "../context/DataContext";
 import ModelViewer from "../components/pages/threeD/ModelViewer";
 
 const ThreeD = () => {
   const { menu3D, setMenu3D } = useStyleContext();
+  const { size } = MyDataContext();
   const [toggle, setToggle] = useState(false);
   const [subButtons, setSubButtons] = useState(sizeconsole);
   const handleMenuChange = (name) => {
@@ -22,6 +25,8 @@ const ThreeD = () => {
       setSubButtons(colorconsole);
     } else if (name === "roof") {
       setSubButtons(roofconsole);
+    } else if (name === "rotate") {
+      setSubButtons(rotateconsole);
     }
   };
 
@@ -52,8 +57,8 @@ const ThreeD = () => {
               <div className="relative border-0 border-sky-400 h-96 w-10">
                 {toggle && (
                   <motion.div
-                    className=" absolute top-10  z-10 glassmorphism w-16 h-96 rounded m-2 flex flex-col items-center justify-start"
-                    {...myAnimation("left")}
+                    className=" absolute top-0 md:top-10  z-10 glassmorphism h-16 md:w-16 md:h-96 rounded m-2 flex flex-row md:flex-col  items-center justify-start border-2 border-red-400"
+                    {...myAnimation(size.width > 400 ? "left" : "right")}
                   >
                     {mainconsole.map((item) => (
                       <div
@@ -70,7 +75,11 @@ const ThreeD = () => {
                 )}
               </div>
               <div className="relative right-5 top-0 w-200 h-200 border-0 border-lime-400 flex items-center justify-center">
-                <ModelViewer width={700} height={500} menu3D={menu3D} />
+                <ModelViewer
+                  width={size.width > 400 ? 700 : 300}
+                  height={500}
+                  menu3D={menu3D}
+                />
               </div>
             </div>
 

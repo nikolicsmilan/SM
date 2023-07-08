@@ -18,11 +18,12 @@ export const StyleContextProvider = ({ children }) => {
   });
 
   const [menu3D, setMenu3D] = useState({
-    size: 1.0,
+    size: 1.8,
     color: "/tv_unit__furniture/textures/Material_5_baseColor.jpeg",
     material: "fenyo",
     roof: "serepes",
     animation: "right",
+    rotate:0.01
   });
 
   return (
