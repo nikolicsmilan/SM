@@ -24,15 +24,9 @@ const MobileHome = ({ DesktopKepnezegeto }) => {
       </div>
 
       <div className="flex-1 flex items-center justify-center"></div>
-    
+
     </div>
   );
 };
 
 export default MobileHome;
-/*  className={`${
-          size.width < 667 || size.width < size.height || 500 > size.height
-            ? "mt-5"
-            : ""
-        }`} */
-        //  <MobileDragingTeszt/>

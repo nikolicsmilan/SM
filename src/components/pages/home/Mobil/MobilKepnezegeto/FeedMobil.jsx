@@ -9,103 +9,8 @@ const FeedMobil = ({
   handleModalOpen,
   size,
 }) => {
-  const mobileImageRef = useRef(null);
-  const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-
-  const handleImageLoad = () => {
-    const { width } = mobileImageRef.current?.getBoundingClientRect() || {};
-
-    if (width) {
-      handleImageDimensions(width);
-    }
-  };
-
-  const handleTouchStart = (e) => {
-    setStartX(e.touches[0].clientX);
-    setIsDragging(true);
-  };
-
-  const handleTouchMove = (e) => {
-    if (!isDragging) return;
-
-    const currentX = e.touches[0].clientX;
-    const differenceX = startX - currentX;
-
-    if (differenceX > 100 && sliderPosition + 1 < newimages.length) {
-      setSliderPosition(sliderPosition + 1);
-    } else if (differenceX < -100 && sliderPosition > 0) {
-      setSliderPosition(sliderPosition - 1);
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-  };
-
-  return (
-    <div
-      className={`overflow-hidden m-0 p-0 border-0 border-red-400 ${
-        size.width < 667 || size.width < size.height || 500 > size.height
-          ? "w-64"
-          : "w-60"
-      }`}
-      ref={mobileImageRef}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-    >
-      <div
-        className="flex transition-transform duration-300 ease-in-out border-0 p-0"
-        style={{
-          transform: `translateX(-${sliderPosition * imageDimensions}px)`,
-        }}
-      >
-        {newimages?.map((image, index) => (
-          <div key={index} className="flex-shrink-0 p-0 m-0 border-0">
-            <p
-              className={`text-center  text-base text-dark font-extrabold border-0 ${
-                size.width < 667 || size.width < size.height || 500 > size.height
-                  ? "my-0"
-                  : "my-0"
-              }`}
-            >
-              {image.name}
-            </p>
-            <img
-              className={`cursor-pointer object-cover rounded-2xl border-0 border-orange-400 ${
-                size.width < 667 || size.width < size.height || 500 > size.height
-                  ? "h-72 my-0"
-                  : "h-64"
-              }`}
-              src={image.image}
-              onClick={() => handleModalOpen(index)}
-              onLoad={handleImageLoad}
-              style={{ width: `${imageDimensions}px` }}
-              alt="ez egy kép"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default FeedMobil;
-
-
-
-
-/*import React, { useRef } from "react";
-
-const FeedMobil = ({
-  sliderPosition,
-  imageDimensions,
-  newimages,
-  handleImageDimensions,
-  handleModalOpen,
-  size,
-}) => {
+  const [startX, setStartX] = useState(0);
   const mobileImageRef = useRef(null);
 
   const handleImageLoad = () => {
@@ -120,11 +25,41 @@ const FeedMobil = ({
     }
   };
 
+  const handleMouseDown = (event) => {
+    setIsDragging(true);
+
+    setStartX(event.clientX || event.touches[0].clientX);
+  };
+
+  const handleMouseMove = (event) => {
+    if (!isDragging) return;
+
+    const currentPosition = event.clientX || event.touches[0].clientX;
+    const deltaX = currentPosition - startX;
+    console.log(
+      "currentPosition",
+      currentPosition,
+      "deltaX",
+      deltaX,
+      "startX",
+      startX
+    );
+    if (deltaX > 50 && sliderPosition > 0) {
+      setSliderPosition((prevIndex) => prevIndex - 1);
+      setIsDragging(false);
+    } else if (deltaX < -50 && sliderPosition < newimages.length - 1) {
+      setSliderPosition((prevIndex) => prevIndex + 1);
+      setIsDragging(false);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
   return (
     <div
-      className={` overflow-hidden m-0 p-0 border-0 border-red-400 ${
-        size.width < 667 || size.width < size.height || 500 > size.height ? "w-64" : "w-60"
-      }`}
+      className={` overflow-hidden m-0 p-0 border-0 border-red-400 w-64`}
       ref={mobileImageRef}
     >
       <div
@@ -136,20 +71,21 @@ const FeedMobil = ({
         {newimages?.map((image, index) => (
           <div key={index} className="flex-shrink-0 p-0 m-0 border-0">
             <p
-              // ref={(el) => (nameRefs.current[index] = el)}
-              className={`text-center  text-base text-dark font-extrabold border-0 ${
-                size.width < 667 || size.width < size.height || 500 > size.height ? "my-0" : "my-0"
-              }`}
+              className={`text-center  text-base text-dark font-extrabold border-0`}
             >
               {image.name}
             </p>
             <img
-              className={`cursor-pointer object-cover rounded-2xl border-0 border-orange-400 ${
-                size.width < 667 || size.width < size.height || 500 > size.height ? "h-72 my-0" : "h-64"
-              }`}
+              className={`cursor-pointer object-cover rounded-2xl border-0 border-orange-400 h-72`}
               src={image.image}
               onClick={() => handleModalOpen(index)}
               onLoad={handleImageLoad}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onTouchStart={handleMouseDown}
+              onTouchMove={handleMouseMove}
+              onTouchEnd={handleMouseUp}
               style={{ width: `${imageDimensions}px` }}
               alt="ez egy kép"
             />
@@ -160,4 +96,4 @@ const FeedMobil = ({
   );
 };
 
-export default FeedMobil;*/
+export default FeedMobil;

@@ -58,6 +58,7 @@ const MobilKepnezegeto = () => {
       <InfoMobil numImages={numImages} />
       <FeedMobil
         sliderPosition={sliderPosition}
+        setSliderPosition={setSliderPosition}
         imageDimensions={mobilegallery.imageDimensions}
         newimages={newimages}
         handleModalOpen={handleModalOpen}
