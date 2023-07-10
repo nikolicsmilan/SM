@@ -1,22 +1,27 @@
-import { FaRegWindowClose } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa";
-import { FaClipboardList } from "react-icons/fa";
+import {
+  FaHome,
+  FaShapes,
+  FaPuzzlePiece,
+  FaCalculator,
+  FaComments,
+  FaInfoCircle,
+  FaTools,
+  FaUtensils,
+  FaTshirt,
+  FaBath,
+  FaLemon,
+  FaPlus,
+  FaRegWindowClose,
+  FaClipboardList,
+} from "react-icons/fa";
 
-import { FaHome } from "react-icons/fa";
-import { FaComments } from "react-icons/fa";
-import { FaCalculator } from "react-icons/fa";
-import { FaInfoCircle } from "react-icons/fa";
-import { FaTools } from "react-icons/fa";
-import { FaUtensils } from "react-icons/fa";
-import { FaTshirt } from "react-icons/fa";
-import { GiMirrorMirror } from "react-icons/gi";
+import {
+  GiMirrorMirror,
+  GiOrangeSlice,
+  GiKiwiFruit,
+  GiCoconuts,GiCube
+} from "react-icons/gi";
 import { IoHandLeftOutline } from "react-icons/io5";
-import { FaBath } from "react-icons/fa";
-import { FaLemon } from "react-icons/fa";
-import { GiOrangeSlice } from "react-icons/gi";
-import { GiKiwiFruit } from "react-icons/gi";
-import { GiCoconuts } from "react-icons/gi";
-
 
 export const links = [
   {
@@ -30,13 +35,13 @@ export const links = [
       },
       {
         name: "Árajánlatkészítő",
-        icon: <FaComments />,
+        icon: <FaCalculator />,
         type: "route",
         to: "/pricemaker",
       },
       {
-        name: "3D tervezés",
-        icon: <FaCalculator />,
+        name: "3D Kalkulátor",
+        icon: <GiCube />,
         type: "route",
         to: "/calculator",
       },
@@ -88,14 +93,13 @@ export const links = [
   {
     title: "Stílus",
     links: [
-   
       {
         name: "narancs",
         type: "style",
         icon: <GiOrangeSlice />,
         ownstyle: "text-orange-400",
       },
-   
+
       {
         name: "dio",
         type: "style",

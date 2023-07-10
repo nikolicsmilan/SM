@@ -58,7 +58,7 @@ const ThreeD = () => {
                 {toggle && (
                   <motion.div
                     className=" absolute top-0 md:top-10  z-10 glassmorphism h-16 md:w-16 md:h-96 rounded m-2 flex flex-row md:flex-col  items-center justify-start border-2 border-red-400"
-                    {...myAnimation(size.width > 400 ? "left" : "right")}
+                    {...myAnimation(size.width > 640 ? "left" : "right")}
                   >
                     {mainconsole.map((item) => (
                       <div
@@ -76,7 +76,7 @@ const ThreeD = () => {
               </div>
               <div className="relative right-5 top-0 w-200 h-200 border-0 border-lime-400 flex items-center justify-center">
                 <ModelViewer
-                  width={size.width > 400 ? 700 : 300}
+                  width={size.width > 640 ? 700 : 300}
                   height={500}
                   menu3D={menu3D}
                 />
