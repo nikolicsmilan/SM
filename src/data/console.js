@@ -83,20 +83,20 @@ export const sizeconsole = [
 
 export const colorconsole = [
   {
-    name: "/gazebo_1/textures/Material_5_baseColor.jpeg",
+    name: "/tv_unit__furniture/textures/Material_5_baseColor.jpeg",
     property: "color",
     displayname: "Normál",
     icon: <img className="w-8 rounded-2xl" src={basecolor} />,
   },
   {
-    name: "/gazebo_1/textures/pine1.jpg",
+    name: "/tv_unit__furniture/textures/pine1.jpg",
     property: "color",
     displayname: "Fenyő",
     icon: <img className="w-8 rounded-2xl" src={pine1} />,
   },
 
   {
-    name: "/gazebo_1/textures/oak.jpg",
+    name: "/tv_unit__furniture/textures/oak.jpg",
     property: "color",
     displayname: "Tölgy",
     icon: <img className="w-8 rounded-2xl" src={oak} />,
@@ -138,31 +138,4 @@ export const rotateconsole = [
     icon: <FaStopCircle />,
   },
 ];
-/*  {
-    name: "/tv_unit__furniture/textures/pine2.jpg",
-    property: "color",
-    displayname: "Fenyő2",
-    icon: <BsFill3CircleFill />,
-  }, */
 
-/*export const colorconsole = [
-  {
-    name: "/mygazebo/textures/Material_5_baseColor.jpeg",
-    property: "color",
-    displayname: "Normál",
-    icon: <img className="w-8 rounded-2xl" src={basecolor}/>,
-  },
-  {
-    name: "/gazebo_1/textures/pine1.jpg",
-    property: "color",
-    displayname: "Fenyő",
-    icon:<img className="w-8 rounded-2xl" src={pine1}/>,
-  },
-
-  {
-    name: "/gazebo_1/textures/oak.jpg",
-    property: "color",
-    displayname: "Tölgy",
-    icon: <img className="w-8 rounded-2xl" src={oak}/>
-  },
-]; */

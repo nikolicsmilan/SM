@@ -20,7 +20,6 @@ const useWindowSize = () => {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      //console.log("ez lefut");
       return window.removeEventListener("resize", handleResize);
     };
   }, []);

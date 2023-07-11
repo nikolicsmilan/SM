@@ -10,10 +10,9 @@ import "./App.css";
 // Lazy loaded components
 const Login = lazy(() => import("./pages/Login"));
 const Signup = lazy(() => import("./pages/Signup"));
-const Calendar = lazy(() => import("./pages/Calendar"));
+
 const Home = lazy(() => import("./pages/Home"));
 const PriceMaker = lazy(() => import("./pages/PriceMaker"));
-const Calculator = lazy(() => import("./pages/Modeling"));
 const DashBoard = lazy(() => import("./pages/DashBoard"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotReady = lazy(() => import("./pages/NotReady"));
@@ -30,11 +29,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/unauthorized" element={<Unauthorized />} />
-            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/unauthorized" element={<Unauthorized />} /> 
             <Route path="/pricemaker" element={<NotReady />} />
             <Route path="/calculator" element={<ThreeD />} />
-            <Route path="/dashboard" element={<NotReady />} />
+            <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/contact" element={<NotReady />} />
           </Route>
         </Routes>

@@ -4,7 +4,7 @@ import Formnavigation from "../components/pages/pricemaker/FormNavigation/Formna
 import NavButtons from "../components/pages/pricemaker/FormNavigation/NavButtons";
 import FormBody from "../components/pages/pricemaker/FormBody/FormBody";
 
-//ITT KELL EGY SZÉTVÁLASZTÁS MOBIL ÉS DESKTOP
+//HERE NEEDS A SEPARATE SELECTION OF MOBILE AND DESKTOP
 
 const PriceMaker = () => {
   const [step, setStep] = useState({

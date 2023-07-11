@@ -9,7 +9,4 @@ const Intro = () => {
 };
 
 export default Intro;
-/*<p className="text-sm opacity-50">
-An app that handle all of  data
-</p>*/
-// <p className="opacity-80">Made by my corporation</p>
+
