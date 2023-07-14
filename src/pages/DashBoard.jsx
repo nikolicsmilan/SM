@@ -16,49 +16,35 @@ const DashBoard = () => {
     <div className="">
       DashBoard
       <div className="flex">
-      <div className="bg-white flex">
-        <FaHome
-          className=" text-6xl text-info rounded hover:text-success p-2"
+      
+
+        <FaThLarge
+          className=" text-6xl text-info rounded hover:text-primary p-2"
           title="Lakat Zárt"
         />
-
-        <FaTools
-          className=" text-6xl text-primary rounded hover:text-success p-2"
+      
+        <FaCubes
+          className=" text-6xl text-info rounded hover:text-primary p-2"
+          title="Lakat Zárt"
+        />
+        <FaChartArea
+          className=" text-6xl text-info rounded hover:text-primary p-2"
+          title="Lakat Zárt"
+        />
+        <FaRegCalendarAlt
+          className=" text-6xl text-info rounded hover:text-primary p-2"
+          title="Lakat Zárt"
+        />
+        <FaUsers
+          className=" text-6xl text-info rounded hover:text-primary p-2"
+          title="Lakat Zárt"
+        />
+        <FaRegImages
+          className=" text-6xl text-info rounded hover:text-primary p-2"
           title="Lakat Zárt"
         />
       </div>
-      <FaThLarge
-        className=" text-6xl text-info rounded hover:text-success p-2"
-        title="Lakat Zárt"
-      />
-      <FaComments
-        className=" text-6xl text-info rounded hover:text-success p-2"
-        title="Lakat Zárt"
-      />
-      <FaCubes
-        className=" text-6xl text-info rounded hover:text-primary p-2"
-        title="Lakat Zárt"
-      />
-      <FaChartArea
-        className=" text-6xl text-primary rounded hover:text-primary p-2"
-        title="Lakat Zárt"
-      />
-      <FaRegCalendarAlt
-        className=" text-6xl text-info rounded hover:text-primary p-2"
-        title="Lakat Zárt"
-      />
-      <FaUsers
-        className=" text-6xl text-info rounded hover:text-primary p-2"
-        title="Lakat Zárt"
-      />
-      <FaRegImages
-        className=" text-6xl text-info rounded hover:text-primary p-2"
-        title="Lakat Zárt"
-      />
-    </div>
-    <div>
-  
-    </div>
+      <div></div>
     </div>
   );
 };
@@ -66,3 +52,33 @@ const DashBoard = () => {
 export default DashBoard;
 
 //<Fileupload/>
+/*
+    <div className="bg-white flex">
+          <FaHome
+            className=" text-6xl text-info rounded hover:text-success p-2"
+            title="Lakat Zárt"
+          />
+
+          <FaTools
+            className=" text-6xl text-primary rounded hover:text-success p-2"
+            title="Lakat Zárt"
+          />
+        </div>
+
+
+  <FaHome
+          className=" text-6xl text-info rounded hover:text-primary p-2"
+          title="Lakat Zárt"
+        />
+
+        <FaTools
+          className=" text-6xl text-info rounded hover:text-primary p-2"
+          title="Lakat Zárt"
+        />
+
+
+          <FaComments
+          className=" text-6xl text-info rounded hover:text-primary p-2"
+          title="Lakat Zárt"
+        />
+*/

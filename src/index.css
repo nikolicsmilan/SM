@@ -29,6 +29,10 @@ body {
     border:3px solid brown;
     color:blue;
   }
+
+  .diob{
+    color:	#CD853F
+  }
   /*activeClassName={`${style}active`}*/
 
 

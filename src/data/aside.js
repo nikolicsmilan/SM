@@ -97,14 +97,14 @@ export const links = [
         name: "narancs",
         type: "style",
         icon: <GiOrangeSlice />,
-        ownstyle: "text-orange-400",
+        ownstyle: "text-orange-400 ",
       },
 
       {
         name: "dio",
         type: "style",
         icon: <GiCoconuts />,
-        ownstyle: "text-yellow-800",
+        ownstyle:"diob",
       },
     ],
   },

@@ -2,6 +2,7 @@ import React from "react";
 
 const CustomNav = ({ onClick, ownstyle, icon, name }) => {
   return (
+    <div>
     <p
       className={`flex items-center m-1 border-0 cursor-pointer ${
         ownstyle ? ownstyle : ""
@@ -15,6 +16,7 @@ const CustomNav = ({ onClick, ownstyle, icon, name }) => {
         {name}
       </span>
     </p>
+    </div>
   );
 };
 

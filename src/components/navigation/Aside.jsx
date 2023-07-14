@@ -49,7 +49,7 @@ const MyNavLink = ({ link }) => {
 const Aside = () => {
   const { setSearch, setSliderPosition } = MyDataContext();
 
-  const { setStyle, activeAside, setActiveAside } = useStyleContext();
+  const { style,setStyle, activeAside, setActiveAside } = useStyleContext();
   const navigate = useNavigate();
   // const match = useMatch(path);
   const handleSearch = (category) => {
@@ -72,7 +72,7 @@ const Aside = () => {
                 <MyNavLink key={link.name} link={link} />
               ) : link.type === "style" ? (
                 <CustomNav
-                  ownstyle={link.ownstyle}
+                   ownstyle={link.ownstyle+`${style===link.name?'':'text-stone-400'}`}
                   icon={link.icon}
                   onClick={handleStyle}
                   name={link.name}
