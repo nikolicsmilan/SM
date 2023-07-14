@@ -47,7 +47,7 @@ const MyNavLink = ({ link }) => {
 };
 
 const Aside = () => {
-  const { setSearch, setSliderPosition } = MyDataContext();
+  const { search,setSearch, setSliderPosition } = MyDataContext();
 
   const { style,setStyle, activeAside, setActiveAside } = useStyleContext();
   const navigate = useNavigate();
@@ -81,7 +81,7 @@ const Aside = () => {
                 />
               ) : link.type === "search" ? (
                 <CustomNav
-                  ownstyle={link.ownstyle}
+                  ownstyle={search===link.name?"text-primary":""}
                   icon={link.icon}
                   onClick={handleSearch}
                   name={link.name}
