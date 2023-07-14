@@ -67,6 +67,7 @@ const Aside = () => {
       <div className="border-0 ">
         {links.map((item) => (
           <div className=" border-0 m-3 mt-4  text-info ">
+           {item.title !=="Pages"?(<p className="font-bold">{item.title}</p>):""}
             {item.links.map((link) =>
               link.type === "route" ? (
                 <MyNavLink key={link.name} link={link} />
@@ -76,6 +77,7 @@ const Aside = () => {
                   icon={link.icon}
                   onClick={handleStyle}
                   name={link.name}
+                 
                 />
               ) : link.type === "search" ? (
                 <CustomNav
