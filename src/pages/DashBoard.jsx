@@ -1,84 +1,80 @@
 import React from "react";
 //import Fileupload from '../components/dashboard/Fileupload';
-import { FaHome } from "react-icons/fa";
-import { FaComments } from "react-icons/fa";
-import { FaChartArea } from "react-icons/fa";
-import { FaCubes } from "react-icons/fa";
-import { FaRegCalendarAlt } from "react-icons/fa";
-import { FaTools } from "react-icons/fa";
-import { FaThLarge } from "react-icons/fa";
-import { FaUsers } from "react-icons/fa";
-import { FaRegImages } from "react-icons/fa";
-//import Graphicon from "../components/dashboard/graphicon/Graphicon";
+import basecolor from "../assets/material/basecolor.jpeg";
 
+import { buttons } from "../data/dashboard";
 const DashBoard = () => {
   return (
-    <div className="">
-      DashBoard
-      <div className="flex">
-      
-
-        <FaThLarge
-          className=" text-6xl text-info rounded hover:text-primary p-2"
-          title="Lakat Zárt"
-        />
-      
-        <FaCubes
-          className=" text-6xl text-info rounded hover:text-primary p-2"
-          title="Lakat Zárt"
-        />
-        <FaChartArea
-          className=" text-6xl text-info rounded hover:text-primary p-2"
-          title="Lakat Zárt"
-        />
-        <FaRegCalendarAlt
-          className=" text-6xl text-info rounded hover:text-primary p-2"
-          title="Lakat Zárt"
-        />
-        <FaUsers
-          className=" text-6xl text-info rounded hover:text-primary p-2"
-          title="Lakat Zárt"
-        />
-        <FaRegImages
-          className=" text-6xl text-info rounded hover:text-primary p-2"
-          title="Lakat Zárt"
-        />
+    <div className="border-0 border-lime-400">
+      <div className="border-0 flex flex-wrap">
+        {buttons.map((item) => (
+          <div className=" m-3 mt-4  text-info border-0 flex flex-col border-sky-400">
+            {item.title !== "Pages" ? (
+              <p className="font-bold text-sm lg:text-lg">{item.title}</p>
+            ) : (
+              ""
+            )}
+            <div className="flex">
+              {item.items.map((link) => (
+                <div className="flex w-8 lg:w-16 flex-row border-0 text-xl lg:text-4xl text-info rounded hover:text-primary p-0 m-1">
+                  <span className="border-0">{link.icon}</span>
+                </div>
+              ))}
+            </div>{" "}
+          </div>
+        ))}
       </div>
-      <div></div>
+
+      <div className="card-container">
+        <div className="card">
+          <div className="card-front w-full h-full border-2">
+            {/* Előlap tartalma */}Előlap
+          </div>
+          <div className="card-back w-32 h-32 border-2">
+            {/* Hátlap tartalma */}Hátlap
+          </div>
+        </div>
+      </div>
+
+      <div className="my-cube">
+        <div className="top">aaaaaaaaa</div>
+
+        <div className="cube">
+          <span className="cube-span" style={{ "--i": 0 }}>
+            SM
+          </span>
+          <span className="cube-span" style={{ "--i": 1 }}>
+            design
+          </span>
+          <span className="cube-span" style={{ "--i": 2 }}>
+            by
+          </span>
+          <span className="cube-span" style={{ "--i": 3 }}>
+            milan
+          </span>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default DashBoard;
 
-//<Fileupload/>
 /*
-    <div className="bg-white flex">
-          <FaHome
-            className=" text-6xl text-info rounded hover:text-success p-2"
-            title="Lakat Zárt"
-          />
 
-          <FaTools
-            className=" text-6xl text-primary rounded hover:text-success p-2"
-            title="Lakat Zárt"
-          />
-        </div>
+    <div className="card">
+   
+      <div className="card bg-gray-200 rounded-lg p-4 shadow-3d">
+   
+    </div>
+    </div>
 
+    <div className="card bg-gray-200 rounded-lg p-4 transform hover:-translate-y-1 hover:shadow-md">
+     
+    </div>
 
-  <FaHome
-          className=" text-6xl text-info rounded hover:text-primary p-2"
-          title="Lakat Zárt"
-        />
+    <div className="card bg-gray-200 w-10 h-2 md:w-20 md:h-4 lg:w-40 lg:h-8">
+    
+    </div>
 
-        <FaTools
-          className=" text-6xl text-info rounded hover:text-primary p-2"
-          title="Lakat Zárt"
-        />
-
-
-          <FaComments
-          className=" text-6xl text-info rounded hover:text-primary p-2"
-          title="Lakat Zárt"
-        />
 */

@@ -1,4 +1,4 @@
-import { BsBarChartFill } from "react-icons/bs";
+
 import { GrRotateLeft } from "react-icons/gr";
 import { IoMdColorFill } from "react-icons/io";
 import { GiWoodPile } from "react-icons/gi";
@@ -8,28 +8,70 @@ import {
   BsFill2CircleFill,
   BsFill3CircleFill,
   BsFill4CircleFill,
+  BsBarChartFill
 } from "react-icons/bs";
-import { FaArrowLeft, FaArrowRight, FaStopCircle } from "react-icons/fa";
 
 //GiWoodBeam
 import basecolor from "../assets/material/basecolor.jpeg";
 import pine1 from "../assets/material/pine1.jpg";
 import oak from "../assets/material/oak.jpg";
-export const mainconsole = [
-  {
-    name: "size",
-    displayname: "Méret",
-    icon: <BsBarChartFill />,
-  },
-  {
-    name: "color",
-    displayname: "Szín",
-    icon: <IoMdColorFill />,
-  },
 
+import {
+  FaHome,
+  FaUserAlt,
+  FaComments,
+  FaChartArea,
+  FaArrowLeft,
+  FaArrowRight,
+  FaStopCircle,
+  FaCubes,
+  FaRegImages,
+  FaRegCalendarAlt,
+  FaUsers,
+  FaTools,
+  FaThLarge,FaClipboardList,FaPlus
+} from "react-icons/fa";
+
+export const buttons = [
   {
-    name: "rotate",
-    displayname: "Forgatás",
-    icon: <GrRotateLeft />,
+    title: "Elemek",
+    items: [
+      {
+        name: "Lista",
+        icon: <FaClipboardList />,
+        type: "route",
+        to: "/",
+      },
+      {
+        name: "Feltöltés",
+        icon: <FaPlus />,
+        type: "route",
+        to: "/pricemaker",
+      },
+    ],
+  },
+  {
+    title: "Kategóriák",
+    items: [
+      {
+        name: "Feltöltés",
+        icon: <FaThLarge />,
+        type: "route",
+        to: "/",
+      },
+     
+    ],
+  },
+  {
+    title: "Felhasználók",
+    items: [
+      {
+        name: "Feltöltés",
+        icon: <FaUsers />,
+        type: "route",
+        to: "/",
+      },
+     
+    ],
   },
 ];

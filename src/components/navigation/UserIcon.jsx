@@ -5,7 +5,7 @@ const UserIcon = () => {
   return (
     <FaUserAlt
       className=" text-2xl text-info bg-secondary rounded cursor-pointer"
-      title="left button"
+      title="User"
     />
   );
 };
