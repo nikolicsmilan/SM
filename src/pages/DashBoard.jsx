@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 //import Fileupload from '../components/dashboard/Fileupload';
 import basecolor from "../assets/material/basecolor.jpeg";
-
+import Input from "../components/shared/Input";
 import { buttons } from "../data/dashboard";
 const DashBoard = () => {
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+  const [z, setZ] = useState(0);
+
+  const handleX = (value) => {
+    setY(value);
+  };
+
+  const handleY = (value) => {
+    setY(value);
+  };
+
+  const handleZ = (value) => {
+    setZ(value);
+  };
   return (
     <div className="border-0 border-lime-400">
       <div className="border-0 flex flex-wrap">
@@ -25,7 +40,7 @@ const DashBoard = () => {
         ))}
       </div>
 
-      <div className="card-container">
+      <div className="card-container border-2 flex">
         <div className="card">
           <div className="card-front w-full h-full border-2">
             {/* Előlap tartalma */}Előlap
@@ -34,12 +49,56 @@ const DashBoard = () => {
             {/* Hátlap tartalma */}Hátlap
           </div>
         </div>
+        <div className="flex border-2">
+          <div className="w-16 m-1">
+            <Input label="4 oldal X" placeholder="X" onChange={handleX} />
+            <Input label="4 oldal Y" placeholder="Y" onChange={handleY} />
+            <Input label="4 oldal Z" placeholder="Z" onChange={handleZ} />
+          </div>
+          count:{y}
+        </div>
       </div>
 
       <div className="my-cube">
-        <div className="top">aaaaaaaaa</div>
-
+        <div className="top">
+          aaaaaaaaa bbbbbbbbbbbbbbbbbb cccccccccccccccccccc
+        </div>
         <div className="cube">
+          <span
+            className="cube-span"
+            style={{ "--i": 0, "--y": `${y}deg`, "--x": `${x}deg`,"--z": `${z}px` }}
+          >
+            SM
+          </span>
+          <span
+            className="cube-span"
+            style={{ "--i": 1, "--y": `${y}deg`, "--x": `${x}deg` }}
+          >
+            design
+          </span>
+          <span
+            className="cube-span"
+            style={{ "--i": 2, "--y": `${y}deg`, "--x": `${x}deg` }}
+          >
+            by
+          </span>
+          <span
+            className="cube-span"
+            style={{ "--i": 0, "--y": `${y}deg`, "--x": `${x}deg` }}
+          >
+            milan
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DashBoard;
+/*  <div className="top">aaaaaaaaa bbbbbbbbbbbbbbbbbb cccccccccccccccccccc</div> */
+
+/*
+ <div className="cube">
           <span className="cube-span" style={{ "--i": 0 }}>
             SM
           </span>
@@ -53,12 +112,8 @@ const DashBoard = () => {
             milan
           </span>
         </div>
-      </div>
-    </div>
-  );
-};
 
-export default DashBoard;
+*/
 
 /*
 
