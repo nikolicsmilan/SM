@@ -4,9 +4,7 @@ import basecolor from "../assets/material/basecolor.jpeg";
 import Input from "../components/shared/Input";
 import { buttons } from "../data/dashboard";
 const DashBoard = () => {
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
-  const [z, setZ] = useState(0);
+
 
   const [side, setSide] = useState({
     oldal_1: { x: 0, y: 0, z: 0 },
@@ -17,17 +15,7 @@ const DashBoard = () => {
     oldal_6: { x: 0, y: 0, z: 0 },
   });
 
-  const handleX = (value) => {
-    setX(value);
-  };
 
-  const handleY = (value) => {
-    setY(value);
-  };
-
-  const handleZ = (value) => {
-    setZ(value);
-  };
 
   const handleInputChange = (value, sideKey, coordinateKey) => {
     // const { value } = event.target;
@@ -276,25 +264,7 @@ const DashBoard = () => {
 };
 
 export default DashBoard;
-/*  <div className="top">aaaaaaaaa bbbbbbbbbbbbbbbbbb cccccccccccccccccccc</div> */
 
-/*
- <div className="cube">
-          <span className="cube-span" style={{ "--i": 0 }}>
-            SM
-          </span>
-          <span className="cube-span" style={{ "--i": 1 }}>
-            design
-          </span>
-          <span className="cube-span" style={{ "--i": 2 }}>
-            by
-          </span>
-          <span className="cube-span" style={{ "--i": 3 }}>
-            milan
-          </span>
-        </div>
-
-*/
 
 /*
 
