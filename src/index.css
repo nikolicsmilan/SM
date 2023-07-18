@@ -131,7 +131,7 @@ body {
   height: 100%;
   background: linear-gradient(#151515, #00ec00);
   /* transform: rotateY(calc(90deg * var(--i))) translateZ(150px);*/
-  transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+ /* transform: rotateY(calc(90deg * var(--i))) translateZ(150px);*/
   /*300/2 = 150*/
   border: 3px solid green;
   display: flex;
@@ -140,6 +140,41 @@ body {
   color: white;
   font-size: 20px;
 }
+
+
+.egy{
+ /* transform:rotateX(var(--x))  rotateY(var(--y)) rotateZ(var(--z)) ;  */
+  background: orange;
+ /* transform: rotateY(calc(var(--y) * var(--i))) translateZ(150px);*/
+ /* transform: rotateY(calc(90deg * var(--i))) translateZ(150px);*/
+ transform: rotateY(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+}
+
+.ketto{
+  transform: rotateY(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+  background: blue;
+}
+
+.harom{
+  transform: rotateY(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+  background: purple;
+}
+
+.negy{
+  transform: rotateY(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+  background: yellow;
+}
+
+.ot{
+  transform: rotateY(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+  background: green;
+}
+
+.hat{
+  transform: rotateY(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+  background: red;
+}
+
 
 .top {
   border: 1px solid red;

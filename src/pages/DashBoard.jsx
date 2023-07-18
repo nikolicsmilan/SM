@@ -8,8 +8,17 @@ const DashBoard = () => {
   const [y, setY] = useState(0);
   const [z, setZ] = useState(0);
 
+  const [side, setSide] = useState({
+    oldal_1: { x: 0, y: 0, z: 0 },
+    oldal_2: { x: 0, y: 0, z: 0 },
+    oldal_3: { x: 0, y: 0, z: 0 },
+    oldal_4: { x: 0, y: 0, z: 0 },
+    oldal_5: { x: 0, y: 0, z: 0 },
+    oldal_6: { x: 0, y: 0, z: 0 },
+  });
+
   const handleX = (value) => {
-    setY(value);
+    setX(value);
   };
 
   const handleY = (value) => {
@@ -19,6 +28,19 @@ const DashBoard = () => {
   const handleZ = (value) => {
     setZ(value);
   };
+
+  const handleInputChange = (value, sideKey, coordinateKey) => {
+    // const { value } = event.target;
+
+    setSide((prevState) => ({
+      ...prevState,
+      [sideKey]: {
+        ...prevState[sideKey],
+        [coordinateKey]: parseInt(value, 10),
+      },
+    }));
+  };
+
   return (
     <div className="border-0 border-lime-400">
       <div className="border-0 flex flex-wrap">
@@ -50,12 +72,128 @@ const DashBoard = () => {
           </div>
         </div>
         <div className="flex border-2">
-          <div className="w-16 m-1">
-            <Input label="4 oldal X" placeholder="X" onChange={handleX} />
-            <Input label="4 oldal Y" placeholder="Y" onChange={handleY} />
-            <Input label="4 oldal Z" placeholder="Z" onChange={handleZ} />
+          <div className="w-16 m-1 mx-5">
+            <Input
+              label="side.oldal_1.x:"
+              placeholder="X"
+              value={side.oldal_1.x}
+              onChange={(event) => handleInputChange(event, "oldal_1", "x")}
+            />
+            <Input
+              label="side.oldal_1.y:"
+              placeholder="Y"
+              value={side.oldal_1.y}
+              onChange={(event) => handleInputChange(event, "oldal_1", "y")}
+            />
+            <Input
+              label="side.oldal_1.z:"
+              placeholder="Z"
+              value={side.oldal_1.z}
+              onChange={(event) => handleInputChange(event, "oldal_1", "z")}
+            />
           </div>
-          count:{y}
+          <div className="w-16 m-1 mx-5">
+            <Input
+              label="side.oldal_2.x:"
+              placeholder="X"
+              value={side.oldal_2.x}
+              onChange={(event) => handleInputChange(event, "oldal_2", "x")}
+            />
+            <Input
+              label="side.oldal_2.y:"
+              placeholder="Y"
+              value={side.oldal_2.y}
+              onChange={(event) => handleInputChange(event, "oldal_2", "y")}
+            />
+            <Input
+              label="side.oldal_2.z:"
+              placeholder="Z"
+              value={side.oldal_2.z}
+              onChange={(event) => handleInputChange(event, "oldal_2", "z")}
+            />
+          </div>
+
+          <div className="w-16 m-1 mx-5">
+            <Input
+              label="side.oldal_3.x:"
+              placeholder="X"
+              value={side.oldal_3.x}
+              onChange={(event) => handleInputChange(event, "oldal_3", "x")}
+            />
+            <Input
+              label="side.oldal_3.y:"
+              placeholder="Y"
+              value={side.oldal_3.y}
+              onChange={(event) => handleInputChange(event, "oldal_3", "y")}
+            />
+            <Input
+              label="side.oldal_3.z:"
+              placeholder="Z"
+              value={side.oldal_3.z}
+              onChange={(event) => handleInputChange(event, "oldal_3", "z")}
+            />
+          </div>
+
+          <div className="w-16 m-1 mx-5">
+            <Input
+              label="side.oldal_4.x:"
+              placeholder="X"
+              value={side.oldal_4.x}
+              onChange={(event) => handleInputChange(event, "oldal_4", "x")}
+            />
+            <Input
+              label="side.oldal_4.y:"
+              placeholder="Y"
+              value={side.oldal_4.y}
+              onChange={(event) => handleInputChange(event, "oldal_4", "y")}
+            />
+            <Input
+              label="side.oldal_4.z:"
+              placeholder="Z"
+              value={side.oldal_4.z}
+              onChange={(event) => handleInputChange(event, "oldal_4", "z")}
+            />
+          </div>
+        </div>
+        <div className="w-16 m-1 mx-5">
+          <Input
+            label="side.oldal_5.x:"
+            placeholder="X"
+            value={side.oldal_5.x}
+            onChange={(event) => handleInputChange(event, "oldal_5", "x")}
+          />
+          <Input
+            label="side.oldal_5.y:"
+            placeholder="Y"
+            value={side.oldal_5.y}
+            onChange={(event) => handleInputChange(event, "oldal_5", "y")}
+          />
+          <Input
+            label="side.oldal_5.z:"
+            placeholder="Z"
+            value={side.oldal_5.z}
+            onChange={(event) => handleInputChange(event, "oldal_5", "z")}
+          />
+        </div>
+        <div className="w-16 m-1 mx-5">
+          <Input
+            label="side.oldal_6.x:"
+            placeholder="X"
+            value={side.oldal_6.x}
+            onChange={(event) => handleInputChange(event, "oldal_6", "x")}
+          />
+          <Input
+            label="side.oldal_6.y:"
+            placeholder="Y"
+            value={side.oldal_6.y}
+            onChange={(event) => handleInputChange(event, "oldal_6", "y")}
+          />
+          <Input
+            label="side.oldal_6.z:"
+            placeholder="Z"
+            value={side.oldal_6.z}
+            onChange={(event) => handleInputChange(event, "oldal_6", "z")}
+          />
         </div>
       </div>
 
@@ -65,26 +203,69 @@ const DashBoard = () => {
         </div>
         <div className="cube">
           <span
-            className="cube-span"
-            style={{ "--i": 0, "--y": `${y}deg`, "--x": `${x}deg`,"--z": `${z}px` }}
+            className="cube-span egy"
+            style={{
+              "--i": 0,
+              "--y": `${side.oldal_1.y}deg`,
+              "--x": `${side.oldal_1.x}deg`,
+              "--z": `${side.oldal_1.z}px`,
+            }}
           >
             SM
           </span>
           <span
-            className="cube-span"
-            style={{ "--i": 1, "--y": `${y}deg`, "--x": `${x}deg` }}
+            className="cube-span ketto"
+            style={{
+              "--i": 1,
+              "--y": `${side.oldal_2.y}deg`,
+              "--x": `${side.oldal_2.x}deg`,
+              "--z": `${side.oldal_2.z}px`,
+            }}
           >
-            design
+            designabb
           </span>
           <span
-            className="cube-span"
-            style={{ "--i": 2, "--y": `${y}deg`, "--x": `${x}deg` }}
+            className="cube-span harom"
+            style={{
+              "--i": 2,
+              "--y": `${side.oldal_3.y}deg`,
+              "--x": `${side.oldal_3.x}deg`,
+              "--z": `${side.oldal_3.z}px`,
+            }}
           >
             by
           </span>
           <span
-            className="cube-span"
-            style={{ "--i": 0, "--y": `${y}deg`, "--x": `${x}deg` }}
+            className="cube-span negy"
+            style={{
+              "--i": 3,
+              "--y": `${side.oldal_4.y}deg`,
+              "--x": `${side.oldal_4.x}deg`,
+              "--z": `${side.oldal_4.z}px`,
+            }}
+          >
+            milan
+          </span>
+
+          <span
+            className="cube-span ot"
+            style={{
+              "--i": 4,
+              "--y": `${side.oldal_5.y}deg`,
+              "--x": `${side.oldal_5.x}deg`,
+              "--z": `${side.oldal_5.z}px`,
+            }}
+          >
+            milan
+          </span>
+          <span
+            className="cube-span hat"
+            style={{
+              "--i": 5,
+              "--y": `${side.oldal_6.y}deg`,
+              "--x": `${side.oldal_6.x}deg`,
+              "--z": `${side.oldal_6.z}px`,
+            }}
           >
             milan
           </span>
