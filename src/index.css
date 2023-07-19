@@ -116,10 +116,10 @@ body {
 .cube {
   position: absolute;
   width: 300px;
-  height: 100px;
+  height: 300px;
   transform-style: preserve-3d;
   transform: rotateX(-30deg);
-  animation: animate 31s linear infinite;
+ /* animation: animate 31s linear infinite;*/
   color: blue;
 }
 
@@ -147,7 +147,7 @@ body {
   background: orange;
  /* transform: rotateY(calc(var(--y) * var(--i))) translateZ(150px);*/
  /* transform: rotateY(calc(90deg * var(--i))) translateZ(150px);*/
- transform: rotateY(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+ transform: rotateY(var(--y) ) rotateX(var(--x)) translateZ(var(--z));
 }
 
 .ketto{

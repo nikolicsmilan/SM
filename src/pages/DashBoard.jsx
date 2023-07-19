@@ -4,8 +4,6 @@ import basecolor from "../assets/material/basecolor.jpeg";
 import Input from "../components/shared/Input";
 import { buttons } from "../data/dashboard";
 const DashBoard = () => {
-
-
   const [side, setSide] = useState({
     oldal_1: { x: 0, y: 0, z: 0 },
     oldal_2: { x: 0, y: 0, z: 0 },
@@ -14,8 +12,6 @@ const DashBoard = () => {
     oldal_5: { x: 0, y: 0, z: 0 },
     oldal_6: { x: 0, y: 0, z: 0 },
   });
-
-
 
   const handleInputChange = (value, sideKey, coordinateKey) => {
     // const { value } = event.target;
@@ -199,7 +195,7 @@ const DashBoard = () => {
               "--z": `${side.oldal_1.z}px`,
             }}
           >
-            SM
+            Egy
           </span>
           <span
             className="cube-span ketto"
@@ -210,7 +206,7 @@ const DashBoard = () => {
               "--z": `${side.oldal_2.z}px`,
             }}
           >
-            designabb
+            Kettő
           </span>
           <span
             className="cube-span harom"
@@ -221,7 +217,7 @@ const DashBoard = () => {
               "--z": `${side.oldal_3.z}px`,
             }}
           >
-            by
+            Három
           </span>
           <span
             className="cube-span negy"
@@ -232,7 +228,7 @@ const DashBoard = () => {
               "--z": `${side.oldal_4.z}px`,
             }}
           >
-            milan
+            Négy
           </span>
 
           <span
@@ -244,7 +240,7 @@ const DashBoard = () => {
               "--z": `${side.oldal_5.z}px`,
             }}
           >
-            milan
+            Öt
           </span>
           <span
             className="cube-span hat"
@@ -255,7 +251,7 @@ const DashBoard = () => {
               "--z": `${side.oldal_6.z}px`,
             }}
           >
-            milan
+            Hat
           </span>
         </div>
       </div>
@@ -264,7 +260,6 @@ const DashBoard = () => {
 };
 
 export default DashBoard;
-
 
 /*
 
