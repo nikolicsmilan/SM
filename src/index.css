@@ -151,27 +151,27 @@ body {
 }
 
 .ketto{
-  transform: rotateY(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+  transform: rotateX(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
   background: blue;
 }
 
 .harom{
-  transform: rotateY(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+  transform: rotateX(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
   background: purple;
 }
 
 .negy{
-  transform: rotateY(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+  transform: rotateX(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
   background: yellow;
 }
 
 .ot{
-  transform: rotateY(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+  transform: rotateX(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
   background: green;
 }
 
 .hat{
-  transform: rotateY(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+  transform: rotateX(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
   background: red;
 }
 
