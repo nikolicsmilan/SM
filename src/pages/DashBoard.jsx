@@ -187,7 +187,7 @@ const DashBoard = () => {
         </div>
         <div className="cube">
           <span
-            className="cube-span egy"
+            className="cube-span egy rounded-2xl "
             style={{
               "--i": 0,
               "--y": `${side.oldal_1.y}deg`,
@@ -198,7 +198,7 @@ const DashBoard = () => {
             Egy
           </span>
           <span
-            className="cube-span ketto"
+            className="cube-span ketto rounded-2xl invisible"
             style={{
               "--i": 1,
               "--y": `${side.oldal_2.y}deg`,
@@ -209,7 +209,7 @@ const DashBoard = () => {
             Kettő
           </span>
           <span
-            className="cube-span harom"
+            className="cube-span harom invisible"
             style={{
               "--i": 2,
               "--y": `${side.oldal_3.y}deg`,
@@ -220,7 +220,7 @@ const DashBoard = () => {
             Három
           </span>
           <span
-            className="cube-span negy"
+            className="cube-span negy invisible"
             style={{
               "--i": 3,
               "--y": `${side.oldal_4.y}deg`,
@@ -232,7 +232,7 @@ const DashBoard = () => {
           </span>
 
           <span
-            className="cube-span ot"
+            className="cube-span ot invisible"
             style={{
               "--i": 4,
               "--y": `${side.oldal_5.y}deg`,
@@ -243,7 +243,7 @@ const DashBoard = () => {
             Öt
           </span>
           <span
-            className="cube-span hat"
+            className="cube-span hat invisible"
             style={{
               "--i": 5,
               "--y": `${side.oldal_6.y}deg`,
