@@ -106,22 +106,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
- /* min-height: 100vh;*/
- height:500px;
+  /* min-height: 100vh;*/
+  height: 500px;
   /*background: #050505;*/
-  border: 0px solid red;
+  border: 3px solid red;
   color: orange;
+  background: white;
 }
 
 .cube {
   position: absolute;
- /* width: 300px;
+  /* width: 300px;
   height: 300px;*/
-  width:200px;
-  height: 300px;
+  width: 1000px;
+  height: 600px;
   transform-style: preserve-3d;
   transform: rotateX(-30deg);
- /* animation: animate 31s linear infinite;*/
+  /* animation: animate 31s linear infinite;*/
   color: blue;
 }
 
@@ -133,9 +134,9 @@ body {
   height: 100%;
   background: linear-gradient(#151515, #00ec00);
   /* transform: rotateY(calc(90deg * var(--i))) translateZ(150px);*/
- /* transform: rotateY(calc(90deg * var(--i))) translateZ(150px);*/
+  /* transform: rotateY(calc(90deg * var(--i))) translateZ(150px);*/
   /*300/2 = 150*/
- /* border: 3px solid green;*/
+  /* border: 3px solid green;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,47 +144,55 @@ body {
   font-size: 20px;
 }
 
-
-.egy{
- /* transform:rotateX(var(--x))  rotateY(var(--y)) rotateZ(var(--z)) ;  */
+.egy {
+  /* transform:rotateX(var(--x))  rotateY(var(--y)) rotateZ(var(--z)) ;  */
   background: orange;
- /* transform: rotateY(calc(var(--y) * var(--i))) translateZ(150px);*/
- /* transform: rotateY(calc(90deg * var(--i))) translateZ(150px);*/
- transform: rotateY(var(--y) ) rotateX(var(--x)) translateZ(var(--z));
- /*-border: 8px solid red;*/
- /*box-shadow: 0 60px 12px rgba(55, 30, 143, 0.4), 0 12px 24px rgba(143, 13, 110, 0.3);*/
-/* box-shadow: 10px 10px 20px rgba(93, 24, 136, 0.3);*/
-/* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;*/
-/* border-width: 7px 0px 0px 7px;*/
-border-width: 10px 0px 5px 10px;
- border-color:white green rgb(34, 34, 34)  rgb(34, 34, 34)
+  /* transform: rotateY(calc(var(--y) * var(--i))) translateZ(150px);*/
+  /* transform: rotateY(calc(90deg * var(--i))) translateZ(150px);*/
+  transform: rotateY(var(--y)) rotateX(var(--x)) translateZ(var(--z));
+  /*-border: 8px solid red;*/
+  /*box-shadow: 0 60px 12px rgba(55, 30, 143, 0.4), 0 12px 24px rgba(143, 13, 110, 0.3);*/
+  /* box-shadow: 10px 10px 20px rgba(93, 24, 136, 0.3);*/
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;*/
+  /* border-width: 7px 0px 0px 7px;*/
+  border-width: 10px 0px 5px 10px;
+  border-color: rgb(204, 204, 204) green rgb(154, 154, 154) rgb(154, 154, 154);
+}
+/* side: 1 160 fok az y tengelyen már hasonlít és kzben side 6 348 
+fok x tengely és 165 fok y tengely*/
+.belso {
+  width: 150px;
+  height: 300px;
+  transform: rotateY(var(--y)) rotateX(var(--x)) translateZ(var(--z));
+  border-width: 5px 0px 5px 5px;
+  background-color: aqua;
+  border-color: rgb(204, 204, 204) green rgb(154, 154, 154) rgb(154, 154, 154);
 }
 
-.ketto{
-  transform: rotateX(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+.ketto {
+  transform: rotateX(calc(var(--x))) rotateY(var(--y)) translateZ(var(--z));
   background: blue;
 }
 
-.harom{
-  transform: rotateX(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+.harom {
+  transform: rotateX(calc(var(--x))) rotateY(var(--y)) translateZ(var(--z));
   background: purple;
 }
 
-.negy{
-  transform: rotateX(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+.negy {
+  transform: rotateX(calc(var(--x))) rotateY(var(--y)) translateZ(var(--z));
   background: yellow;
 }
 
-.ot{
-  transform: rotateX(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+.ot {
+  transform: rotateX(calc(var(--x))) rotateY(var(--y)) translateZ(var(--z));
   background: green;
 }
 
-.hat{
-  transform: rotateX(calc(var(--x) )) rotateY(var(--y)) translateZ(var(--z));
+.hat {
+  transform: rotateX(calc(var(--x))) rotateY(var(--y)) translateZ(var(--z));
   background: red;
 }
-
 
 .top {
   border: 1px solid red;
@@ -194,7 +203,7 @@ border-width: 10px 0px 5px 10px;
   transform: translateZ(150px) rotateY(90deg);
   /* background: #050505;*/
 
- /* animation: animate2 331s linear infinite;*/
+  /* animation: animate2 331s linear infinite;*/
 }
 
 .top::before {

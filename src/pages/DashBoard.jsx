@@ -195,7 +195,32 @@ const DashBoard = () => {
               "--z": `${side.oldal_1.z}px`,
             }}
           >
-            Egy
+         
+            <span className=" belso rounded-2xl"  style={{
+              "--i": 0,
+              "--y": `${side.oldal_6.y}deg`,
+              "--x": `${side.oldal_6.x}deg`,
+              "--z": `${side.oldal_6.z}px`,
+            }}>
+ez mi??
+            </span>
+
+            <span className=" belso rounded-2xl"  style={{
+              "--i": 0,
+              "--y": `${side.oldal_6.y}deg`,
+              "--x": `${side.oldal_6.x}deg`,
+              "--z": `${side.oldal_6.z}px`,
+            }}>
+ez mi??
+            </span>
+            <span className=" belso rounded-2xl"  style={{
+              "--i": 0,
+              "--y": `${side.oldal_6.y}deg`,
+              "--x": `${side.oldal_6.x}deg`,
+              "--z": `${side.oldal_6.z}px`,
+            }}>
+ez mi??
+            </span>
           </span>
           <span
             className="cube-span ketto rounded-2xl invisible"
