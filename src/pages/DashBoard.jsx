@@ -45,7 +45,16 @@ const DashBoard = () => {
           </div>
         ))}
       </div>
+<h1>Az van hogy hagyom ezt a 3d dolgot mert túl sok időt elvesz a css el való viaskodás,
+  helyette a react kódot fogom folytatni. Lesz egy lista és egy csoport nézet
+  a listában minden elem látható lesz táblázatba rendezve.
+  A csoport nézet gombokkal való választgatást jelenti. Lesz egy újn elem felvitelle
+képfeltöltéssel és alap adatok felvitelével az adatbázisban. valamint a kiválasztott elem
+szerkesztése és törlése ( nem a csoporté hanem az adott elemé) Új csoportott nem
+tervezek egyenlőre megvalósítani az statikusan az adatbázisból fog eredni hogy milyen
+kategóriák vagy msánéven csoportok vannak. Egyenlőre ennyit erre a projektre.
 
+</h1>
       <div className="card-container border-2 flex">
         <div className="card">
           <div className="card-front w-full h-full border-2">
