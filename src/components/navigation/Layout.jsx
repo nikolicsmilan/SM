@@ -31,7 +31,7 @@ const Layout = () => {
             />
           </div>
 
-          <footer class="fixed bottom-0 w-full p-0 bg-secondary">
+          <footer className="fixed bottom-0 w-full p-0 bg-secondary">
               <BottomNavBar />
             </footer>
         </div>
