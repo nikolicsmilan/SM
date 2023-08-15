@@ -115,12 +115,13 @@ html {
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-
+/*this cause missing input when input type is file*/
+/*
 input[type="file"] {
   z-index: -1;
   position: absolute;
   opacity: 0;
-}
+}*/
 
 .sketch-picker {
   width: 170px !important;

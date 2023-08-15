@@ -10,6 +10,7 @@ const DashBoard = () => {
     price: "10",
     description: "ez egy bútor",
     category: "Konyhabútor",
+    url:"Az urlem"
   });
 
   const categoryOptions = [
@@ -35,8 +36,10 @@ const DashBoard = () => {
         [coordinateKey]: parseInt(value, 10),
       },
     }));*/
+    
+   
   };
-
+  console.log("ez az item",item)
   return (
     <div className="border-0 border-lime-400">
       <div className="border-0 flex flex-wrap">
@@ -83,26 +86,9 @@ const DashBoard = () => {
             options={categoryOptions}
           />
         </div>
-        <div className="w-1/2 m-1 mx-5 justify-center items-center flex hover:shadow-lg cursor-pointer">
-          <div className=" ">
-           
-            <Fileupload/>
-          </div>
+        <div className="border-2  w-1/2 m-1 mx-5 justify-center items-center flex hover:shadow-lg cursor-pointer">
+          <Fileupload handleInputChange={handleInputChange} />
         </div>
-        A Ho<div>
-      <form>
-        <input
-          type="file"
-         
-          className="bg-info appearance-none w-full py-2 px-3 leading-tight rounded-lg shadow-md focus:outline-none focus:shadow-outline"
-        />
-
-      
-      </form>
-
-     
-    </div>zé
-       
       </div>
 
       <h1>
@@ -123,6 +109,10 @@ const DashBoard = () => {
         alcsoportok mert az ügfél képtelen őket meghatározni és én sme vagyok
         gondolatolvasó szóval
       </h1>
+ssssssss
+      {item.name} 
+      {item.url}
+      ccccccccccc
     </div>
   );
 };

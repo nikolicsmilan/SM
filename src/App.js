@@ -24,14 +24,7 @@ function App() {
   return (
     <div className={`flex font-sans text-base ${style} w-full border-0 lg:h-screen  border-red-400 `}>
     
-    dwedqw
-   
 
-    <input
-  type="file"
-
-  className="bg-info appearance-none w-full py-2 px-3 leading-tight rounded-lg shadow-md focus:outline-none focus:shadow-outline"
-/>sss
     
       <Suspense fallback={<ProgresBar/>}>
         <Routes>
@@ -47,6 +40,8 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
+
+    
     </div>
   );
 }
