@@ -9,7 +9,7 @@ import { useStyleContext } from "../../context/StyleContext";
 const Layout = () => {
   const { width,height } = useWindowSize();
   const { activeAside, setActiveAside } = useStyleContext();
-  console.log('ez mi? 0',activeAside)
+  /*console.log('ez mi? 0',activeAside)*/
   return (
     <>
       { width < 1024|| width < height || 300 > height? (

@@ -1,45 +1,46 @@
 import React, { useState } from "react";
-//import Fileupload from '../components/dashboard/Fileupload';
-import basecolor from "../assets/material/basecolor.jpeg";
 import Input from "../components/shared/Input";
 import Fileupload from "../components/dashboard/Fileupload";
 import { buttons } from "../data/dashboard";
+import { myAddGeneral } from "../components/firebase/Firestore";
 const DashBoard = () => {
   const [item, setItem] = useState({
-    name: "Piros konyhabútor Scarlet",
-    price: "10",
-    description: "ez egy bútor",
-    category: "Konyhabútor",
-    url:"Az urlem"
+    name: "",
+    price: "",
+    description: "",
+    category: "",
+    url: "",
   });
 
   const categoryOptions = [
-    { value: "Konyha", label: "Konyha" },
-    { value: "Gardrób", label: "Gardrób" },
-    { value: "Előszoba", label: "Előszoba" },
-    { value: "Tolóajtó", label: "Tolóajtó" },
-    { value: "Fürdő", label: "Fürdő" },
+    { value: "Kitchen", label: "Konyha" },
+    { value: "Wardrobe", label: "Gardrób" },
+    { value: "Hall", label: "Előszoba" },
+    { value: "Slidingdoor", label: "Tolóajtó" },
+    { value: "Bath", label: "Fürdő" },
   ];
 
   const handleInputChange = (konretertek, property) => {
     //const { value } = event.target;
-
     setItem((prevState) => ({
       ...prevState,
       [property]: konretertek,
     }));
-    /*
-    setSide((prevState) => ({
-      ...prevState,
-      [sideKey]: {
-        ...prevState[sideKey],
-        [coordinateKey]: parseInt(value, 10),
-      },
-    }));*/
-    
-   
+  
   };
-  console.log("ez az item",item)
+
+  const sendHandler =()=>{
+    myAddGeneral(item.category,item.name,item)
+
+    setItem({
+      name: "",
+      price: "",
+      description: "",
+      category: "",
+      url: "",
+    })
+  }
+
   return (
     <div className="border-0 border-lime-400">
       <div className="border-0 flex flex-wrap">
@@ -60,7 +61,6 @@ const DashBoard = () => {
           </div>
         ))}
       </div>
-
       <div className="card-container border-0 flex flex-row bg-success">
         <div className="w-1/2 m-1 mx-5 ">
           <Input
@@ -90,7 +90,12 @@ const DashBoard = () => {
           <Fileupload handleInputChange={handleInputChange} />
         </div>
       </div>
-
+      <button
+        className="m-5 p-1 px-4 rounded border-4 border-stone-400 text-stone-400"
+        onClick={sendHandler}
+      >
+        Küld
+      </button>
       <h1>
         Az van hogy hagyom ezt a 3d dolgot mert túl sok időt elvesz a css el
         való viaskodás, helyette a react kódot fogom folytatni. Lesz egy lista
@@ -103,48 +108,25 @@ const DashBoard = () => {
         kategóriák vagy msánéven csoportok vannak. Egyenlőre ennyit erre a
         projektre.
       </h1>
-
       <h1>
         Először a feltöltő részét kell megvalósítani, nem kellenek az
-        alcsoportok mert az ügfél képtelen őket meghatározni és én sme vagyok
+        alcsoportok mert az ügyfél képtelen őket meghatározni és én sem vagyok
         gondolatolvasó szóval
       </h1>
-ssssssss
-      {item.name} 
+     
+      {item.name}
       {item.url}
-      ccccccccccc
+      <p>Megpróbálom megjeleníteni:</p>
+      <img
+      
+        className="w-48 h-64 cursor-pointer object-cover rounded-2xl  border-0 border-primary"
+        src={
+          "https://firebasestorage.googleapis.com/v0/b/sm-new-8a9a7.appspot.com/o/files%2FAria.jpg?alt=media&token=916abb4a-c5bf-42fd-a543-da005247d530"
+        }
+      />
     </div>
   );
 };
 
 export default DashBoard;
 
-/*
-
-    <div className="card">
-   
-      <div className="card bg-gray-200 rounded-lg p-4 shadow-3d">
-   
-    </div>
-    </div>
-
-    <div className="card bg-gray-200 rounded-lg p-4 transform hover:-translate-y-1 hover:shadow-md">
-     
-    </div>
-
-    <div className="card bg-gray-200 w-10 h-2 md:w-20 md:h-4 lg:w-40 lg:h-8">
-    
-    </div>
-
-*/
-/*
-  <ul>
-        <li>Név</li>
-        <li>Kép</li>
-        <li>Ár</li>
-        <li>Leírás</li>
-        <li>Kategória</li>
-        Plusz jel alatt, a config stateből ból fog jönni hogy mi jelenjen meg az
-        admin oldalon
-      </ul>
-*/

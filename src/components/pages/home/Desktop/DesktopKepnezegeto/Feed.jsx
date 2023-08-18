@@ -34,7 +34,7 @@ const Feed = ({
           <img
             //   ref={imageRef}
             className="w-48 h-64 cursor-pointer object-cover rounded-2xl  border-0 border-primary"
-            src={image.image}
+            src={image.url}
             alt={`image ${index}`}
             onClick={() => handleModalOpen(index)}
             onLoad={handleImageLoad}

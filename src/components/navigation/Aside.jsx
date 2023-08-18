@@ -9,7 +9,7 @@ import { NavLink, useMatch } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 
 const MyNavLink = ({ link }) => {
-  const { activeAside,setActiveAside } = useStyleContext();
+  const { activeAside, setActiveAside } = useStyleContext();
   const path = link?.to || "/";
   const match = useMatch(path);
   const isActive = (match) => {
@@ -22,7 +22,7 @@ const MyNavLink = ({ link }) => {
       key={link.name}
       onClick={(prevState) => {
         setActiveAside(!prevState);
-        console.log('kattintottam',activeAside)
+        console.log("kattintottam", activeAside);
       }}
       className={`flex items-center m-0 ${
         isActive(match) ? "text-primary" : ""
@@ -47,12 +47,13 @@ const MyNavLink = ({ link }) => {
 };
 
 const Aside = () => {
-  const { search,setSearch, setSliderPosition } = MyDataContext();
+  const { search, setSearch, setSliderPosition } = MyDataContext();
 
-  const { style,setStyle, activeAside, setActiveAside } = useStyleContext();
+  const { style, setStyle, activeAside, setActiveAside } = useStyleContext();
   const navigate = useNavigate();
   // const match = useMatch(path);
   const handleSearch = (category) => {
+    console.log("ez lesz a kategória", category);
     setSearch(category);
     setSliderPosition(0);
     navigate("/");
@@ -66,22 +67,30 @@ const Aside = () => {
     <div className="border-0">
       <div className="border-0 ">
         {links.map((item) => (
-          <div className=" border-0 m-3 mt-4  text-info ">
-           {item.title !=="Pages"?(<p className="font-bold">{item.title}</p>):""}
+          <div key={item.title} className=" border-0 m-3 mt-4  text-info ">
+            {item.title !== "Pages" ? (
+              <p className="font-bold">{item.title}</p>
+            ) : (
+              ""
+            )}
             {item.links.map((link) =>
               link.type === "route" ? (
                 <MyNavLink key={link.name} link={link} />
               ) : link.type === "style" ? (
                 <CustomNav
-                   ownstyle={link.ownstyle+`${style===link.name?'':'text-stone-400'}`}
+                  key={link.name}
+                  ownstyle={
+                    link.ownstyle +
+                    `${style === link.name ? "" : "text-stone-400"}`
+                  }
                   icon={link.icon}
                   onClick={handleStyle}
                   name={link.name}
-                 
                 />
               ) : link.type === "search" ? (
                 <CustomNav
-                  ownstyle={search===link.name?"text-primary":""}
+                  key={link.name}
+                  ownstyle={search === link.name ? "text-primary" : ""}
                   icon={link.icon}
                   onClick={handleSearch}
                   name={link.name}

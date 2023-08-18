@@ -21,7 +21,7 @@ const LightFeed = ({ newimages, currentIndex, width, setSizes,sliderPosition }) 
           ref={imageFrameRef}
           style={{ transform: `translateX(-${currentIndex * width}px)` }}
         >
-          <div class="flex h-5/6 ">
+          <div className="flex h-5/6 ">
             <img
               className="w-full object-contain"
               src={image.image}

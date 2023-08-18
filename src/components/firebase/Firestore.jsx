@@ -39,13 +39,21 @@ export const myDeleteElement = async (deletecollectionname,id) => {
 
 
 export const myOnSnapshotGeneral = (setter, mycollection) => {
+  //console.log('Subscribing to onSnapshotGeneral...');
   const q = query(collection(db, mycollection));
   return onSnapshot(q, (querySnapshot) => {
+   // console.log('Snapshot received:', querySnapshot.docs.length, 'documents');
     let todosArr = [];
     querySnapshot.forEach((doc) => {
       todosArr.push({ ...doc.data(), id: doc.id });
     });
+    console.log('Updating state with', todosArr.length, 'items','this is: ',todosArr);
     setter(todosArr);
   });
+};
+
+export const myAddGeneral = async (categoryName,elementName, formData) => {
+  console.log(`myAddElements`, formData);
+  await setDoc(doc(db, categoryName, elementName), formData);
 };
 

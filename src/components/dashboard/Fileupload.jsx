@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage";
 import { storage } from "../../firebase";
 
-const Fileupload = (handleInputChange) => {
+const Fileupload = ({handleInputChange}) => {
   const [progress, setProgress] = useState(0);
   const formHandler = (e) => {
     e.preventDefault();
@@ -33,8 +33,10 @@ const Fileupload = (handleInputChange) => {
         () => {
           //getDownloadURL paraméterei: path
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+            console.log('ez a then ááááááááááááááááááááááááááááááág')
             console.log("ez az url",url);
             handleInputChange(url,"url")
+            console.log('ez a then ááááááááááááááááááááááááááááááág22222222')
           });
         }
       );

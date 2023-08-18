@@ -5,7 +5,8 @@ import Info from "./Info";
 import { MyDataContext } from "../../../../../context/DataContext";
 
 const DesktopKepnezegeto = () => {
-  const { newimages, sliderPosition, setSliderPosition } = MyDataContext();
+  const { newimages, sliderPosition, setSliderPosition, dataNet } =
+    MyDataContext();
   const [gallery, setGallery] = useState({
     //stepprecent: 0,
     isModalOpen: false,
@@ -82,7 +83,8 @@ const DesktopKepnezegeto = () => {
           sliderPosition={sliderPosition}
           //stepprecent={gallery.stepprecent}
           imageDimensions={gallery.imageDimensions}
-          newimages={newimages}
+           newimages={newimages}
+         // newimages={dataNet}
           handleModalOpen={handleModalOpen}
           handleImageDimensions={handleImageDimensions}
         />
