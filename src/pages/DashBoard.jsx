@@ -6,6 +6,7 @@ import { myAddGeneral } from "../components/firebase/Firestore";
 const DashBoard = () => {
   const [item, setItem] = useState({
     name: "",
+    englishName:"",
     price: "",
     description: "",
     category: "",
@@ -42,18 +43,18 @@ const DashBoard = () => {
   }
 
   return (
-    <div className="border-0 border-lime-400">
-      <div className="border-0 flex flex-wrap">
-        {buttons.map((item) => (
-          <div className=" m-3 mt-4  text-info border-0 flex flex-col border-sky-400">
+    <div  className="border-0 border-lime-400">
+      <div   className="border-0 flex flex-wrap">
+        {buttons.map((item,index) => (
+          <div key={index} className=" m-3 mt-4  text-info border-0 flex flex-col border-sky-400">
             {item.title !== "Pages" ? (
-              <p className="font-bold text-sm lg:text-lg">{item.title}</p>
+              <p  className="font-bold text-sm lg:text-lg">{item.title}</p>
             ) : (
               ""
             )}
-            <div className="flex">
+            <div  className="flex">
               {item.items.map((link) => (
-                <div className="flex w-8 lg:w-16 flex-row border-0 text-xl lg:text-4xl text-info rounded hover:text-primary p-0 m-1">
+                <div key={link.name} className="flex w-8 lg:w-16 flex-row border-0 text-xl lg:text-4xl text-info rounded hover:text-primary p-0 m-1">
                   <span className="border-0">{link.icon}</span>
                 </div>
               ))}
@@ -61,7 +62,7 @@ const DashBoard = () => {
           </div>
         ))}
       </div>
-      <div className="card-container border-0 flex flex-row bg-success">
+      <div   className="card-container border-0 flex flex-row bg-success">
         <div className="w-1/2 m-1 mx-5 ">
           <Input
             label="Név"
@@ -86,7 +87,7 @@ const DashBoard = () => {
             options={categoryOptions}
           />
         </div>
-        <div className="border-2  w-1/2 m-1 mx-5 justify-center items-center flex hover:shadow-lg cursor-pointer">
+        <div className="border-0  w-1/2 m-1 mx-5 justify-center items-center flex hover:shadow-lg cursor-pointer">
           <Fileupload handleInputChange={handleInputChange} />
         </div>
       </div>

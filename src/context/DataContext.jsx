@@ -7,7 +7,7 @@ const baseState=[{
   name: "",
   price: "",
   description: "",
-  category: "",
+  category: "Kitchen",
   url: "",
 }]
 export const DataContextProvider = ({ children }) => {
@@ -120,9 +120,9 @@ export const DataContextProvider = ({ children }) => {
       });
     });*/
     console.log('ez lesz a kitchen: ', kitchen)
-    newDataArray = [...kitchen,...hall];
+    newDataArray = [...kitchen,...hall,...bath,...wardrobe,...slidingDoor];
 
-    console.log('ez az össz: ', newDataArray)
+    console.log('ez az össssssssssssssssssssz: ', newDataArray)
     // kiszűri hogy a keresett kifejezés megtalálható valemlyik  propertyben
     const filteredResults = newDataArray.filter((post, index, arr) => {
       //A trim fut le először eltávolítja a leading és trailing karaktereket
@@ -151,7 +151,7 @@ export const DataContextProvider = ({ children }) => {
 
     // set the newImages state to the array of furniture items
     setNewImages(filteredResults);
-  }, [search,kitchen]);
+  }, [search,kitchen,hall,wardrobe,bath,slidingDoor]);
 
   return (
     <DataContext.Provider

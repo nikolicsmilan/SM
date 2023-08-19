@@ -47,7 +47,7 @@ export const myOnSnapshotGeneral = (setter, mycollection) => {
     querySnapshot.forEach((doc) => {
       todosArr.push({ ...doc.data(), id: doc.id });
     });
-    console.log('Updating state with', todosArr.length, 'items','this is: ',todosArr);
+   // console.log('Updating state with', todosArr.length, 'items','this is: ',todosArr);
     setter(todosArr);
   });
 };

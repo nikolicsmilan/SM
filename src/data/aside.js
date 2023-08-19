@@ -65,26 +65,31 @@ export const links = [
     links: [
       {
         name: "Konyha",
+        englishName:"Kitchen",
         type: "search",
         icon: <FaUtensils />,
       },
       {
         name: "Gardrób",
+        englishName:"Kitchen",
         type: "search",
         icon: <FaTshirt />,
       },
       {
         name: "Előszoba",
+        englishName:"Hall",
         type: "search",
         icon: <GiMirrorMirror />,
       },
       {
         name: "Tolóajtó",
+        englishName:"Kitchen",
         type: "search",
         icon: <IoHandLeftOutline />,
       },
       {
         name: "Fürdő",
+        englishName:"Kitchen",
         type: "search",
         icon: <FaBath />,
       },

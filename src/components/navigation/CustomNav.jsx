@@ -1,6 +1,6 @@
 import React from "react";
 
-const CustomNav = ({ onClick, ownstyle, icon, name }) => {
+const CustomNav = ({ onClick, ownstyle, icon, name,englishName }) => {
   return (
     <div>
 
@@ -8,7 +8,7 @@ const CustomNav = ({ onClick, ownstyle, icon, name }) => {
       className={`flex items-center m-1 border-0 cursor-pointer ${
         ownstyle ? ownstyle : ""
       }`}
-      onClick={() => onClick(name)}
+      onClick={() => onClick(englishName)}
     >
       <span className={`text-2xl ${ownstyle ? ownstyle : "text-info"}`}>
         {icon}
