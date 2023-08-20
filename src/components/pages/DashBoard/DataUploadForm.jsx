@@ -1,0 +1,64 @@
+import React from 'react';
+import Input from '../../shared/Input';
+import { myAddGeneral } from '../../firebase/Firestore';
+
+const DataUploadForm = ({handleInputChange,item,setItem}) => {
+
+    const sendHandler = () => {
+        myAddGeneral(item.category, item.name, item);
+    
+        setItem({
+          name: "",
+          price: "",
+          description: "",
+          category: "",
+          url: "",
+        });
+      };
+    const categoryOptions = [
+        { value: "Kitchen", label: "Konyha" },
+        { value: "Wardrobe", label: "Gardrób" },
+        { value: "Hall", label: "Előszoba" },
+        { value: "Slidingdoor", label: "Tolóajtó" },
+        { value: "Bath", label: "Fürdő" },
+      ];
+
+
+  return (
+    <div className="w-1/2 m-1 mx-5 p-5 shadow-xl">
+    <Input
+      label="Név"
+      value={item.name}
+      onChange={(event) => handleInputChange(event, "name")}
+    />
+    <Input
+      label="Ár"
+      value={item.price}
+      onChange={(event) => handleInputChange(event, "price")}
+    />
+    <Input
+      label="Leírás"
+      value={item.description}
+      onChange={(event) => handleInputChange(event, "description")}
+    />
+    <Input
+      label="Kategória"
+      value={item.category}
+      onChange={(event) => handleInputChange(event, "category")}
+      type="dropdown"
+      options={categoryOptions}
+    />
+    <div className="border-0 flex justify-center">
+      <button
+        className="m-5 p-1 px-4 rounded border-2 border-stone-400 text-stone-400 hover:text-primary hover:border-primary cursor-pointer"
+        onClick={sendHandler}
+      >
+        Küld
+      </button>
+    </div>
+  </div>
+  
+  )
+}
+
+export default DataUploadForm

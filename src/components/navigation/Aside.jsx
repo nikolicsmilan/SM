@@ -86,7 +86,7 @@ const Aside = () => {
                   icon={link.icon}
                   onClick={handleStyle}
                   name={link.name}
-                 // englishName={link.englishName}
+                 englishName={link.englishName}
                 />
               ) : link.type === "search" ? (
                 <CustomNav

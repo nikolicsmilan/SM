@@ -100,6 +100,7 @@ export const links = [
     links: [
       {
         name: "narancs",
+        englishName:"narancs",
         type: "style",
         icon: <GiOrangeSlice />,
         ownstyle: "text-orange-400 ",
@@ -107,6 +108,7 @@ export const links = [
 
       {
         name: "dio",
+        englishName:"dio",
         type: "style",
         icon: <GiCoconuts />,
         ownstyle:"diob",
