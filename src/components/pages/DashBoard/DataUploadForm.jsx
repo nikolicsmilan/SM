@@ -25,7 +25,7 @@ const DataUploadForm = ({handleInputChange,item,setItem}) => {
 
 
   return (
-    <div className="w-1/2 m-1 mx-5 p-5 shadow-xl">
+    <div className="lg:w-1/2  m-1 mx-5 p-5 shadow-xl  ">
     <Input
       label="Név"
       value={item.name}

@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { getDownloadURL, ref, uploadBytesResumable, deleteObject } from "@firebase/storage";
+import {
+  getDownloadURL,
+  ref,
+  uploadBytesResumable,
+  deleteObject,
+} from "@firebase/storage";
 import { storage } from "../../firebase";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import ProgressBar2 from "../../utility/ProgressBar2";
 
-const Fileupload = ({ handleInputChange }) => {
+const Fileupload = ({ handleInputChange, url }) => {
   const [progress, setProgress] = useState(0);
-  const [imageUrl, setImageUrl] = useState("");
 
   const formHandler = (e) => {
     e.preventDefault();
@@ -27,18 +31,19 @@ const Fileupload = ({ handleInputChange }) => {
     } else {
       const storageref = ref(storage, `/files/${file.name}`);
       const uploadTask = uploadBytesResumable(storageref, file);
-      
+
       uploadTask.on(
         "state_changed",
         (snapshot) => {
-          const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+          const prog = Math.round(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
           setProgress(prog);
         },
         (err) => console.log(err),
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
             handleInputChange(url, "url");
-            setImageUrl(url);
           });
         }
       );
@@ -46,13 +51,14 @@ const Fileupload = ({ handleInputChange }) => {
   };
 
   const deleteImage = () => {
-    if (imageUrl) {
-      const imageRef = ref(storage, imageUrl);
-      
+    if (url) {
+      const imageRef = ref(storage, url);
+
       deleteObject(imageRef)
         .then(() => {
           console.log("Kép sikeresen törölve");
-          setImageUrl("");
+
+          handleInputChange("", "url");
           setProgress(0);
         })
         .catch((error) => {
@@ -63,9 +69,12 @@ const Fileupload = ({ handleInputChange }) => {
 
   return (
     <div className="flex flex-col justify-center items-center border-0 border-red-400 w-100 h-100">
-      {!imageUrl ? (
-        <form onSubmit={formHandler} className="justify-center items-center flex flex-col border-0">
-          <label className="cursor-pointer">
+      {!url ? (
+        <form
+          onSubmit={formHandler}
+          className="justify-center items-center flex flex-col border-0"
+        >
+          <label className="cursor-pointer ">
             <FaCloudUploadAlt className="w-12 h-12 text-primary" />
             <input
               type="file"
@@ -73,18 +82,19 @@ const Fileupload = ({ handleInputChange }) => {
               onChange={handleImageUpload}
             />
           </label>
+          <span>Kép feltöltése</span>
         </form>
       ) : (
-        <div className="flex flex-col justify-center items-center m-2">
-          <img className="w-96 h-96" src={imageUrl} alt="Uploaded" />
+        <div className="flex flex-col justify-center items-center m-2 my-10">
+          <img className="w-96 h-96" src={url} alt="Uploaded" />
           <button
             className="m-2 p-1 px-4 rounded border-0 border-stone-400 text-white bg-red-700"
             onClick={deleteImage}
           >
             Törlés
           </button>
-          
-          <ProgressBar2 progress={progress}/>
+
+          <ProgressBar2 progress={progress} />
         </div>
       )}
     </div>
@@ -92,6 +102,3 @@ const Fileupload = ({ handleInputChange }) => {
 };
 
 export default Fileupload;
-
-
-

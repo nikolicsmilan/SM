@@ -2,7 +2,7 @@ import React from 'react'
 
 const DashboardMenu = ({buttons}) => {
   return (
-    <div className="border-0 flex flex-wrap">
+    <div className="border-0 flex flex-wrap ">
         {buttons.map((item, index) => (
           <div
             key={index}

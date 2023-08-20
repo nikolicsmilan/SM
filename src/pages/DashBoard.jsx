@@ -24,14 +24,14 @@ const DashBoard = () => {
   return (
     <div className="border-0 border-lime-400">
       <DashboardMenu buttons={buttons} />
-      <div className="card-container border-0 flex flex-row bg-success ">
+      <div className="card-container border-0 border-red-400 flex flex-col md:flex-row bg-success ">
         <DataUploadForm
           handleInputChange={handleInputChange}
           item={item}
           setItem={setItem}
         />
-        <div className="border-0  w-1/2 m-1 mx-5 justify-center items-center flex shadow-xl ">
-          <Fileupload handleInputChange={handleInputChange} />
+        <div className="border-0  lg:w-1/2  m-1 mx-5 justify-center items-center flex shadow-xl ">
+          <Fileupload handleInputChange={handleInputChange} url={item.url}/>
         </div>
       </div>
     </div>
