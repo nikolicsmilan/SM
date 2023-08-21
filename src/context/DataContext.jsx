@@ -1,62 +1,45 @@
 import { useContext, createContext, useEffect, useState } from "react";
-import { images } from "../data/image2";
 import Scarlet from "../assets/konyhabutor/Scarlet.jpg";
 import { myOnSnapshotGeneral } from "../components/firebase/Firestore";
 const DataContext = createContext();
-const baseState=[{
-  name: "",
-  price: "",
-  description: "",
-  category: "Kitchen",
-  url: "",
-}]
+const baseState = [
+  {
+    name: "",
+    price: "",
+    description: "",
+    category: "Kitchen",
+    url: "",
+  },
+];
 export const DataContextProvider = ({ children }) => {
   const [sliderPosition, setSliderPosition] = useState(0);
   const [kitchen, setKitchen] = useState(baseState);
-  const [hall, setHall] = useState([]);
-  const [wardrobe, setWardrobe] = useState([]);
-  const [slidingDoor, setSlidingDoor] = useState([]);
-  const [bath, setBath] = useState([]);
-  const [newimages, setNewImages] = useState([
-    {
-      name: "Scarlet",
-      image: Scarlet,
-      type: "real",
-      description: "Elegant and modern kitchen set with a red finish",
-      price: "1200 USD",
-      category: "Konyhabútor",
-      color: "piros",
-    },
-  ]);
-  const [dataNet, setDataNet] = useState([
-    {
-      name: "Piros konyhabútor Scarlet",
-      price: "10",
-      description: "ez egy bútor",
-      category: "Konyhabútor",
-      url: "https://firebasestorage.googleapis.com/v0/b/sm-new-8a9a7.appspot.com/o/files%2FAria.jpg?alt=media&token=916abb4a-c5bf-42fd-a543-da005247d530",
-    },
-    {
-      name: "Piros konyhabútor Scarlet",
-      price: "10",
-      description: "ez egy bútor",
-      category: "Konyhabútor",
-      url: "https://firebasestorage.googleapis.com/v0/b/sm-new-8a9a7.appspot.com/o/files%2FAria.jpg?alt=media&token=916abb4a-c5bf-42fd-a543-da005247d530",
-    },
-  ]);
-
+  const [hall, setHall] = useState(baseState);
+  const [wardrobe, setWardrobe] = useState(baseState);
+  const [slidingDoor, setSlidingDoor] = useState(baseState);
+  const [bath, setBath] = useState(baseState);
+  const [newimages, setNewImages] = useState(baseState);
+  const [config, setConfig] = useState({
+    upload:true
+  });
   const [search, setSearch] = useState("");
   const [size, setSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
-//nem tölti le
+
   useEffect(() => {
     const unsubscribe = myOnSnapshotGeneral(setKitchen, "Kitchen");
     return () => {
       unsubscribe();
     };
-    console.log('ez a kitchen',kitchen)
+  }, []);
+
+  useEffect(() => {
+    const unsubscribe = myOnSnapshotGeneral(setWardrobe, "Wardrobe");
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   useEffect(() => {
@@ -67,14 +50,7 @@ export const DataContextProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    const unsubscribe = myOnSnapshotGeneral(setBath, "Slidingdoor");
-    return () => {
-      unsubscribe();
-    };
-  }, []);
-
-  useEffect(() => {
-    const unsubscribe = myOnSnapshotGeneral(setWardrobe, "Wardrobe");
+    const unsubscribe = myOnSnapshotGeneral(setSlidingDoor, "Slidingdoor");
     return () => {
       unsubscribe();
     };
@@ -104,25 +80,7 @@ export const DataContextProvider = ({ children }) => {
 
   useEffect(() => {
     let newDataArray = [];
-    //leszedi a külső burkot és mindent egy arraybe rak bele
-    /*  images.forEach((thing) => {
-      thing.data.forEach((item) => {
-        const { name, image, type, description, price, category, color } = item;
-        newDataArray.push({
-          name,
-          image,
-          type,
-          description,
-          price,
-          category,
-          color,
-        });
-      });
-    });*/
-    console.log('ez lesz a kitchen: ', kitchen)
-    newDataArray = [...kitchen,...hall,...bath,...wardrobe,...slidingDoor];
-
-    console.log('ez az össssssssssssssssssssz: ', newDataArray)
+    newDataArray = [...kitchen, ...hall, ...bath, ...wardrobe, ...slidingDoor];
     // kiszűri hogy a keresett kifejezés megtalálható valemlyik  propertyben
     const filteredResults = newDataArray.filter((post, index, arr) => {
       //A trim fut le először eltávolítja a leading és trailing karaktereket
@@ -151,19 +109,19 @@ export const DataContextProvider = ({ children }) => {
 
     // set the newImages state to the array of furniture items
     setNewImages(filteredResults);
-  }, [search,kitchen,hall,wardrobe,bath,slidingDoor]);
+  }, [search, kitchen, hall, wardrobe, bath, slidingDoor]);
 
   return (
     <DataContext.Provider
       value={{
-        images,
         newimages,
         search,
         setSearch,
         sliderPosition,
         setSliderPosition,
         size,
-        dataNet,
+        config,
+        setConfig
       }}
     >
       {children}

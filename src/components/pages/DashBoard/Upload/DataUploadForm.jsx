@@ -1,6 +1,6 @@
 import React from 'react';
-import Input from '../../shared/Input';
-import { myAddGeneral } from '../../firebase/Firestore';
+import Input from '../../../shared/Input';
+import { myAddGeneral } from '../../../firebase/Firestore';
 
 const DataUploadForm = ({handleInputChange,item,setItem}) => {
 

@@ -5,9 +5,9 @@ import {
   uploadBytesResumable,
   deleteObject,
 } from "@firebase/storage";
-import { storage } from "../../firebase";
+import { storage } from "../../../../firebase";
 import { FaCloudUploadAlt } from "react-icons/fa";
-import ProgressBar2 from "../../utility/ProgressBar2";
+import ProgressBar2 from "../../../../utility/ProgressBar2";
 
 const Fileupload = ({ handleInputChange, url }) => {
   const [progress, setProgress] = useState(0);

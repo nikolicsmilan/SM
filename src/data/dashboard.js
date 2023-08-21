@@ -37,13 +37,13 @@ export const buttons = [
     title: "Elemek",
     items: [
       {
-        name: "Lista",
+        name: "list",
         icon: <FaClipboardList />,
         type: "route",
         to: "/",
       },
       {
-        name: "Feltöltés",
+        name: "upload",
         icon: <FaPlus />,
         type: "route",
         to: "/pricemaker",
@@ -54,7 +54,7 @@ export const buttons = [
     title: "Kategóriák",
     items: [
       {
-        name: "Feltöltés",
+        name: "category",
         icon: <FaThLarge />,
         type: "route",
         to: "/",
