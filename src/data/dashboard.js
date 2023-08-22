@@ -29,13 +29,22 @@ import {
   FaRegCalendarAlt,
   FaUsers,
   FaTools,
-  FaThLarge,FaClipboardList,FaPlus
+  FaThLarge,FaClipboardList,FaPlus,FaCodeBranch
 } from "react-icons/fa";
+import { AiFillDatabase } from "react-icons/ai";
+
+
 
 export const buttons = [
   {
     title: "Elemek",
     items: [
+      {
+        name: "branch",
+        icon: <AiFillDatabase />,
+        type: "route",
+        to: "/",
+      },
       {
         name: "list",
         icon: <FaClipboardList />,
@@ -66,7 +75,7 @@ export const buttons = [
     title: "Felhasználók",
     items: [
       {
-        name: "Feltöltés",
+        name: "users",
         icon: <FaUsers />,
         type: "route",
         to: "/",

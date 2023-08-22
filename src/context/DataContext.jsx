@@ -20,14 +20,15 @@ export const DataContextProvider = ({ children }) => {
   const [bath, setBath] = useState(baseState);
   const [newimages, setNewImages] = useState(baseState);
   const [config, setConfig] = useState({
-    upload:true
+    upload:true,
+    list:false
   });
   const [search, setSearch] = useState("");
   const [size, setSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
-
+console.log(config)
   useEffect(() => {
     const unsubscribe = myOnSnapshotGeneral(setKitchen, "Kitchen");
     return () => {

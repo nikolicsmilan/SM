@@ -77,7 +77,7 @@ const FeedMobil = ({
             </p>
             <img
               className={`cursor-pointer object-cover rounded-2xl border-0 border-orange-400 h-72`}
-              src={image.image}
+              src={image.url}
               onClick={() => handleModalOpen(index)}
               onLoad={handleImageLoad}
               onMouseDown={handleMouseDown}
