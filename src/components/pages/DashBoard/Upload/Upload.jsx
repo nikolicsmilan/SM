@@ -9,7 +9,7 @@ const Upload = () => {
         englishName: "",
         price: "",
         description: "",
-        category: "Kitchen",
+        category: "Konyha",
         url: "",
       });
     const handleInputChange = (konretertek, property) => {

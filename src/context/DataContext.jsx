@@ -7,7 +7,7 @@ const baseState = [
     name: "",
     price: "",
     description: "",
-    category: "Kitchen",
+    category: "Konyha",
     url: "",
   },
 ];
@@ -20,45 +20,53 @@ export const DataContextProvider = ({ children }) => {
   const [bath, setBath] = useState(baseState);
   const [newimages, setNewImages] = useState(baseState);
   const [config, setConfig] = useState({
-    upload:true,
-    list:false
+    compact: true,
+    list: false,
+    upload: false,
+    users: false,
   });
+  const [choosenIcon, setChoosenIcon] = useState("");
   const [search, setSearch] = useState("");
   const [size, setSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
-console.log(config)
+  console.log("ez a kitchen", kitchen);
   useEffect(() => {
-    const unsubscribe = myOnSnapshotGeneral(setKitchen, "Kitchen");
+    //Kitchen
+    const unsubscribe = myOnSnapshotGeneral(setKitchen, "Konyha");
     return () => {
       unsubscribe();
     };
   }, []);
 
   useEffect(() => {
-    const unsubscribe = myOnSnapshotGeneral(setWardrobe, "Wardrobe");
+    //Wardrobe
+    const unsubscribe = myOnSnapshotGeneral(setWardrobe, "Gardrób");
     return () => {
       unsubscribe();
     };
   }, []);
 
   useEffect(() => {
-    const unsubscribe = myOnSnapshotGeneral(setHall, "Hall");
+    //Hall
+    const unsubscribe = myOnSnapshotGeneral(setHall, "Előszoba");
     return () => {
       unsubscribe();
     };
   }, []);
 
   useEffect(() => {
-    const unsubscribe = myOnSnapshotGeneral(setSlidingDoor, "Slidingdoor");
+    //Slidingdoor
+    const unsubscribe = myOnSnapshotGeneral(setSlidingDoor, "Tolóajtó");
     return () => {
       unsubscribe();
     };
   }, []);
 
   useEffect(() => {
-    const unsubscribe = myOnSnapshotGeneral(setBath, "Bath");
+    //Bath
+    const unsubscribe = myOnSnapshotGeneral(setBath, "Fürdő");
     return () => {
       unsubscribe();
     };
@@ -122,7 +130,9 @@ console.log(config)
         setSliderPosition,
         size,
         config,
-        setConfig
+        setConfig,
+        choosenIcon,
+        setChoosenIcon,
       }}
     >
       {children}

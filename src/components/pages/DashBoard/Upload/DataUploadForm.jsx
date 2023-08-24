@@ -6,21 +6,29 @@ const DataUploadForm = ({handleInputChange,item,setItem}) => {
 
     const sendHandler = () => {
         myAddGeneral(item.category, item.name, item);
-    
+    console.log('ez a category a myAddGeneral ban: ',item.category)
         setItem({
           name: "",
           price: "",
           description: "",
-          category: "",
+          category: "Konyha",
           url: "",
         });
       };
-    const categoryOptions = [
+  /*  const categoryOptions = [
         { value: "Kitchen", label: "Konyha" },
         { value: "Wardrobe", label: "Gardrób" },
         { value: "Hall", label: "Előszoba" },
         { value: "Slidingdoor", label: "Tolóajtó" },
         { value: "Bath", label: "Fürdő" },
+      ];*/
+
+      const categoryOptions = [
+        { value: "Konyha", label: "Konyha" },
+        { value: "Gardrób", label: "Gardrób" },
+        { value: "Előszoba", label: "Előszoba" },
+        { value: "Tolóajtó", label: "Tolóajtó" },
+        { value: "Fürdő", label: "Fürdő" },
       ];
 
 

@@ -44,7 +44,7 @@ const Feed = ({
             // ref={(el) => (nameRefs.current[index] = el)}
             className="text-center mt-2 text-sm font-medium text-info"
           >
-            {image.name} {image.price}
+            {image.name} ${image.price}
           </p>
         </div>
       ))}

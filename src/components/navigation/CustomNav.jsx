@@ -8,7 +8,7 @@ const CustomNav = ({ onClick, ownstyle, icon, name,englishName }) => {
       className={`flex items-center m-1 border-0 cursor-pointer ${
         ownstyle ? ownstyle : ""
       }`}
-      onClick={() => onClick(englishName)}
+      onClick={() => onClick(name)}
     >
       <span className={`text-2xl ${ownstyle ? ownstyle : "text-info"}`}>
         {icon}

@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useStyleContext } from "../../context/StyleContext";
 
 const DesktopNavBar = ({ Logo, NavButton, Search, UserIcon }) => {
+  const { style } = useStyleContext();
   return (
-    <div className="flex border-0 bg-secondary w-full p-2 items-center h-14">
+    <div className={`flex border-0 bg-secondary w-full p-2 items-center h-14 opacity-95 ${style==='narancs'?'bg-stone-100':'bg-secondary'}`}>
       <div className="w-1/3 border-0  ">
         <Link to="/">
         <Logo />

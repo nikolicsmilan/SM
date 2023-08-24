@@ -40,7 +40,7 @@ export const buttons = [
     title: "Elemek",
     items: [
       {
-        name: "branch",
+        name: "compact",
         icon: <AiFillDatabase />,
         type: "route",
         to: "/",
@@ -59,18 +59,7 @@ export const buttons = [
       },
     ],
   },
-  {
-    title: "Kategóriák",
-    items: [
-      {
-        name: "category",
-        icon: <FaThLarge />,
-        type: "route",
-        to: "/",
-      },
-     
-    ],
-  },
+ 
   {
     title: "Felhasználók",
     items: [
@@ -84,3 +73,15 @@ export const buttons = [
     ],
   },
 ];
+/* {
+    title: "Kategóriák",
+    items: [
+      {
+        name: "category",
+        icon: <FaThLarge />,
+        type: "route",
+        to: "/",
+      },
+     
+    ],
+  }, */

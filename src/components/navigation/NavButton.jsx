@@ -17,12 +17,12 @@ const NavButton = () => {
     <>
       <FaAngleLeft
         onClick={handleGoBack}
-        className=" text-2xl text-info bg-white lg:bg-secondary rounded cursor-pointer"
+        className=" text-2xl text-info  lg:bg-secondary rounded cursor-pointer"
         title="left button"
       />
       <FaAngleRight
         onClick={handleGoForward}
-        className=" text-2xl text-info bg-white lg:bg-secondary  rounded cursor-pointer"
+        className=" text-2xl text-info  lg:bg-secondary  rounded cursor-pointer"
         title="right button"
       />
     </>
