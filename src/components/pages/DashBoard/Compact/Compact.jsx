@@ -1,11 +1,54 @@
 import React from "react";
 import { FaTrashAlt, FaEdit } from "react-icons/fa";
+import { myDeleteElement,deleteImage } from "../../../firebase/Firestore";
+import { deleteObject,ref, } from "firebase/storage";
+import { storage } from "../../../../firebase";
+
+const Compact = ({ newimages }) => {
+
+  const handleDeleteItem = async (category, name, url) => {
+    try {
+      await myDeleteElement(category, name);
+      await deleteImage(url);
+    } catch (error) {
+      console.error("Error deleting item in handleDeleteItem function:", error);
+    }
+  };
+
+
+  return (
+    <div className="border-0 flex flex-wrap justify-center lg:justify-start my-10">
+      {newimages.map((item) => (
+        <div key={item.name} className="flex flex-col w-40 h-40 border-0 border-stone-400 m-2  rounded-xl shadow-2xl">
+          <div className="flex flex-row justify-between m-2 ">
+            <FaTrashAlt className="text-info cursor-pointer" onClick={() => handleDeleteItem(item.category, item.name, item.url)} />
+            <FaEdit className="text-info cursor-pointer" />
+          </div>
+          <div className="flex justify-center items-center border-0 h-32 ">
+            <img className="w-20 h-20 items-center" src={item.url} alt={item.name} />
+          </div>
+          <div className="text-center my-1 text-info"> {item.name} </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Compact;
+
+
+
+
+
+
+/*import React from "react";
+import { FaTrashAlt, FaEdit } from "react-icons/fa";
 import { myDeleteElement } from "../../../firebase/Firestore";
 
 const Compact = ({ newimages }) => {
 
-const handleDeleteItem = ()=>{
-  myDeleteElement()
+const handleDeleteItem = (category,name)=>{
+  myDeleteElement(category,name)
 }
 
   return (
@@ -13,7 +56,7 @@ const handleDeleteItem = ()=>{
       {newimages.map((item) => (
         <div className="flex flex-col w-40 h-40 border-0 border-stone-400 m-2  rounded-xl shadow-2xl">
           <div className="flex flex-row justify-between m-2 ">
-            <FaTrashAlt className="text-info cursor-pointer" onClick={handleDeleteItem(item.category,)} />
+            <FaTrashAlt className="text-info cursor-pointer" onClick={()=>{handleDeleteItem(item.category,item.name)}} />
             <FaEdit className="text-info cursor-pointer" />
           </div>
           <div className="flex justify-center items-center border-0 h-32 ">
@@ -26,4 +69,4 @@ const handleDeleteItem = ()=>{
   );
 };
 
-export default Compact;
+export default Compact;*/
