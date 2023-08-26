@@ -17,19 +17,14 @@ const LighBoxHeader = ({ handleModalClose, handleImage, clicked }) => {
       </div>
       <div className="w-1/12 flex justify-end border-0 text-xl">
       <div className="m-3">
-          <SlBasket />
+        { /* <SlBasket />*/}
         </div>
         <div className="m-3">
-          <FaPlay />
+       
+          { /* <   <FaPlay /> />*/}
         </div>
-        <div className="m-3">
-          {clicked ? (
-            <FaSearchMinus onClick={() => handleImage()} />
-          ) : (
-            <FaSearchPlus onClick={() => handleImage()} />
-          )}
-        </div>
-        <div className="m-3">
+      
+        <div className="m-3 cursor-pointer">
           <FaRegWindowClose onClick={() => handleModalClose()} />
         </div>
       </div>
@@ -39,3 +34,13 @@ const LighBoxHeader = ({ handleModalClose, handleImage, clicked }) => {
 
 export default LighBoxHeader;
 
+/*
+
+  <div className="m-3">
+          {clicked ? (
+            <FaSearchMinus onClick={() => handleImage()} />
+          ) : (
+            <FaSearchPlus onClick={() => handleImage()} />
+          )}
+        </div>
+*/

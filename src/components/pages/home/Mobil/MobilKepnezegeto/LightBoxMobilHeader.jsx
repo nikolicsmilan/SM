@@ -16,18 +16,13 @@ const LightBoxMobilHeader = ({ handleModalClose, handleImage, clicked }) => {
       </div>
       <div className="w-1/12 flex justify-end border-0 text-xl">
       <div className="m-3">
-          <SlBasket />
+        {/*<SlBasket /> */}  
         </div>
         <div className="m-3">
-          <FaPlay />
+          {/*  <FaPlay /> */}  
+        
         </div>
-        <div className="m-3">
-          {clicked ? (
-            <FaSearchMinus onClick={() => handleImage()} />
-          ) : (
-            <FaSearchPlus onClick={() => handleImage()} />
-          )}
-        </div>
+        
         <div className="m-3">
           <FaRegWindowClose onClick={() => handleModalClose()} />
         </div>
@@ -37,3 +32,14 @@ const LightBoxMobilHeader = ({ handleModalClose, handleImage, clicked }) => {
 }
 
 export default LightBoxMobilHeader
+
+/*
+<div className="m-3">
+          {clicked ? (
+            <FaSearchMinus onClick={() => handleImage()} />
+          ) : (
+            <FaSearchPlus onClick={() => handleImage()} />
+          )}
+        </div>
+
+*/

@@ -59,10 +59,10 @@ const LightBoxMobil = ({
                   {image.name}
                 </p>
                 <img
-                  className={`cursor-pointer object-cover  border-0 ${
+                  className={`cursor-pointer object-cover m-1 border-0 ${
                     size.width < 667 || size.width < size.height || 300 > size.height ? "h-96 my-0" : "h-60"
                   }`}
-                  src={image.image}
+                  src={image.url}
                   //onClick={() => handleModalOpen(index)}
                   onLoad={handleImageLoad}
                   style={{ width: `${imageDimensions}px` }}
