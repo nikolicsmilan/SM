@@ -48,6 +48,7 @@ const Compact = ({ newimages }) => {
                   onClick={() => {
                     handleEdit(item);
                   }}
+                  alt="szerkesztés"
                 />
               </div>
               <div className="flex justify-center items-center border-0 h-32 ">

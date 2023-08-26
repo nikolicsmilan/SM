@@ -3,7 +3,7 @@ import { buttons } from "../data/dashboard";
 import DashboardMenu from "../components/pages/DashBoard/DashboardMenu";
 import Compact from "../components/pages/DashBoard/Compact/Compact";
 import Upload from "../components/pages/DashBoard/Upload/Upload";
-import ListElement from "../components/pages/DashBoard/List/ListElement";
+import List from "../components/pages/DashBoard/List/List";
 
 import Users from "../components/pages/DashBoard/Users/Users";
 
@@ -22,7 +22,7 @@ const DashBoard = () => {
       />
       {config.compact && <Compact newimages={newimages}/>}
       {config.upload && <Upload />}
-      {config.list && <ListElement />}
+      {config.list && <List newimages={newimages} />}
     
       {config.users && <Users />}
     
