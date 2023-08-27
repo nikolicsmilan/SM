@@ -85,7 +85,7 @@ const Fileupload = ({ handleInputChange, url }) => {
           <span>Kép feltöltése</span>
         </form>
       ) : (
-        <div className="flex flex-col justify-center items-center m-2 my-10">
+        <div className="flex flex-col justify-center items-center m-2 my-10 ">
           <img className="w-96 h-96" src={url} alt="Uploaded" />
           <button
             className="m-2 p-1 px-4 rounded border-0 border-stone-400 text-white bg-red-700"
@@ -94,8 +94,8 @@ const Fileupload = ({ handleInputChange, url }) => {
             Törlés
           </button>
 
-          <ProgressBar2 progress={progress} />
-        </div>
+          <ProgressBar2  className="border-4 border-red-400 h-32" progress={progress} />
+       </div>
       )}
     </div>
   );

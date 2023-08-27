@@ -60,7 +60,7 @@ const DashboardMenu = ({
           </div>
         </div>
       ))}
-      Ez a choosenIcon: {choosenIcon}
+    
     </div>
   );
 };

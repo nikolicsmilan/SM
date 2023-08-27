@@ -39,7 +39,7 @@ const Compact = ({ newimages }) => {
                 <FaTrashAlt
                   className="text-info cursor-pointer"
                   onClick={() =>
-                    handleDeleteItem(item.category, item.name, item.url)
+                    handleDeleteItem(item?.category, item?.name, item?.url)
                   }
                   alt="törlés"
                 />
@@ -54,11 +54,11 @@ const Compact = ({ newimages }) => {
               <div className="flex justify-center items-center border-0 h-32 ">
                 <img
                   className="w-20 h-20 items-center"
-                  src={item.url}
-                  alt={item.name}
+                  src={item?.url}
+                  alt={item?.name}
                 />
               </div>
-              <div className="text-center my-1 text-info"> {item.name} </div>
+              <div className="text-center my-1 text-info"> {item?.name} </div>
             </div>
           ))}
         </div>

@@ -20,11 +20,11 @@ const DashBoard = () => {
         choosenIcon={choosenIcon}
         setChoosenIcon={setChoosenIcon}
       />
-      {config.compact && <Compact newimages={newimages}/>}
-      {config.upload && <Upload />}
-      {config.list && <List newimages={newimages} />}
+      {config?.compact && <Compact newimages={newimages}/>}
+      {config?.upload && <Upload setConfig={setConfig}/>}
+      {config?.list && <List newimages={newimages} />}
     
-      {config.users && <Users />}
+      {config?.users && <Users />}
     
     </div>
   );
