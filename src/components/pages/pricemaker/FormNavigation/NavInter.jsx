@@ -17,7 +17,7 @@ const NavInter = ({ step, index, item }) => {
       >
         {/*number in the circle */}
         <span
-          className={`absolute top-1  w-48 text-base font-bold text-gray-500   ${
+          className={`absolute top-1  w-48 text-base font-bold text-gray-900   ${
             step.num >= index + 1 ? "text-dark" : ""
           }`}
           style={{ transform: "translateX(-50%)" }}
@@ -26,8 +26,8 @@ const NavInter = ({ step, index, item }) => {
         </span>
         {/* text */}
         <span
-          className={`absolute top-10  w-48 text-base  text-gray-500   ${
-            step.num >= index + 1 ? "text-primary" : ""
+          className={`absolute top-10  w-48 text-base    ${
+            step.num >= index + 1 ? "text-primary " : "text-gray-900"
           }`}
           style={{ transform: "translateX(-50%)" }}
         >

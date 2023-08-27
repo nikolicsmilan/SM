@@ -5,14 +5,14 @@ const NavFirstLast = ({ step, index, item }) => {
     <>
       {/*stage (circle) */}
       <div
-        className={` relative rounded w-4 h-4 p-4 m-0 ${
+        className={` relative rounded w-4 h-4 p-4 m-0  border-0 ${
           step.num >= 1 ? "bg-primary" : "bg-white"
         }`}
       >
         {/*number in the circle +plus one as index of array */}
         <span
-          className={`absolute top-1  w-48 text-base font-bold text-gray-500   ${
-            step.num >= 1 ? "text-dark" : ""
+          className={`absolute top-1  w-48 text-base font-bold text-gray-900   border-0 ${
+            step.num >= 1 ? "text-dark" : "text-red-400"
           }`}
           style={{ transform: "translateX(-50%)" }}
         >
@@ -20,8 +20,8 @@ const NavFirstLast = ({ step, index, item }) => {
         </span>
         {/*text */}
         <span
-          className={`absolute top-10  w-48 text-base  text-gray-500   ${
-            step.num >= 1 ? "text-primary" : ""
+          className={`absolute top-10  w-48 text-base  text-info   ${
+            step.num >= 1 ? "text-primary" : "text-dark"
           }`}
           style={{ transform: "translateX(-50%)" }}
         >

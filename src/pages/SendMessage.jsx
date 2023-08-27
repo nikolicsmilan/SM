@@ -6,7 +6,7 @@ import FormBody from "../components/pages/pricemaker/FormBody/FormBody";
 
 //HERE NEEDS A SEPARATE SELECTION OF MOBILE AND DESKTOP
 
-const PriceMaker = () => {
+const SendMessage = () => {
   const [step, setStep] = useState({
     num: 1,
     isClicked: false,
@@ -39,7 +39,7 @@ const PriceMaker = () => {
         max={Object.keys(formData).length}
       />
       <div className="flex justify-center border-0 my-5">
-        <div className="bg-white rounded-md shadow-md p-6 w-1/2 my-10">
+        <div className="bg-secondary rounded-md shadow-md p-6 w-1/2 my-10">
           <FormBody
             step={step}
             setStep={setStep}
@@ -60,5 +60,5 @@ const PriceMaker = () => {
   );
 };
 
-export default PriceMaker;
+export default SendMessage;
 

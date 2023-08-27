@@ -13,6 +13,7 @@ import {
   FaPlus,
   FaRegWindowClose,
   FaClipboardList,
+  FaEnvelope
 } from "react-icons/fa";
 
 import {
@@ -34,10 +35,10 @@ export const links = [
         to: "/",
       },
       {
-        name: "Árajánlatkészítő",
-        icon: <FaCalculator />,
+        name: "Üzenetküldés",
+        icon: <FaEnvelope />,
         type: "route",
-        to: "/pricemaker",
+        to: "/sendmessage",
       },
       {
         name: "3D Kalkulátor",

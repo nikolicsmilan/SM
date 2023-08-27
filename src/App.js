@@ -5,6 +5,7 @@ import Unauthorized from "./pages/Unathorized";
 import { UserAuth } from "./context/AuthContext";
 import { useStyleContext } from "./context/StyleContext";
 import ProgresBar from "./utility/ProgressBar"
+
 import "./App.css";
 
 // Lazy loaded components
@@ -12,7 +13,7 @@ const Login = lazy(() => import("./pages/Login"));
 const Signup = lazy(() => import("./pages/Signup"));
 
 const Home = lazy(() => import("./pages/Home"));
-const PriceMaker = lazy(() => import("./pages/PriceMaker"));
+const SendMessage = lazy(() => import("./pages/SendMessage"));
 const DashBoard = lazy(() => import("./pages/DashBoard"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotReady = lazy(() => import("./pages/NotReady"));
@@ -33,7 +34,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/unauthorized" element={<Unauthorized />} /> 
-            <Route path="/pricemaker" element={<NotReady />} />
+            <Route path="/sendmessage" element={<SendMessage />} />
             <Route path="/calculator" element={<ThreeD />} />
             <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/contact" element={<NotReady />} />
