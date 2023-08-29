@@ -29,7 +29,7 @@ import {
   FaRegCalendarAlt,
   FaUsers,
   FaTools,
-  FaThLarge,FaClipboardList,FaPlus,FaCodeBranch
+  FaThLarge,FaClipboardList,FaPlus,FaCodeBranch, FaEnvelope
 } from "react-icons/fa";
 import { AiFillDatabase } from "react-icons/ai";
 
@@ -66,6 +66,18 @@ export const buttons = [
       {
         name: "users",
         icon: <FaUsers />,
+        type: "route",
+        to: "/",
+      },
+     
+    ],
+  },
+  {
+    title: "Üzenetek",
+    items: [
+      {
+        name: "users",
+        icon: < FaEnvelope />,
         type: "route",
         to: "/",
       },

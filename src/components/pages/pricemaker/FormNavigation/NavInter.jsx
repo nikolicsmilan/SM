@@ -5,19 +5,19 @@ const NavInter = ({ step, index, item }) => {
     <>
       {/*line */}
       <div
-        className={`border-0  w-96 h-1 p-0 m-0 ${
+        className={`border-0 w-8 lg:w-96 h-1 p-0 mx-3 lg:mx-0 z-1 ${
           step.num >= index + 1 ? "bg-primary" : "bg-white"
         }`}
       ></div>
       {/*circle */}
       <div
-        className={` relative rounded w-4 h-4 p-4 m-0 ${
+        className={` relative rounded w-4 h-4 p-4 m-0 z-1 ${
           step.num >= index + 1 ? "bg-primary" : "bg-white"
         }`}
       >
         {/*number in the circle */}
         <span
-          className={`absolute top-1  w-48 text-base font-bold text-gray-900   ${
+          className={`absolute top-1 z-1 w-48 text-base font-bold text-gray-900   ${
             step.num >= index + 1 ? "text-dark" : ""
           }`}
           style={{ transform: "translateX(-50%)" }}
@@ -26,7 +26,7 @@ const NavInter = ({ step, index, item }) => {
         </span>
         {/* text */}
         <span
-          className={`absolute top-10  w-48 text-base    ${
+          className={`absolute top-10  w-48 text-base  z-1  ${
             step.num >= index + 1 ? "text-primary " : "text-gray-900"
           }`}
           style={{ transform: "translateX(-50%)" }}

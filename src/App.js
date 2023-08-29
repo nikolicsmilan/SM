@@ -23,7 +23,7 @@ function App() {
   const { style } = useStyleContext();
 
   return (
-    <div className={`flex font-sans text-base ${style} w-full border-0 lg:h-screen  border-red-400 `}>
+    <div className={`flex font-sans text-base ${style} w-full border-0 lg:h-screen  border-orange-400 `}>
     
 
     
@@ -42,7 +42,7 @@ function App() {
         </Routes>
       </Suspense>
 
-    
+   
     </div>
   );
 }

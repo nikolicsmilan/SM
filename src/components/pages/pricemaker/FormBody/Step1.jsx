@@ -13,9 +13,9 @@ const Step1 = ({ formData, onFormChange, index,setStep }) => {
 
   return (
     <>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 border-0 border-lime-400">
         <div>
-          <h1 className="text-2xl text-info ">Milyen bútortípust szeretne?</h1>
+          <h1 className="text-2xl text-info py-5">Milyen bútortípust szeretne?</h1>
         </div>
 
         <div className="flex flex-row border-0 w-full my-5">
@@ -42,7 +42,9 @@ const Step1 = ({ formData, onFormChange, index,setStep }) => {
             </div>
           ))}
         </div>
+
       </div>
+  
     </>
   );
 };

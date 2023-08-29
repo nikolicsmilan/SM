@@ -53,8 +53,7 @@ const Aside = () => {
   const navigate = useNavigate();
   // const match = useMatch(path);
   const handleSearch = (category) => {
-    console.log("ez lesz a kategória", category);
-    setSearch(category);
+       setSearch(category);
     setSliderPosition(0);
     navigate("/");
   };
@@ -103,7 +102,7 @@ const Aside = () => {
         ))}
       </div>
       <AiOutlineClose
-        className="text-primary absolute top-4 right-6 lg:hidden"
+        className="text-primary absolute top-4 right-4 lg:hidden"
         onClick={() => setActiveAside((prevState) => !prevState)}
       />
     </div>

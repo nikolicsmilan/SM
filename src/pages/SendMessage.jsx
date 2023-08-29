@@ -27,10 +27,15 @@ const SendMessage = () => {
       return updatedFormData;
     });
   };
-
+  const containerStyle = {
+    display: "flex",
+    flexDirection: "column",
+   minHeight: "100vh", // Set minimum height to 100% of the viewport height
+  };
 
   return (
-    <div className="border-0 border-red-400 my-2 text-center font-montserrat">
+
+    <div   className="z-1 h-auto lg:bg-success border-0 border-stone-900 my-10  text-center font-montserrat rounded-2xl">
       <Intro />
       <Formnavigation
         formData={formData}
@@ -38,8 +43,8 @@ const SendMessage = () => {
         setStep={setStep}
         max={Object.keys(formData).length}
       />
-      <div className="flex justify-center border-0 my-5">
-        <div className="bg-secondary rounded-md shadow-md p-6 w-1/2 my-10">
+      <div className="flex justify-center border-0 border-lime-400 my-5">
+        <div className="bg-secondary rounded-md lg:shadow-md p-2 w-full lg:w-1/2 m-2 my-10  lg:h-auto bodrer-4 border-sky-400">
           <FormBody
             step={step}
             setStep={setStep}
@@ -51,14 +56,19 @@ const SendMessage = () => {
             setStep={setStep}
             max={Object.keys(formData).length}
           />
-          <p className="text-center text-xl">
-            step: {step.num} max: {Object.keys(formData).length}
-          </p>
+          
         </div>
       </div>
+     
     </div>
+
   );
 };
 
 export default SendMessage;
 
+/*
+<p className="text-center text-xl">
+            step: {step.num} max: {Object.keys(formData).length}
+          </p>
+*/
