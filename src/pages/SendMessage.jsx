@@ -3,17 +3,19 @@ import Intro from "../components/pages/pricemaker/Intro";
 import Formnavigation from "../components/pages/pricemaker/FormNavigation/Formnavigation";
 import NavButtons from "../components/pages/pricemaker/FormNavigation/NavButtons";
 import FormBody from "../components/pages/pricemaker/FormBody/FormBody";
-
+import useErrorModal from "../hooks/useErrorModal";
 //HERE NEEDS A SEPARATE SELECTION OF MOBILE AND DESKTOP
 
 const SendMessage = () => {
+  const {  showErrorModal } = useErrorModal();
   const [step, setStep] = useState({
     num: 1,
     isClicked: false,
   });
   const [formData, setFormData] = useState([
     { furnituretype: "", stage: "Bútortípus" },
-    { address: "", city: "", state: "", zip: "", stage: "Termék" },
+    { maxAmmount: "", description: "", deadline: "", stage: "Termék" },
+    { address: "", city: "", state: "", zip: "", stage: "Szálítási adatok" },
     { cardNumber: "", expDate: "", cvv: "", stage: "Elérhetőség" },
     { homedelivery: "", stage: "Összegzés" },
   ]);
@@ -55,6 +57,8 @@ const SendMessage = () => {
             step={step}
             setStep={setStep}
             max={Object.keys(formData).length}
+            formData={formData}
+            showErrorModal={showErrorModal}
           />
           
         </div>

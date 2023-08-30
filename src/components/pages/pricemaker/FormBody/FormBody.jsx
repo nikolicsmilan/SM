@@ -30,6 +30,7 @@ const FormBody = ({ step, formData, onFormChange, setStep }) => {
       {step.num === 4 && (
         <Step4 formData={formData[3]} onFormChange={onFormChange} index={3} />
       )}
+      
     </>
   );
 };

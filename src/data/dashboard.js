@@ -29,7 +29,7 @@ import {
   FaRegCalendarAlt,
   FaUsers,
   FaTools,
-  FaThLarge,FaClipboardList,FaPlus,FaCodeBranch, FaEnvelope
+  FaThLarge,FaClipboardList,FaPlus,FaCodeBranch, FaEnvelope,
 } from "react-icons/fa";
 import { AiFillDatabase } from "react-icons/ai";
 
@@ -76,8 +76,20 @@ export const buttons = [
     title: "Üzenetek",
     items: [
       {
-        name: "users",
+        name: "message",
         icon: < FaEnvelope />,
+        type: "route",
+        to: "/",
+      },
+     
+    ],
+  },
+  {
+    title: "Naptár",
+    items: [
+      {
+        name: "calendar",
+        icon: < FaRegCalendarAlt />,
         type: "route",
         to: "/",
       },

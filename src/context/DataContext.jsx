@@ -25,7 +25,7 @@ export const DataContextProvider = ({ children }) => {
     upload: false,
     users: false,
   });
-  const [choosenIcon, setChoosenIcon] = useState("");
+  const [choosenIcon, setChoosenIcon] = useState("compact");
   const [search, setSearch] = useState("");
   const [size, setSize] = useState({
     width: window.innerWidth,

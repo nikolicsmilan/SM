@@ -8,6 +8,7 @@ export const StyleContextProvider = ({ children }) => {
   //hatnak mindenhol ahol felhasználásra kerülnek.
   const [style, setStyle] = useState("dio");
   const [activeAside, setActiveAside] = useState(false);
+  const [errorModel, setErrorModel] = useState(false);
   const [snap, setSnap] = useState({
     intro: true,
     color: "#EFBD48",
@@ -23,7 +24,7 @@ export const StyleContextProvider = ({ children }) => {
     material: "fenyo",
     roof: "serepes",
     animation: "right",
-    rotate:0.01
+    rotate: 0.01,
   });
 
   return (
@@ -37,6 +38,8 @@ export const StyleContextProvider = ({ children }) => {
         setSnap,
         menu3D,
         setMenu3D,
+        errorModel,
+        setErrorModel,
       }}
     >
       {children}

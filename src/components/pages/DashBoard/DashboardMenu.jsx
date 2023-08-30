@@ -8,28 +8,30 @@ const DashboardMenu = ({
   setChoosenIcon,
 }) => {
   const handleConfig = (property, akarmi) => {
-    console.log("ez a property", property);
-    /*setConfig((prevConfig) => ({
+       /*setConfig((prevConfig) => ({
       ...prevConfig,
       [property]: !prevConfig[property],
       [property]: akarmi,
     }));*/
-    setChoosenIcon(property);
-    setConfig((prevConfig) => {
-      const updatedConfig = { ...prevConfig };
-
-      // Set the property being toggled to true
-      updatedConfig[property] = !prevConfig[property];
-
-      // Set all other properties to false
-      for (const prop in updatedConfig) {
-        if (prop !== property) {
-          updatedConfig[prop] = false;
+    if (!config[property]) { // Check if the property is not already true
+      setChoosenIcon(property); // Set the chosen icon based on the property
+      
+      setConfig((prevConfig) => {
+        const updatedConfig = { ...prevConfig };
+  
+        // Set the property being toggled to true
+        updatedConfig[property] = true;
+  
+        // Set all other properties to false
+        for (const prop in updatedConfig) {
+          if (prop !== property) {
+            updatedConfig[prop] = false;
+          }
         }
-      }
-
-      return updatedConfig;
-    });
+  
+        return updatedConfig;
+      });
+    }
   };
 
 
@@ -48,7 +50,7 @@ const DashboardMenu = ({
           <div className="flex">
             {item.items.map((link) => (
               <div
-                onClick={() => handleConfig(link.name, "hozé")}
+                onClick={() => handleConfig(link.name)}
                 key={link.name}
                 className={`flex w-8 lg:w-16 flex-row border-0 text-xl lg:text-4xl text-info rounded hover:text-primary p-0 m-1 cursor-pointer ${
                   link.name === choosenIcon ? "text-primary" : "text-info"

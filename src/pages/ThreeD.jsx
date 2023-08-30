@@ -57,8 +57,8 @@ const ThreeD = () => {
               <div className="relative border-0 border-sky-400 h-96 w-10">
                 {toggle && (
                   <motion.div
-                    className=" absolute top-0 md:top-10  z-10 glassmorphism h-16 md:w-16 md:h-96 rounded m-2 flex flex-row md:flex-col  items-center justify-start border-2 border-red-400"
-                    {...myAnimation(size.width > 640 ? "left" : "right")}
+                    className=" absolute top-0 md:top-10  z-10 glassmorphism h-16 md:w-16 md:h-96 rounded m-2 flex flex-row md:flex-col  items-center justify-start border-0 border-red-400"
+                    {...myAnimation(size.width > 640 ? "desktop" : "mobile")}
                   >
                     {mainconsole.map((item) => (
                       <div

@@ -10,11 +10,11 @@ const Step2 = ({ formData, onFormChange, index,setStep }) => {
   return (
     <div className="flex flex-col gap-4">
       <GeneralInput
-        id="address"
-        name="address"
-        label="Address"
-        type="text"
-        value={formData?.address}
+        id="maxAmmount"
+        name="maxAmmount"
+        label={`A legmagasabb összeg, amit ráfordítanál 1000 Ft ban: ${formData?.maxAmmount} 000`}
+        type="range"
+        value={formData?.maxAmmount}
         onChange={handleInputChange}
       />
       <GeneralInput

@@ -4,11 +4,14 @@ import Aside from "./Aside";
 import BottomNavBar from "./BottomNavBar";
 import { Outlet } from "react-router-dom";
 import useWindowSize from "../../hooks/use-windowsize";
-import { useStyleContext } from "../../context/StyleContext";
+import { useStyleContext } from "../../context/StyleContext"; 
+import useErrorModal from "../../hooks/useErrorModal";
+import ErrorModal from "../../utility/ErrorModal";
 
 const Layout = () => {
   const { width, height } = useWindowSize();
   const { activeAside, setActiveAside } = useStyleContext();
+  const { error, showErrorModal, hideErrorModal } = useErrorModal();
   /*console.log('ez mi? 0',activeAside)*/
   return (
     <>
@@ -49,6 +52,8 @@ const Layout = () => {
               <Outlet />
             </div>
           </div>
+
+
         </div>
       )}
     </>
