@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { buttons } from "../data/dashboard";
-import DashboardMenu from "../components/pages/DashBoard/DashboardMenu";
+import DashboardMenu from "../components/pages/DashBoard/Menu/DashboardMenu";
 import Compact from "../components/pages/DashBoard/Compact/Compact";
 import Upload from "../components/pages/DashBoard/Upload/Upload";
 import List from "../components/pages/DashBoard/List/List";

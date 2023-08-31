@@ -5,7 +5,7 @@ const NavButtons = ({ step, setStep, max, formData, showErrorModal }) => {
     if (!formData[0].furnituretype && step.num===1) {
       showErrorModal("Válasz bútortípust!");
       return;
-    }else if(!formData[1].address && step.num===2){
+    }else if(!formData[1].maxAmmount && step.num===2){
       showErrorModal("Add meg a címed!");
       return
     }

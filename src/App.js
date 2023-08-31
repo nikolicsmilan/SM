@@ -13,7 +13,6 @@ import "./App.css";
 // Lazy loaded components
 const Login = lazy(() => import("./pages/Login"));
 const Signup = lazy(() => import("./pages/Signup"));
-
 const Home = lazy(() => import("./pages/Home"));
 const SendMessage = lazy(() => import("./pages/SendMessage"));
 const DashBoard = lazy(() => import("./pages/DashBoard"));
@@ -23,9 +22,8 @@ const ThreeD = lazy(() => import("./pages/ThreeD"));
 
 function App() {
   const { style, errorModel } = useStyleContext();
-  const { error, showErrorModal, hideErrorModal } = useErrorModal();
+  const { hideErrorModal } = useErrorModal();
 
-  console.log("ez mi error", error);
   return (
     <div
       className={`flex font-sans text-base ${style} w-full border-0 lg:h-screen  border-orange-400 `}
@@ -39,16 +37,14 @@ function App() {
             <Route path="/unauthorized" element={<Unauthorized />} />
             <Route path="/sendmessage" element={<SendMessage />} />
             <Route path="/calculator" element={<ThreeD />} />
-            <Route path="/dashboard" element={<DashBoard error2={error} />} />
+            <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/contact" element={<NotReady />} />
           </Route>
         </Routes>
       </Suspense>
 
       {/* Show the ErrorModal if there's an error */}
-      {errorModel && (
-        <ErrorModal error={errorModel} onClose={hideErrorModal} />
-      )}
+      {errorModel && <ErrorModal error={errorModel} onClose={hideErrorModal} />}
     </div>
   );
 }

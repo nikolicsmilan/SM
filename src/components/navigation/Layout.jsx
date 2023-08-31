@@ -34,7 +34,7 @@ const Layout = () => {
             />
           </div>
           {/* BottomNavBar is now positioned outside the main content */}
-          <footer className="fixed bottom-0 z-100  w-full p-0 bg-secondary border-2 border-lime-400">
+          <footer className="fixed bottom-0 z-100  w-full p-0 bg-secondary border-0 border-lime-400">
             <BottomNavBar />
           </footer>
         </div>

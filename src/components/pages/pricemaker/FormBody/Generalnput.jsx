@@ -18,7 +18,7 @@ const GeneralInput = ({ label, type, id, name, value, onChange, min, max, step }
         min={min}     // Új: minimum érték
         max={max}     // Új: maximum érték
         step={step}   // Új: léptetés értéke
-        className={`border font-bold border-gray-400 py-2 px-4 rounded-md focus:outline-none focus:border-primary bg-secondary ${inputClassName}`}
+        className={`border font-bold border-gray-400 py-2 px-4 rounded-md focus:outline-none focus:border-primary bg-info h-8 ${inputClassName}`}
       />
     </div>
   );

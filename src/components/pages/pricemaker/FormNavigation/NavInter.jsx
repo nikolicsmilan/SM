@@ -1,6 +1,6 @@
 import React from "react";
 
-const NavInter = ({ step, index, item }) => {
+const NavInter = ({ step, index, item,width, height }) => {
   return (
     <>
       {/*line */}
@@ -17,7 +17,7 @@ const NavInter = ({ step, index, item }) => {
       >
         {/*number in the circle */}
         <span
-          className={`absolute top-1 z-1 w-48 text-base font-bold text-gray-900   ${
+          className={`absolute top-1 z-1 w-8 text-base font-bold text-gray-900   ${
             step.num >= index + 1 ? "text-dark" : ""
           }`}
           style={{ transform: "translateX(-50%)" }}
@@ -25,14 +25,15 @@ const NavInter = ({ step, index, item }) => {
           {index + 1}
         </span>
         {/* text */}
-        <span
+        {width < 1024 || width < height || 300 > height ?"":( <span
           className={`absolute top-10  w-48 text-base  z-1  ${
             step.num >= index + 1 ? "text-primary " : "text-gray-900"
           }`}
           style={{ transform: "translateX(-50%)" }}
         >
           {item?.stage}
-        </span>
+        </span>)}
+       
       </div>
     </>
   );

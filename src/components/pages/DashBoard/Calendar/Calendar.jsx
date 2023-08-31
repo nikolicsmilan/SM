@@ -15,7 +15,7 @@ import {
 
 //import { DataPickerComponent } from "@syncfusion/ej2-react-calendars";
 import { scheduleData } from "../../../../data/dummy";
-import Header from '../../../../components/Header'
+
 
 const Calendar = () => {
   return (

@@ -37,7 +37,7 @@ const SendMessage = () => {
 
   return (
 
-    <div   className="z-1 h-auto lg:bg-success border-0 border-stone-900 my-10  text-center font-montserrat rounded-2xl">
+    <div   className="z-1 h-auto lg:bg-success border-0 border-stone-900 my-0 lg:my-10  text-center font-montserrat rounded-2xl">
       <Intro />
       <Formnavigation
         formData={formData}
@@ -46,7 +46,7 @@ const SendMessage = () => {
         max={Object.keys(formData).length}
       />
       <div className="flex justify-center border-0 border-lime-400 my-5">
-        <div className="bg-secondary rounded-md lg:shadow-md p-2 w-full lg:w-1/2 m-2 my-10  lg:h-auto bodrer-4 border-sky-400">
+        <div className="bg-secondary rounded-md lg:shadow-md p-2 w-full lg:w-1/2 m-2 my-0 lg:my-10  lg:h-auto bodrer-4 border-sky-400">
           <FormBody
             step={step}
             setStep={setStep}

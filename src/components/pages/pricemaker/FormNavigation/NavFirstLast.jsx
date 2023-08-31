@@ -1,6 +1,6 @@
 import React from "react";
 
-const NavFirstLast = ({ step, index, item }) => {
+const NavFirstLast = ({ step, index, item,width, height }) => {
   return (
     <>
       {/*stage (circle) */}
@@ -19,14 +19,14 @@ const NavFirstLast = ({ step, index, item }) => {
           {index + 1}
         </span>
         {/*text */}
-        <span
-          className={`absolute top-10  w-48 text-base  text-info   ${
-            step.num >= 1 ? "text-primary" : "text-dark"
+        {width < 1024 || width < height || 300 > height ?"":( <span
+          className={`absolute top-10  w-48 text-base  z-1  ${
+            step.num >= index + 1 ? "text-primary " : "text-gray-900"
           }`}
           style={{ transform: "translateX(-50%)" }}
         >
           {item?.stage}
-        </span>
+        </span>)}
 
   
       </div>
