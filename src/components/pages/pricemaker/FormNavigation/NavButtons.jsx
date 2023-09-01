@@ -1,13 +1,29 @@
 import React from "react";
 
 const NavButtons = ({ step, setStep, max, formData, showErrorModal }) => {
+  // const telPattern = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+  const telPattern =
+    /^(\+\d{1,4})?[- .()/]*\d{1,4}[- .()/]*\d{1,4}[- .()/]*\d{1,4}[- .()/]*\d{1,9}[- .()/]*\d{0,9}$/;
+
   const handleIncrease = () => {
-    if (!formData[0].furnituretype && step.num===1) {
+    if (!formData[0].furnituretype && step.num === 1) {
       showErrorModal("Válasz bútortípust!");
       return;
-    }else if(!formData[1].maxAmmount && step.num===2){
+    } else if (!formData[1].minAmmount && step.num === 2) {
       showErrorModal("Add meg a címed!");
-      return
+      return;
+    } else if (!formData[2].name && step.num === 3) {
+      showErrorModal("Add meg a teljes neved!");
+      return;
+    } else if (!formData[2].address && step.num === 3) {
+      showErrorModal("Add meg a lakcímed!");
+      return;
+    } else if (!formData[2].tel && step.num === 3) {
+      showErrorModal("Add meg a telefonszámod!");
+      return;
+    } else if (!telPattern.test(formData[2].tel) && step.num === 3) {
+      showErrorModal("Érvénytelen a telefonszám!");
+      return;
     }
 
     if (step.num < max) {
@@ -19,7 +35,7 @@ const NavButtons = ({ step, setStep, max, formData, showErrorModal }) => {
   };
 
   const handleDecrease = () => {
-    console.log('step visszafelé')
+    console.log("step visszafelé");
     setStep((prevState) => ({ ...prevState, num: prevState.num - 1 }));
   };
 

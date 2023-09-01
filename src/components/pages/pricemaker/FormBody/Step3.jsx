@@ -8,26 +8,34 @@ const Step3 = ({ formData, onFormChange, index }) => {
   return (
     <div className="flex flex-col gap-4">
       <GeneralInput
-        id="cardNumber"
-        name="cardNumber"
-        label="Card Number"
-        type="number"
-        value={formData?.cardNumber}
-        onChange={handleInputChange}
-      />
-      <GeneralInput
-        id="expDate"
-        name="expDate"
-        label="Experation Date"
-        type="date"
-        value={formData?.expDate}
-        onChange={handleInputChange}
-      />
-      <GeneralInput
-        id="cvv"
-        name="cvv"
-        label="Cvv"
+        id="name"
+        name="name"
+        label="Teljes Név"
         type="text"
+        value={formData?.name}
+        onChange={handleInputChange}
+      />
+      <GeneralInput
+        id="address"
+        name="address"
+        label="Lakcím"
+        type="text"
+        value={formData?.address}
+        onChange={handleInputChange}
+      />
+      <GeneralInput
+        id="tel"
+        name="tel"
+        label="Telefonszám"
+        type="tel"
+        value={formData?.tel}
+        onChange={handleInputChange}
+      />
+       <GeneralInput
+        id="email"
+        name="email"
+        label="Email"
+        type="number"
         value={formData?.cvv}
         onChange={handleInputChange}
       />

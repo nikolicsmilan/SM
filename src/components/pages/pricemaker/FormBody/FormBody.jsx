@@ -6,7 +6,7 @@ import Step4 from "./Step4";
 
 const FormBody = ({ step, formData, onFormChange, setStep }) => {
   return (
-    <>
+    <form>
       {step.num === 1 && (
         <Step1
           formData={formData[0]}
@@ -31,7 +31,7 @@ const FormBody = ({ step, formData, onFormChange, setStep }) => {
         <Step4 formData={formData[3]} onFormChange={onFormChange} index={3} />
       )}
       
-    </>
+    </form>
   );
 };
 

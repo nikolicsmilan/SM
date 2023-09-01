@@ -14,9 +14,9 @@ const SendMessage = () => {
   });
   const [formData, setFormData] = useState([
     { furnituretype: "", stage: "Bútortípus" },
-    { maxAmmount: "", description: "", deadline: "", stage: "Termék" },
-    { address: "", city: "", state: "", zip: "", stage: "Szálítási adatok" },
-    { cardNumber: "", expDate: "", cvv: "", stage: "Elérhetőség" },
+    { minAmmount: "50", description: "", deadline: "", stage: "Termék" },
+    {name:"",address: "", city: "", tel: "", email: "",  stage: "Elérhetőség" },
+    { stage: "Szálítási adatok" },   
     { homedelivery: "", stage: "Összegzés" },
   ]);
 
@@ -63,7 +63,8 @@ const SendMessage = () => {
           
         </div>
       </div>
-     
+    name: {formData.name}
+    name: {formData[2].name}
     </div>
 
   );

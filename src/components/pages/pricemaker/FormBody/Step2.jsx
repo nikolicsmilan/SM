@@ -5,43 +5,37 @@ const Step2 = ({ formData, onFormChange, index, setStep }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     onFormChange(index, { ...formData, [name]: value });
-    setStep((prevState) => ({ ...prevState, isClicked: true }));
+   // setStep((prevState) => ({ ...prevState, isClicked: true }));
   };
 
   return (
     <div className="flex flex-col gap-4">
-      <RangeInput  id="maxAmmount"
-        name="maxAmmount"
-        label={`A minimum összeg amit rászánsz`}
+      <RangeInput  id="minAmmount"
+        name="minAmmount"
+        label={`Minimum összeg`}
         type="range"
-        value={formData?.maxAmmount}
+        value={formData?.minAmmount}
         onChange={handleInputChange}
         min={50}
         max={1000}/>
       <GeneralInput
-        id="city"
-        name="city"
-        label="City"
-        type="text"
+        id="description"
+        name="description"
+        label="Egyedi elképzelések"
+        type="textarea"
+        rows={5}
         value={formData?.city}
         onChange={handleInputChange}
       />
-      <GeneralInput
-        id="state"
-        name="state"
-        label="State"
-        type="text"
-        value={formData?.state}
+     <GeneralInput
+        id="deadline"
+        name="deadline"
+        label="Határidő (ha van)"
+        type="date"
+        value={formData?.expDate}
         onChange={handleInputChange}
       />
-      <GeneralInput
-        id="zip"
-        name="zip"
-        label="Zip"
-        type="text"
-        value={formData?.zip}
-        onChange={handleInputChange}
-      />
+     
     </div>
   );
 };
