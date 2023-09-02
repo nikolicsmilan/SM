@@ -7,7 +7,7 @@ import useErrorModal from "../hooks/useErrorModal";
 //HERE NEEDS A SEPARATE SELECTION OF MOBILE AND DESKTOP
 
 const SendMessage = () => {
-  const {  showErrorModal } = useErrorModal();
+  const { showErrorModal } = useErrorModal();
   const [step, setStep] = useState({
     num: 1,
     isClicked: false,
@@ -15,8 +15,21 @@ const SendMessage = () => {
   const [formData, setFormData] = useState([
     { furnituretype: "", stage: "Bútortípus" },
     { minAmmount: "50", description: "", deadline: "", stage: "Termék" },
-    {name:"",address: "", city: "", tel: "", email: "",  stage: "Elérhetőség" },
-    { stage: "Szálítási adatok" },   
+    {
+      name: "",
+      address: "",
+      tel: "",
+      email: "",
+      stage: "Elérhetőség",
+    },
+    {
+      same: false,
+      name: "",
+      address: "",
+      tel: "",
+      email: "",
+      stage: "Szállítási adatok",
+    },
     { homedelivery: "", stage: "Összegzés" },
   ]);
 
@@ -29,15 +42,9 @@ const SendMessage = () => {
       return updatedFormData;
     });
   };
-  const containerStyle = {
-    display: "flex",
-    flexDirection: "column",
-   minHeight: "100vh", // Set minimum height to 100% of the viewport height
-  };
 
   return (
-
-    <div   className="z-1 h-auto lg:bg-success border-0 border-stone-900 my-0 lg:my-10  text-center font-montserrat rounded-2xl">
+    <div className="z-1 h-auto lg:bg-success border-0 border-stone-900 my-0 lg:my-10  text-center font-montserrat rounded-2xl">
       <Intro />
       <Formnavigation
         formData={formData}
@@ -51,6 +58,7 @@ const SendMessage = () => {
             step={step}
             setStep={setStep}
             formData={formData}
+            setFormData={setFormData}
             onFormChange={handleFormChange}
           />
           <NavButtons
@@ -60,20 +68,10 @@ const SendMessage = () => {
             formData={formData}
             showErrorModal={showErrorModal}
           />
-          
         </div>
       </div>
-    name: {formData.name}
-    name: {formData[2].name}
     </div>
-
   );
 };
 
 export default SendMessage;
-
-/*
-<p className="text-center text-xl">
-            step: {step.num} max: {Object.keys(formData).length}
-          </p>
-*/

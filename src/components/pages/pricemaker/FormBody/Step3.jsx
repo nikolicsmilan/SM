@@ -31,12 +31,12 @@ const Step3 = ({ formData, onFormChange, index }) => {
         value={formData?.tel}
         onChange={handleInputChange}
       />
-       <GeneralInput
+      <GeneralInput
         id="email"
         name="email"
         label="Email"
-        type="number"
-        value={formData?.cvv}
+        type="email"
+        value={formData?.email}
         onChange={handleInputChange}
       />
     </div>
