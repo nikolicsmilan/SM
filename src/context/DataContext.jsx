@@ -24,6 +24,7 @@ export const DataContextProvider = ({ children }) => {
     list: false,
     upload: false,
     users: false,
+    messages:false
   });
   const [choosenIcon, setChoosenIcon] = useState("compact");
   const [search, setSearch] = useState("");
@@ -31,7 +32,7 @@ export const DataContextProvider = ({ children }) => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  console.log("ez a kitchen", kitchen);
+
   useEffect(() => {
     //Kitchen
     const unsubscribe = myOnSnapshotGeneral(setKitchen, "Konyha");

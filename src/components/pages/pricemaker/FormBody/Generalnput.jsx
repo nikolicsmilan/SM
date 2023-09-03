@@ -50,7 +50,7 @@ if (type === "tel") {
           pattern={patternAttribute}
           placeholder={placeholderAttribute}
           required
-          className={`border  border-gray-400 py-2 px-4 rounded-md focus:outline-none focus:border-primary bg-info ${
+          className={`  w-full py-2 px-4 rounded-md focus:outline-none focus:border-primary bg-info ${
             type === "textarea" ? `h-${rows}` : `h-8`
           } `}
         />

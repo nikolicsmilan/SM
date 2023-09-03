@@ -23,7 +23,7 @@ const Compact = ({ newimages }) => {
     setEdit((prevState) => !prevState);
     setActualItem(item);
   };
-  console.log("edit", edit);
+ 
   return (
     <>
       {edit ? (

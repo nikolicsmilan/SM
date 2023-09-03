@@ -76,7 +76,7 @@ export const buttons = [
     title: "Üzenetek",
     items: [
       {
-        name: "message",
+        name: "messages",
         icon: < FaEnvelope />,
         type: "route",
         to: "/",

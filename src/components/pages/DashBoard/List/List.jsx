@@ -33,9 +33,85 @@ const List = ({ newimages }) => {
       {edit ? (
         <EditItem item={actualItem} />
       ) : (
-        <div className="w-full  flex justify-center border-0 border-red-400 my-10">
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
+        <div className="w-full flex justify-center border-0 border-red-400 my-10">
+          <div className="overflow-x-auto max-w-full rounded-2xl">
+            <div className=" overflow-y-auto max-h-[400px]">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
+                  {header.map((item) => (
+                    <th
+                      key={item}
+                      scope="col"
+                      className="px-6 py-3 text-center "
+                    >
+                      {item}
+                    </th>
+                  ))}
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {newimages.map((obj, index) => (
+                    <tr>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        {obj.name}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <img
+                          className="w-10 h-10"
+                          src={obj.url}
+                          alt={obj.name}
+                        />
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        {obj.price}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        {obj.category}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap truncate overflow-hidden max-w-xs border-0 border-red-300">
+                        {obj.description}
+                      </td>
+
+                      <td className="px-6 py-7 whitespace-nowrap   flex justify-center border-0 border-sky-400">
+                        <FaEdit
+                          className="text-info cursor-pointer "
+                          onClick={() => {
+                            handleEdit(obj);
+                          }}
+                          alt="szerkesztés"
+                        />
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap ">
+                        <FaTrashAlt
+                          className="text-info cursor-pointer "
+                          onClick={() =>
+                            handleDeleteItem(obj.category, obj.name, obj.url)
+                          }
+                          alt="törlés"
+                        />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default List;
+/* <div className="rounded-2xl w-full  flex justify-center border-0 border-red-400 my-10">
+          <div className=" overflow-x-auto  overflow-y-auto max-h-[400px] ">
+           <div className="rounded-2xl">
+         
+            </div>
+          </div>
+        </div> */
+
+/*
+   <table className="min-w-full divide-y divide-gray-200 ">
               <thead className="bg-gray-50">
                 {header.map((item) => (
                   <th key={item} scope="col" className="px-6 py-3 text-center ">
@@ -81,13 +157,4 @@ const List = ({ newimages }) => {
               
               </tbody>
             </table>
-          </div>
-        </div>
-      )}
-    </>
-  );
-};
-
-export default List;
-
-
+ */

@@ -14,11 +14,11 @@ const Upload = ({ item,setConfig }) => {
     category: "Konyha",
     url: "",
   });
-  const handleInputChange = (konretertek, property) => {
+  const handleInputChange = (konkretertek, property) => {
     //const { value } = event.target;
     setLocalItem((prevState) => ({
       ...prevState,
-      [property]: konretertek,
+      [property]: konkretertek,
     }));
   };
 
@@ -40,6 +40,7 @@ const Upload = ({ item,setConfig }) => {
       list: false,   // Update other properties
       upload: false,
       users: false,
+      messages: false,
     }))
 
   };

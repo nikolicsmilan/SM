@@ -4,7 +4,7 @@ import Formnavigation from "../components/pages/pricemaker/FormNavigation/Formna
 import NavButtons from "../components/pages/pricemaker/FormNavigation/NavButtons";
 import FormBody from "../components/pages/pricemaker/FormBody/FormBody";
 import useErrorModal from "../hooks/useErrorModal";
-//HERE NEEDS A SEPARATE SELECTION OF MOBILE AND DESKTOP
+import { addMessage } from "../components/firebase/Firestore";
 
 const SendMessage = () => {
   const { showErrorModal } = useErrorModal();
@@ -36,15 +36,22 @@ const SendMessage = () => {
   const handleFormChange = (stepindex, data) => {
     setFormData((prevFormData) => {
       const updatedFormData = [...prevFormData];
-      console.log("prevFormData", prevFormData);
-      console.log(" updatedFormData[stepindex]", updatedFormData[stepindex]);
+
       updatedFormData[stepindex] = { ...updatedFormData[stepindex], ...data };
       return updatedFormData;
     });
   };
+  const handleSendData = () => {
+    if (step.isClicked) {
+      alert("Elküldve! Jó még nem mert ez csak teszt!");
+      addMessage("message","",formData)
+    } else {
+      showErrorModal("Küldéshez fogad el az adatvédelmi tájékotatónkat! ");
+    }
+  };
 
   return (
-    <div className="z-1 h-auto lg:bg-success border-0 border-stone-900 my-0 lg:my-10  text-center font-montserrat rounded-2xl">
+    <div className="z-1 h-auto lg:bg-success  my-0 lg:my-10  text-center font-montserrat rounded-2xl">
       <Intro />
       <Formnavigation
         formData={formData}
@@ -52,8 +59,8 @@ const SendMessage = () => {
         setStep={setStep}
         max={Object.keys(formData).length}
       />
-      <div className="flex justify-center border-0 border-lime-400 my-5">
-        <div className="bg-secondary rounded-md lg:shadow-md p-2 w-full lg:w-1/2 m-2 my-0 lg:my-10  lg:h-auto bodrer-4 border-sky-400">
+      <div className="flex justify-center  my-5">
+        <div className="bg-secondary rounded-md lg:shadow-md p-2 w-full lg:w-1/2 m-2 my-0 lg:my-10  lg:h-auto">
           <FormBody
             step={step}
             setStep={setStep}
@@ -67,6 +74,7 @@ const SendMessage = () => {
             max={Object.keys(formData).length}
             formData={formData}
             showErrorModal={showErrorModal}
+            handleSendData={handleSendData}
           />
         </div>
       </div>

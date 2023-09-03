@@ -43,9 +43,9 @@ const Step5 = ({ formData, setStep }) => {
         <strong>Szállítási adatok:</strong>
         <div>
           <strong>Megegyezik az előzőekkel:</strong>{" "}
-          {!formData[3].same ? "Igen" : "Nem"}
+          {formData[3].same ? "Igen" : "Nem"}
         </div>
-        {formData[3].same && (
+        {!formData[3].same && (
           <>
             <div>
               <strong>Név:</strong> {formData[3].name}

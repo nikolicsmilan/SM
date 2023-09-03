@@ -25,7 +25,7 @@ const Calendar = () => {
         height="650px"
         eventSettings={{ dataSource: scheduleData }}
         selectedDate={new Date(2021,0,10)}
-        className="bg-secondary border-2 rounded-2xl"
+        className="bg-info border-2 rounded-2xl"
       >
         <Inject
           services={[Day, Week, Month, WorkWeek, Agenda, Resize, DragAndDrop]}

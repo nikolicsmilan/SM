@@ -1,7 +1,14 @@
 import React from "react";
 import { validateForm } from "../../../../utility/formValidation";
 
-const NavButtons = ({ step, setStep, max, formData, showErrorModal }) => {
+const NavButtons = ({
+  step,
+  setStep,
+  max,
+  formData,
+  showErrorModal,
+  handleSendData,
+}) => {
   const telPattern =
     /^(\+\d{1,4})?[- .()/]*\d{1,4}[- .()/]*\d{1,4}[- .()/]*\d{1,4}[- .()/]*\d{1,9}[- .()/]*\d{0,9}$/;
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -24,18 +31,6 @@ const NavButtons = ({ step, setStep, max, formData, showErrorModal }) => {
       num: prevState.num - 1,
       isClicked: false,
     }));
-  };
-
-  
-  const handleSendData = () => {
-  //  setStep((prevState) => ({ ...prevState, num: prevState.num - 1 }));
-  if(step.isClicked){
-    alert("hozé")
-console.log('tureeee',step.isClicked)
-  }else{
-    console.log('falseeeeeeeeee',step.isClicked)
-    showErrorModal("Küldéshez fogad el az adatvédelmi tájékotatónkat! ");
-  }
   };
 
   return (

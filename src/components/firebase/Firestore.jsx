@@ -30,21 +30,11 @@ export const myOnSnapshotElements = (setElements) => {
   });
 };
 
-export const myAddElements = async (elementName, formData) => {
-  console.log(`myAddElements`, formData);
-  await setDoc(doc(db, "elements", elementName), formData);
-};
-
-export const myAddGroup = async (collectionName, docid, formData) => {
-  //console.log(`myAddElements`, formData);
-  await setDoc(doc(db, collectionName, docid), formData);
-};
-
 export const myOnSnapshotGeneral = (setter, mycollection) => {
-  //console.log('Subscribing to onSnapshotGeneral...');
+  console.log('Subscribing to onSnapshotGeneral...');
   const q = query(collection(db, mycollection));
   return onSnapshot(q, (querySnapshot) => {
-    // console.log('Snapshot received:', querySnapshot.docs.length, 'documents');
+     console.log('Snapshot received:', querySnapshot.docs.length, 'documents');
     let todosArr = [];
     querySnapshot.forEach((doc) => {
       todosArr.push({ ...doc.data(), id: doc.id });
@@ -55,8 +45,38 @@ export const myOnSnapshotGeneral = (setter, mycollection) => {
 };
 
 export const myAddGeneral = async (categoryName, elementName, formData) => {
-  console.log(`myAddElements`, formData);
-  await setDoc(doc(db, categoryName, elementName), formData);
+  console.log(`myAddGeneral`, formData);
+  const docRef = elementName
+    ? doc(db, categoryName, elementName)
+    : doc(collection(db, categoryName));
+
+  await setDoc(docRef, formData);
+};
+
+export const addMessage = async (categoryName, elementName, formData) => {
+  console.log(`addMessage`, formData);
+/*
+  const formDataObject = {
+    // Map each element in the array to a property in the object
+    element1: formData[0],
+    element2: formData[1],
+    element3: formData[2],
+    element4: formData[3],
+    element5: formData[4],
+  };
+  const docRef = elementName
+    ? doc(db, categoryName, elementName)
+    : doc(collection(db, categoryName));
+
+  await setDoc(docRef, formDataObject);*/
+
+  // Use the provided elementName if available, or let Firestore generate one.
+  const docRef = elementName
+    ? doc(db, categoryName, elementName)
+    : doc(collection(db, categoryName));
+
+  // Store the array directly in Firestore
+  await setDoc(docRef, { formData });
 };
 
 export const myDeleteElement = async (deletecollectionname, id) => {
