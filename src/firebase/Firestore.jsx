@@ -53,6 +53,19 @@ export const myAddGeneral = async (categoryName, elementName, formData) => {
   await setDoc(docRef, formData);
 };
 
+export const myAddGeneral2 = async (categoryName, elementName, formData) => {
+  console.log(`myAddGeneral2`, formData);
+
+  // Exclude the "name" field from formData
+  const { name, ...dataToStore } = formData;
+
+  const docRef = elementName
+    ? doc(db, categoryName, elementName)
+    : doc(collection(db, categoryName));
+
+  await setDoc(docRef, dataToStore);
+};
+
 export const addMessage = async (categoryName, elementName, formData) => {
   console.log(`addMessage`, formData);
 /*
@@ -77,6 +90,19 @@ export const addMessage = async (categoryName, elementName, formData) => {
 
   // Store the array directly in Firestore
   await setDoc(docRef, { formData });
+};
+
+export const addMessage2 = async (categoryName, elementName, formData) => {
+  console.log(`addMessage`, formData);
+
+  // Exclude the "name" field from formData
+ // const { name, ...dataToStore } = formData;
+ const unwrappedData = { ...formData };
+  const docRef = elementName
+    ? doc(db, categoryName, elementName)
+    : doc(collection(db, categoryName));
+
+  await setDoc(docRef, unwrappedData);
 };
 
 export const myDeleteElement = async (deletecollectionname, id) => {

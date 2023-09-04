@@ -4,7 +4,7 @@ import Formnavigation from "../components/pages/pricemaker/FormNavigation/Formna
 import NavButtons from "../components/pages/pricemaker/FormNavigation/NavButtons";
 import FormBody from "../components/pages/pricemaker/FormBody/FormBody";
 import useErrorModal from "../hooks/useErrorModal";
-import { addMessage } from "../firebase/Firestore";
+import { addMessage2 } from "../firebase/Firestore";
 
 const SendMessage = () => {
   const { showErrorModal } = useErrorModal();
@@ -14,6 +14,7 @@ const SendMessage = () => {
   });
 
   const [formData, setFormData] = useState({
+    id:"",
     furnituretype: "",
     minAmmount: "50",
     description: "",
@@ -90,7 +91,7 @@ const SendMessage = () => {
   const handleSendData = () => {
     if (step.isClicked) {
       alert("Elküldve! Jó még nem mert ez csak teszt!");
-      addMessage("message", "", formData);
+      addMessage2("messages", "", formData);
     } else {
       showErrorModal("Küldéshez fogad el az adatvédelmi tájékotatónkat! ");
     }
