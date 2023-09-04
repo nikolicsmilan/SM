@@ -1,6 +1,6 @@
 import { useContext, createContext, useEffect, useState } from "react";
 import Scarlet from "../assets/konyhabutor/Scarlet.jpg";
-import { myOnSnapshotGeneral } from "../components/firebase/Firestore";
+import { myOnSnapshotGeneral } from "../firebase/Firestore";
 const DataContext = createContext();
 const baseState = [
   {

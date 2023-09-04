@@ -1,4 +1,4 @@
-import { db } from "../../firebase";
+import { db } from "../firebase";
 import {
   query,
   collection,
@@ -10,7 +10,7 @@ import {
   deleteDoc,
   getDocs,
 } from "firebase/firestore";
-import { storage } from "../../firebase";
+import { storage } from "../firebase";
 
 import {
   getDownloadURL,

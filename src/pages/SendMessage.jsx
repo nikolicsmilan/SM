@@ -4,7 +4,7 @@ import Formnavigation from "../components/pages/pricemaker/FormNavigation/Formna
 import NavButtons from "../components/pages/pricemaker/FormNavigation/NavButtons";
 import FormBody from "../components/pages/pricemaker/FormBody/FormBody";
 import useErrorModal from "../hooks/useErrorModal";
-import { addMessage } from "../components/firebase/Firestore";
+import { addMessage } from "../firebase/Firestore";
 
 const SendMessage = () => {
   const { showErrorModal } = useErrorModal();
@@ -12,7 +12,24 @@ const SendMessage = () => {
     num: 1,
     isClicked: false,
   });
-  const [formData, setFormData] = useState([
+
+  const [formData, setFormData] = useState({
+    furnituretype: "",
+    minAmmount: "50",
+    description: "",
+    deadline: "",
+    name: "",
+    address: "",
+    tel: "",
+    email: "",
+    same: false,
+    nameDeliver: "",
+    addressDeliver: "",
+    telDeliver: "",
+    emailDeliver: "",
+  });
+
+  const [formDataNavigation, setFormDataNavigation] = useState([
     { furnituretype: "", stage: "Bútortípus" },
     { minAmmount: "50", description: "", deadline: "", stage: "Termék" },
     {
@@ -33,18 +50,47 @@ const SendMessage = () => {
     { homedelivery: "", stage: "Összegzés" },
   ]);
 
-  const handleFormChange = (stepindex, data) => {
-    setFormData((prevFormData) => {
-      const updatedFormData = [...prevFormData];
+  const handleCheckChange = (e) => {
+    if (!formData.same) {
+      setFormData((prevData) => {
+        const updatedFormData = { ...prevData };
+        console.log("updatedFormData in handldeCheckChange: ", updatedFormData);
+        updatedFormData.nameDeliver = updatedFormData.name;
+        updatedFormData.addressDeliver = updatedFormData.address;
+        updatedFormData.telDeliver = updatedFormData.tel;
+        updatedFormData.emailDeliver = updatedFormData.email;
+        updatedFormData.same = true;
+        return updatedFormData;
+      });
+    } else {
+      setFormData((prevData) => {
+        const updatedFormData = { ...prevData };
+        updatedFormData.nameDeliver = updatedFormData.nameDeliver || "";
+        updatedFormData.addressDeliver = updatedFormData.addressDeliver || "";
+        updatedFormData.telDeliver = updatedFormData.telDeliver || "";
+        updatedFormData.emailDeliver = updatedFormData.emailDeliver || "";
+        updatedFormData.same = false;
+        console.log(
+          "updatedFormData in handldeCheckChange false branch: ",
+          updatedFormData
+        );
+        return updatedFormData;
+      });
+    }
+  };
 
-      updatedFormData[stepindex] = { ...updatedFormData[stepindex], ...data };
+  const handleFormChange = (name, value) => {
+    setFormData((prevFormData) => {
+      let updatedFormData = { ...prevFormData };
+      updatedFormData = { ...updatedFormData, [name]: value };
       return updatedFormData;
     });
   };
+
   const handleSendData = () => {
     if (step.isClicked) {
       alert("Elküldve! Jó még nem mert ez csak teszt!");
-      addMessage("message","",formData)
+      addMessage("message", "", formData);
     } else {
       showErrorModal("Küldéshez fogad el az adatvédelmi tájékotatónkat! ");
     }
@@ -54,7 +100,7 @@ const SendMessage = () => {
     <div className="z-1 h-auto lg:bg-success  my-0 lg:my-10  text-center font-montserrat rounded-2xl">
       <Intro />
       <Formnavigation
-        formData={formData}
+        formData={formDataNavigation}
         step={step}
         setStep={setStep}
         max={Object.keys(formData).length}
@@ -65,13 +111,13 @@ const SendMessage = () => {
             step={step}
             setStep={setStep}
             formData={formData}
-            setFormData={setFormData}
             onFormChange={handleFormChange}
+            handleCheckChange={handleCheckChange}
           />
           <NavButtons
             step={step}
             setStep={setStep}
-            max={Object.keys(formData).length}
+            max={Object.keys(formDataNavigation).length}
             formData={formData}
             showErrorModal={showErrorModal}
             handleSendData={handleSendData}

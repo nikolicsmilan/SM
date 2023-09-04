@@ -8,7 +8,7 @@ import {
   myOnSnapshotGeneral,
   myOnSnapshotElements,
   myDeleteElement,
-} from "../components/firebase/Firestore";
+} from "../firebase/Firestore";
 //import { elementButtonhandle } from "../components/customerhome/customer-home-helper";
 //import {useClickedButton} from "../hooks/use-clickedbutton"
 // Create the AuthContext

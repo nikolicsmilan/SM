@@ -5,36 +5,37 @@ import Step3 from "./Step3";
 import Step4 from "./Step4";
 import Step5 from "./Step5";
 
-const FormBody = ({ step, formData,setFormData, onFormChange, setStep }) => {
+const FormBody = ({
+  step,
+  formData,
+
+  onFormChange,
+  setStep,
+
+
+  handleCheckChange,
+}) => {
   return (
     <form>
       {step.num === 1 && (
-        <Step1
-          formData={formData[0]}
-          onFormChange={onFormChange}
-          index={0}
-          step={step}
-          setStep={setStep}
-        />
+        <Step1 formData={formData} onFormChange={onFormChange} step={step} />
       )}
       {step.num === 2 && (
-        <Step2
-          formData={formData[1]}
-          onFormChange={onFormChange}
-          index={1}
-          setStep={setStep}
-        />
+        <Step2 formData={formData} onFormChange={onFormChange} />
       )}
       {step.num === 3 && (
-        <Step3 formData={formData[2]} onFormChange={onFormChange} index={2} />
+        <Step3 formData={formData} onFormChange={onFormChange} />
       )}
       {step.num === 4 && (
-        <Step4 formData={formData[3]} onFormChange={onFormChange} index={3} setFormData={setFormData} />
+        <Step4
+          formData={formData}
+          onFormChange={onFormChange}
+          handleCheckChange={handleCheckChange}
+        />
       )}
-        {step.num === 5 && (
-        <Step5 formData={formData} setStep={setStep} />
+      {step.num === 5 && (
+        <Step5 formData={formData} setStep={setStep}  />
       )}
-      
     </form>
   );
 };

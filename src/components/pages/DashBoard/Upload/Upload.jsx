@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DataUploadForm from "./DataUploadForm";
 import Fileupload from "./Fileupload";
-import { myAddGeneral } from "../../../firebase/Firestore";
+import { myAddGeneral } from "../../../../firebase/Firestore";
 import { MyDataContext } from "../../../../context/DataContext";
 
 const Upload = ({ item,setConfig }) => {

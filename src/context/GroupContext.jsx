@@ -1,5 +1,5 @@
 import { useContext, createContext, useEffect, useState } from "react";
-import { myOnSnapshotGeneral } from "../components/firebase/Firestore";
+import { myOnSnapshotGeneral } from "../firebase/Firestore";
 const GroupContext = createContext();
 
 export const GroupContextProvider = ({ children }) => {

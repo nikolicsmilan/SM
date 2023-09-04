@@ -1,9 +1,9 @@
 import React from "react";
 import GeneralInput from "./Generalnput";
-const Step3 = ({ formData, onFormChange, index }) => {
+const Step3 = ({ formData, onFormChange }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    onFormChange(index, { ...formData, [name]: value });
+    onFormChange(name, value);
   };
   return (
     <div className="flex flex-col gap-4">

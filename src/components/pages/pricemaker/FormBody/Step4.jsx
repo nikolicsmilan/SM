@@ -1,55 +1,10 @@
 import React from "react";
 import GeneralInput from "./Generalnput";
 
-const Step4 = ({ formData, setFormData, onFormChange, index }) => {
-  const initialFormData = [
-    { furnituretype: "", stage: "Bútortípus" },
-    { minAmmount: "50", description: "", deadline: "", stage: "Termék" },
-    {
-      name: "",
-      address: "",
-      tel: "",
-      email: "",
-      stage: "Elérhetőség",
-    },
-    {
-      same: false, // Set 'same' to false initially
-      name: "", // These fields can have initial empty values
-      address: "",
-      tel: "",
-      email: "",
-      stage: "Szálítási adatok",
-    },
-    { homedelivery: "", stage: "Összegzés" },
-  ];
-  const handleCheckChange = (e) => {
-    const { checked } = e.target;
-
-    if (checked) {
-      setFormData((prevData) => {
-        const updatedFormData = [...prevData];
-        updatedFormData[3] = {
-          ...updatedFormData[2],
-          same: true,
-          stage: "Szállítási adatok",
-        }; // Copy data from 'Elérhetőség'
-        return updatedFormData;
-      });
-    } else {
-      setFormData((prevData) => {
-        const updatedFormData = [...prevData];
-        updatedFormData[3] = {
-          ...initialFormData[3],
-          same: false,
-          stage: "Szállítási adatok",
-        }; 
-        return updatedFormData;
-      });
-    }
-  };
+const Step4 = ({ formData, onFormChange, handleCheckChange }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    onFormChange(index, { ...formData, [name]: value });
+    onFormChange(name, value);
   };
   return (
     <div className="flex flex-col gap-4">
@@ -63,35 +18,35 @@ const Step4 = ({ formData, setFormData, onFormChange, index }) => {
       />
 
       <GeneralInput
-        id="name"
-        name="name"
+        id="nameDeliver"
+        name="nameDeliver"
         label="Teljes Név"
         type="text"
-        value={formData?.name}
+        value={formData?.nameDeliver}
         onChange={handleInputChange}
       />
       <GeneralInput
-        id="address"
-        name="address"
+        id="addressDeliver"
+        name="addressDeliver"
         label="Lakcím"
         type="text"
-        value={formData?.address}
+        value={formData?.addressDeliver}
         onChange={handleInputChange}
       />
       <GeneralInput
-        id="tel"
-        name="tel"
+        id="telDeliver"
+        name="telDeliver"
         label="Telefonszám"
         type="tel"
-        value={formData?.tel}
+        value={formData?.telDeliver}
         onChange={handleInputChange}
       />
       <GeneralInput
-        id="email"
-        name="email"
+        id="emailDeliver"
+        name="emailDeliver"
         label="Email"
         type="email"
-        value={formData?.email}
+        value={formData?.emailDeliver}
         onChange={handleInputChange}
       />
     </div>

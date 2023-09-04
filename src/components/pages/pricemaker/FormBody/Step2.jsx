@@ -1,10 +1,10 @@
 import React from "react";
 import GeneralInput from "./Generalnput";
 import RangeInput from "./RangeInput";
-const Step2 = ({ formData, onFormChange, index, setStep }) => {
+const Step2 = ({ formData, onFormChange }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    onFormChange(index, { ...formData, [name]: value });
+    onFormChange(name, value);
   };
 
   return (

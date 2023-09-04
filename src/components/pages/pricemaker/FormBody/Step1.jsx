@@ -1,12 +1,11 @@
 import React from "react";
 import { links } from "../../../../data/aside";
 
-const Step1 = ({ formData, onFormChange, index, setStep }) => {
-  const handleInputChange = (name, value) => {
-    onFormChange(index, { ...formData, [name]: value });
-   // setStep((prevState) => ({ ...prevState, isClicked: true }));
+const Step1 = ({ formData, onFormChange}) => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    onFormChange(name, value);
   };
-
   const newarray = links.filter((item) => item.title === "Bútortípsuok")[0]
     .links;
 
@@ -32,9 +31,7 @@ const Step1 = ({ formData, onFormChange, index, setStep }) => {
                   name="furnituretype"
                   value={item.name}
                   checked={formData.furnituretype === item.name}
-                  onChange={(event) => {
-                    handleInputChange("furnituretype", event.target.value);
-                  }}
+                  onChange={handleInputChange}
                   style={{ display: "none" }}
                 />
                 {item?.icon}

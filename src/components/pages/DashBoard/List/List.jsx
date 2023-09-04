@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { myDeleteElement, deleteImage } from "../../../firebase/Firestore";
+import { myDeleteElement, deleteImage } from "../../../../firebase/Firestore";
 import { FaTrashAlt, FaEdit } from "react-icons/fa";
 import EditItem from "../Compact/EditItem";
 const List = ({ newimages }) => {
