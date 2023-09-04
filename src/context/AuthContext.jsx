@@ -3,7 +3,7 @@ import {
   googleSignIn,
   logOut,
   myOnAuthStateChange,
-} from "../components/firebase/Auth";
+} from "../firebase/Auth";
 import {
   myOnSnapshotGeneral,
   myOnSnapshotElements,

@@ -20,7 +20,7 @@ const Messages = () => {
     };
   }, []);
 
- // console.log("messages", messages);
+  // console.log("messages", messages);
   //console.log("messages2", messages[0]?.formData[0]);
   return (
     <div className="w-full flex justify-center border-0 border-red-400 my-10">
@@ -35,7 +35,16 @@ const Messages = () => {
               ))}
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-             
+              {messages?.map((message, index) => (
+                <tr key={index}>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    {message.formData[0]?.stage}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    {message.formData[1]?.minAmmount}
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
@@ -58,10 +67,6 @@ export default Messages;
     
   </tr>
 ))}*/
-
-
-
-
 
 /*
  <div className="overflow-x-auto max-w-full rounded-2xl">
