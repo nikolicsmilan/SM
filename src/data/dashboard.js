@@ -55,7 +55,7 @@ export const buttons = [
         name: "upload",
         icon: <FaPlus />,
         type: "route",
-        to: "/pricemaker",
+        to: "/sendmessages",
       },
     ],
   },

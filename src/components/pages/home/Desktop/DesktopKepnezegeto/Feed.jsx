@@ -25,7 +25,7 @@ const Feed = ({
 
   return (
     <div
-      className="flex transition-transform duration-300 ease-in-out  "
+      className="flex transition-transform duration-300 ease-in-out "
      style={{ transform: `translateX(-${sliderPosition * imageDimensions}px)` }}
   
     >
@@ -33,7 +33,7 @@ const Feed = ({
         <div key={index} className="flex-shrink-0 p-1 m-0 " ref={imageRef}>
           <img
             //   ref={imageRef}
-            className="w-48 h-64 cursor-pointer object-cover rounded-2xl  border-0 border-primary"
+            className="  w-48 h-64 cursor-pointer object-cover rounded-2xl  border-0 border-primary"
             src={image.url}
             alt={`image ${index}`}
             onClick={() => handleModalOpen(index)}

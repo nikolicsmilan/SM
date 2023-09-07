@@ -21,12 +21,12 @@ const NotReady = lazy(() => import("./pages/NotReady"));
 const ThreeD = lazy(() => import("./pages/ThreeD"));
 
 function App() {
-  const { style, errorModel } = useStyleContext();
+  const { style, errorModel,setAppearUser } = useStyleContext();
   const { hideErrorModal } = useErrorModal();
 
   return (
     <div
-      className={`flex font-sans text-base ${style} w-full border-0 lg:h-screen  border-orange-400 `}
+      className={`flex font-sans text-base ${style} w-full border-0 lg:h-screen  border-orange-400 `}  
     >
       <Suspense fallback={<ProgresBar />}>
         <Routes>

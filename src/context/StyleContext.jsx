@@ -9,6 +9,7 @@ export const StyleContextProvider = ({ children }) => {
   const [style, setStyle] = useState("dio");
   const [activeAside, setActiveAside] = useState(false);
   const [errorModel, setErrorModel] = useState(false);
+  const [appearUser, setAppearUser] = useState(false);
   const [snap, setSnap] = useState({
     intro: true,
     color: "#EFBD48",
@@ -40,6 +41,8 @@ export const StyleContextProvider = ({ children }) => {
         setMenu3D,
         errorModel,
         setErrorModel,
+        appearUser,
+        setAppearUser,
       }}
     >
       {children}

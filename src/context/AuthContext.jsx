@@ -143,7 +143,9 @@ export const AuthContextProvider = ({ children }) => {
   return (
     <AuthContext.Provider
       value={{
-  
+        user,
+        logOut,
+        googleSignIn,
       }}
     >
       {children}

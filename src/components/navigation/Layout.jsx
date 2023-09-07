@@ -4,13 +4,13 @@ import Aside from "./Aside";
 import BottomNavBar from "./BottomNavBar";
 import { Outlet } from "react-router-dom";
 import useWindowSize from "../../hooks/use-windowsize";
-import { useStyleContext } from "../../context/StyleContext"; 
+import { useStyleContext } from "../../context/StyleContext";
 import useErrorModal from "../../hooks/useErrorModal";
 import ErrorModal from "../../utility/ErrorModal";
 
 const Layout = () => {
   const { width, height } = useWindowSize();
-  const { activeAside, setActiveAside } = useStyleContext();
+  const { activeAside, setActiveAside, setAppearUser } = useStyleContext();
   const { error, showErrorModal, hideErrorModal } = useErrorModal();
   /*console.log('ez mi? 0',activeAside)*/
   return (
@@ -26,7 +26,10 @@ const Layout = () => {
               <Aside />
             </div>
           )}
-          <div className="w-full flex-grow  border-0 border-sky-400">
+          <div
+            className="w-full flex-grow  border-0 border-sky-400"
+            onClick={() => setAppearUser(false)}
+          >
             <Outlet
               onClick={() => {
                 console.log("hozé");
@@ -39,8 +42,8 @@ const Layout = () => {
           </footer>
         </div>
       ) : (
-        <div className="flex flex-col w-full border-0 border-lime-400">
-          <div className="bg-white">
+        <div className="flex flex-col w-full border-0 border-lime-400 "  >
+          <div className="">
             <NavBar />
           </div>
 
@@ -48,12 +51,10 @@ const Layout = () => {
             <div className=" flex w-1/6 bg-secondary">
               <Aside />
             </div>
-            <div className="w-5/6 bg-success ">
+            <div className="w-5/6 bg-success  "  onClick={() => setAppearUser(false)}>
               <Outlet />
             </div>
           </div>
-
-
         </div>
       )}
     </>
@@ -63,5 +64,3 @@ const Layout = () => {
 export default Layout;
 // Width:{width} Height: {height}
 //h-screen overflow-x-hidden overflow-y-hidden ha végeztem
-
-

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const MainMobileButton = () => {
   const navigate = useNavigate();
   const handleNavigate = ()=>{
-    navigate('pricemaker')
+    navigate('sendmessage')
   }
   return (
     <div className="flex justify-center my-0 ">

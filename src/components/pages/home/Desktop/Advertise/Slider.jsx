@@ -12,7 +12,7 @@ const Slider = () => {
     const { style } = useStyleContext();
   
     function handlesSwitchUrlap() {
-      navigate("/pricemaker");
+      navigate("/sendmessage");
     }
   
     const prevHandler = () => {

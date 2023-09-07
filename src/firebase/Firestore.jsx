@@ -31,10 +31,10 @@ export const myOnSnapshotElements = (setElements) => {
 };
 
 export const myOnSnapshotGeneral = (setter, mycollection) => {
-  console.log('Subscribing to onSnapshotGeneral...');
+ // console.log('Subscribing to onSnapshotGeneral...');
   const q = query(collection(db, mycollection));
   return onSnapshot(q, (querySnapshot) => {
-     console.log('Snapshot received:', querySnapshot.docs.length, 'documents');
+   //  console.log('Snapshot received:', querySnapshot.docs.length, 'documents');
     let todosArr = [];
     querySnapshot.forEach((doc) => {
       todosArr.push({ ...doc.data(), id: doc.id });
@@ -45,7 +45,7 @@ export const myOnSnapshotGeneral = (setter, mycollection) => {
 };
 
 export const myAddGeneral = async (categoryName, elementName, formData) => {
-  console.log(`myAddGeneral`, formData);
+ // console.log(`myAddGeneral`, formData);
   const docRef = elementName
     ? doc(db, categoryName, elementName)
     : doc(collection(db, categoryName));
@@ -54,7 +54,7 @@ export const myAddGeneral = async (categoryName, elementName, formData) => {
 };
 
 export const myAddGeneral2 = async (categoryName, elementName, formData) => {
-  console.log(`myAddGeneral2`, formData);
+  //console.log(`myAddGeneral2`, formData);
 
   // Exclude the "name" field from formData
   const { name, ...dataToStore } = formData;
@@ -67,7 +67,7 @@ export const myAddGeneral2 = async (categoryName, elementName, formData) => {
 };
 
 export const addMessage = async (categoryName, elementName, formData) => {
-  console.log(`addMessage`, formData);
+ // console.log(`addMessage`, formData);
 /*
   const formDataObject = {
     // Map each element in the array to a property in the object
@@ -93,7 +93,7 @@ export const addMessage = async (categoryName, elementName, formData) => {
 };
 
 export const addMessage2 = async (categoryName, elementName, formData) => {
-  console.log(`addMessage`, formData);
+//  console.log(`addMessage`, formData);
 
   // Exclude the "name" field from formData
  // const { name, ...dataToStore } = formData;
@@ -106,7 +106,7 @@ export const addMessage2 = async (categoryName, elementName, formData) => {
 };
 
 export const myDeleteElement = async (deletecollectionname, id) => {
-  console.log(id);
+ // console.log(id);
   try {
     await deleteDoc(doc(db, deletecollectionname, id));
   } catch (error) {
@@ -120,7 +120,7 @@ export const deleteImage = async (url) => {
 
     try {
       await deleteObject(imageRef);
-      console.log("Image deleted successfully");
+    //  console.log("Image deleted successfully");
       // Additional actions after image deletion
     } catch (error) {
       console.error("Error deleting image from storage:", error);
