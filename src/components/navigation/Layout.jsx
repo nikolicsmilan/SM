@@ -16,13 +16,13 @@ const Layout = () => {
   return (
     <>
       {width < 1024 || width < height || 300 > height ? (
-        <div className="flex flex-col w-full border-0 border-lime-400 ">
+        <div className="flex flex-col w-full border-0 border-lime-400 z-40 relative">
           <div className="bg-white">
             <NavBar />
           </div>
 
           {activeAside && (
-            <div className="w-full fixed  bg-secondary z-50 h-screen opacity-95 ">
+            <div className="w-full fixed  bg-secondary z-40 h-screen opacity-95 ">
               <Aside />
             </div>
           )}
@@ -42,7 +42,7 @@ const Layout = () => {
           </footer>
         </div>
       ) : (
-        <div className="flex flex-col w-full border-0 border-lime-400 "  >
+        <div className="flex flex-col w-full border-0 border-lime-400 z-50 relative"  >
           <div className="">
             <NavBar />
           </div>

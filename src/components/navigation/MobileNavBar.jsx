@@ -49,7 +49,7 @@ const MobileNavBar = ({
         </div>
       </div>
       {appearUser && (
-        <div className="fixed top-10 h-96 inset-0 z-50 shadow-xl  m-5 border-0 border-sky-400">
+        <div className="fixed top-10 h-96 inset-0 z-40 shadow-xl  m-5 border-0 border-sky-400">
           <UserLogin  setAppearUser={setAppearUser} />
         </div>
       )}

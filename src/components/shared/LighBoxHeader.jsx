@@ -5,10 +5,10 @@ import { FaRegWindowClose } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
 import { SlBasket } from "react-icons/sl";
 import Logo from "../navigation/Logo";
-
+// Redundant component only the it's high important 
 const LighBoxHeader = ({ handleModalClose, handleImage, clicked }) => {
   return (
-    <div className="flex border-0 bg-secondary w-full p-2 items-center h-14 ">
+    <div className="flex border-0 bg-secondary w-full p-2 items-center h-14  relative z-50">
       <div className="w-1/12 border-0  ">
         <Logo />
       </div>
@@ -24,7 +24,7 @@ const LighBoxHeader = ({ handleModalClose, handleImage, clicked }) => {
           { /* <   <FaPlay /> />*/}
         </div>
       
-        <div className="m-3 cursor-pointer">
+        <div className="m-3 cursor-pointer relative z-50">
           <FaRegWindowClose onClick={() => handleModalClose()} />
         </div>
       </div>

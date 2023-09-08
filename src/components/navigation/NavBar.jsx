@@ -24,7 +24,8 @@ export default function NavBar() {
 
 
   return (
-    <nav className="w-full border-0 border-sky-400">
+    //Here decided NavBar or LightBox appear
+    <nav className="w-full border-0 border-sky-400 z-50 relative">
       {width < 992 ? (
         <MobileNavBar
           Logo={Logo}

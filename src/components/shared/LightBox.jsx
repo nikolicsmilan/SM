@@ -3,6 +3,7 @@ import LighBoxHeader from "./LighBoxHeader";
 import ButtonLight from "./ButtonLight";
 import LightFeed from "./LightFeed";
 //import ImageZoom from "./ImageZoom";
+import { FaRegWindowClose } from "react-icons/fa";
 
 const LightBox = ({
   //nincs használatban a megfelelő indexre kellen ugrani
@@ -38,11 +39,10 @@ const LightBox = ({
 
   return (
     <div
-      className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 z-50 flex justify-center items-center w-full
-     h-full "
+      className="  z-50 border-0 border-sky-400 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 flex justify-center items-center w-full h-full "
       //onClick={handleModalClose}
     >
-      <div className=" w-full h-full  bg-white z-101 flex flex-col items-center">
+      <div className=" w-full h-full  bg-white z-50 relative flex flex-col items-center">
         <LighBoxHeader
           handleModalClose={handleModalClose}
           handleImage={handleImage}
@@ -71,7 +71,10 @@ const LightBox = ({
             direction="right"
             currentIndex={currentIndex}
             numimages={newimages?.length}
-          />
+          />{" "}
+          <div className="m-3 cursor-pointer relative z-50">
+            <FaRegWindowClose onClick={() => handleModalClose()} />
+          </div>
         </div>
       </div>
     </div>
@@ -79,4 +82,3 @@ const LightBox = ({
 };
 
 export default LightBox;
-

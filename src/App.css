@@ -137,4 +137,9 @@ input[type="file"] {
   display: none !important;
 }
 
+.my-opacity-1 {
+  opacity: 1 !important;
+ /* border:3px solid purple!important*/
+}
+
 
