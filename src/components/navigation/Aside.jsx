@@ -63,10 +63,10 @@ const Aside = () => {
   };
 
   return (
-    <div className="border-0">
+    <div className="border-0 border-red-400  z-50 relative">
       <div className="border-0 ">
         {links.map((item) => (
-          <div key={item.title} className=" border-0 m-3 mt-4  text-info ">
+          <div key={item.title} className=" border-0 m-3 mt-4  text-info  z-50 relative">
             {item.title !== "Pages" ? (
               <p className="font-bold">{item.title}</p>
             ) : (
@@ -102,7 +102,7 @@ const Aside = () => {
         ))}
       </div>
       <AiOutlineClose
-        className="text-primary absolute top-4 right-4 lg:hidden"
+        className="text-primary absolute top-4 right-4 lg:hidden z-49"
         onClick={() => setActiveAside((prevState) => !prevState)}
       />
     </div>

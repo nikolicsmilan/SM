@@ -109,7 +109,8 @@ module.exports = {
             backgroundImage: {
               'gradient': 'linear-gradient(130deg, rgb(253, 224, 71) 23.41%, #1A1918 88.02%)',
               'gradient2': 'linear-gradient(130deg, #EB8814, black 95%, #000000)',
-              'gradient3': 'linear-gradient(130deg, #EB8814 15.41%, #1A1918 78.02%)'
+              'gradient3': 'linear-gradient(130deg, #EB8814 15.41%, #1A1918 78.02%)',
+              'gradient4':'linear-gradient(90deg,#6F6543 0.41%,rgb(76, 70, 55)   15.02%)'
             },
           },
         },

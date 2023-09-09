@@ -17,7 +17,7 @@ const Layout = () => {
     <>
       {width < 1024 || width < height || 300 > height ? (
         <div className="flex flex-col w-full border-0 border-lime-400 z-40 relative">
-          <div className="bg-white">
+          <div className="bg-white relative z-40">
             <NavBar />
           </div>
 

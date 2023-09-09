@@ -12,10 +12,10 @@ const DesktopNavBar = ({ Logo, NavButton, Search, UserIcon }) => {
   return (
     // why opacity-95 affect the UserLogin.jsx opacity, not override inline and important
     <div
-      className={`z-40 relative flex border-0 border-red-400 bg-secondary w-full p-2 items-center h-14 ${
-        style === "narancs" ? "bg-stone-100" : "bg-secondary"
+      className={`z-40 relative flex border-0 border-red-400  w-full p-2 items-center h-14 ${
+        style === "narancs" ? "bg-stone-100" : "bg-stone-700"
       }`}
-    >
+     >
       <div className="w-1/3 border-0  ">
         <Link to="/">
           <Logo />
@@ -39,7 +39,7 @@ const DesktopNavBar = ({ Logo, NavButton, Search, UserIcon }) => {
         ) : (
           <UserIcon
             onClick={() => setAppearUser((prevState) => !prevState)}
-            className=" text-2xl text-info bg-secondary rounded cursor-pointer"
+            className=" text-2xl text-info  bg-transparent rounded cursor-pointer"
             title="User"
           />
         )}
@@ -47,7 +47,7 @@ const DesktopNavBar = ({ Logo, NavButton, Search, UserIcon }) => {
       {appearUser && (
         <div
           style={{ opacity: 1 }}
-          className="my-opacity-1 w-80 top-10 right-0 h-96 z-40 shadow-xl absolute m-5 border-0 border-sky-400 rounded-2xl bg-red-400"
+          className=" w-80 top-10 right-0 h-96 z-40 shadow-xl absolute m-5 rounded-2xl border-0 border-sky-400"
         >
           <UserLogin
             user={user}

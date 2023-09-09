@@ -5,7 +5,7 @@ import { modelAnimation } from "../config/motion";
 const ErrorModal = ({ error, onClose }) => {
   return (
     <div
-      className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50"
+      className="z-50 fixed inset-0 flex justify-center items-center bg-black bg-opacity-50"
    
     >
       <motion.div

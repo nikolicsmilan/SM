@@ -54,7 +54,7 @@ const UserLogin = ({
     <div
       onClick={() => setAppearUser(false)}
       //block
-      className={`opacity-100 z-40 relative rounded-2xl border-0 border-red-400 w-full h-96 bg-white px-2 py-5 shadow-lg`}
+      className={`opacity-100 z-40 relative rounded-2xl border-0 border-red-400 w-full h-full bg-white px-2 py-5 `}
     >
       {user ? (
         <div className=" z-50 relative flex items-center border-b border-solid border-gray-300">

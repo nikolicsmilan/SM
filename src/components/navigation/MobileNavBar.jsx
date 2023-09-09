@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useStyleContext } from "../../context/StyleContext";
+import { UserAuth } from "../../context/AuthContext";
+import { MyDataContext } from "../../context/DataContext";
 import UserLogin from "./UserLogin";
 const MobileNavBar = ({
   Logo,
@@ -10,20 +12,21 @@ const MobileNavBar = ({
   GiHamburgerMenu,
   AiOutlineClose,
 }) => {
-  const { activeAside, setActiveAside,setAppearUser, appearUser } = useStyleContext();
- 
+  const {style, activeAside, setActiveAside,setAppearUser, appearUser } = useStyleContext();
+  const { user, logOut, currentRole, setCurrentRole } = UserAuth();
+  const { config, setConfig, setChoosenIcon } = MyDataContext();
 
   return (
-    <div className="flex flex-col relative">
+    <div className="flex flex-col relative z-49 border-sky-400">
       {" "}
       {/* Added relative class */}
-      <div className="flex border-0 bg-white w-full px-2 items-center ">
-        <div className=" border-0 ">
+      <div className="flex border-0 bg-white w-full px-2 items-center relative z-49">
+        <div className=" border-0 relative z-49">
           <Link to="/">
             <Logo />
           </Link>
         </div>
-        <div className="flex-grow justify-center flex bg-white border-0 ">
+        <div className="flex-grow justify-center flex bg-white border-0 relative z-49">
           <NavButton />
         </div>
 
@@ -39,18 +42,25 @@ const MobileNavBar = ({
         <div className=" flex justify-end border-0 p-2 ">
           <UserIcon
             onClick={() => setAppearUser((prevState) => !prevState)}
-            className="text-2xl text-info bg-secondary rounded cursor-pointer"
+            className="text-2xl text-info bg-secondary rounded cursor-pointer "
           />
         </div>
       </div>
       <div>
-        <div className="my-2 mx-2 flex justify-center border-0 bg-white h-8">
+        <div className="my-2 mx-2 flex justify-center border-0 bg-white h-8 ">
           <Search />
         </div>
       </div>
       {appearUser && (
-        <div className="fixed top-10 h-96 inset-0 z-40 shadow-xl  m-5 border-0 border-sky-400">
-          <UserLogin  setAppearUser={setAppearUser} />
+        <div className="fixed top-10 h-96 w-80 rounded-2xl z-40 shadow-xl  m-5 border-0 border-sky-400">
+          <UserLogin
+            user={user}
+            setAppearUser={setAppearUser}
+            logOut={logOut}
+            config={config}
+            setConfig={setConfig}
+            setChoosenIcon={setChoosenIcon}
+          />
         </div>
       )}
     </div>
