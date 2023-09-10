@@ -2,7 +2,7 @@ import React from 'react'
 
 const ButtonAdv = ({onClick,text}) => {
   return (
-<button  className="w-1/12 z-200 bg-transparent text-white text-4xl font-bold mx-5" onClick={onClick} >{text}
+<button  className=" border-0 border-red-400 w-8 z-20 bg-transparent text-info text-3xl font-bold px-1" onClick={onClick} >{text}
 
 
 </button>

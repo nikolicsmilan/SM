@@ -7,6 +7,7 @@ import List from "../components/pages/DashBoard/List/List";
 import Users from "../components/pages/DashBoard/Users/Users";
 import Calendar from "../components/pages/DashBoard/Calendar/Calendar";
 import Messages from "../components/pages/DashBoard/Messages/Messages";
+import SliderAdv from "../components/pages/DashBoard/Slider/SliderAdv";
 import { MyDataContext } from "../context/DataContext";
 
 import useErrorModal from "../hooks/useErrorModal";
@@ -29,7 +30,15 @@ const DashBoard = () => {
       {config?.users && <Users />}
       {config?.calendar && <Calendar />}
      {config?.messages && <Messages />}
-      <button
+     {config?.slider && <SliderAdv />}
+    
+    </div>
+  );
+};
+
+export default DashBoard;
+/*
+  <button
         className="border-2 border-sky-400 rounded w-32 p-2 m-5"
         onClick={() => {
           showErrorModal("Most tesztelem a Modelem");
@@ -37,8 +46,5 @@ const DashBoard = () => {
       >
         teszt model
       </button>
-    </div>
-  );
-};
 
-export default DashBoard;
+*/

@@ -47,8 +47,8 @@ const Layout = () => {
             <NavBar />
           </div>
 
-          <div className="flex lg:flex-grow border-0 border-lime-400">
-            <div className=" flex w-1/6 bg-secondary">
+          <div className="flex lg:flex-grow border-0 border-lime-400 ">
+            <div className=" flex w-1/6 bg-secondary relative z-40">
               <Aside />
             </div>
             <div className="w-5/6 bg-success  "  onClick={() => setAppearUser(false)}>

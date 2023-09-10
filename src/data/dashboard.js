@@ -32,7 +32,7 @@ import {
   FaThLarge,FaClipboardList,FaPlus,FaCodeBranch, FaEnvelope,
 } from "react-icons/fa";
 import { AiFillDatabase } from "react-icons/ai";
-
+import { TfiLayoutSlider } from "react-icons/tfi";
 
 
 export const buttons = [
@@ -90,6 +90,18 @@ export const buttons = [
       {
         name: "calendar",
         icon: < FaRegCalendarAlt />,
+        type: "route",
+        to: "/",
+      },
+     
+    ],
+  },
+  {
+    title: "Reklám",
+    items: [
+      {
+        name: "slider",
+        icon: < TfiLayoutSlider />,
         type: "route",
         to: "/",
       },

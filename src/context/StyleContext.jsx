@@ -6,7 +6,7 @@ const StyleContext = createContext();
 export const StyleContextProvider = ({ children }) => {
   // Csak azokat itt amik globálisan egyformán
   //hatnak mindenhol ahol felhasználásra kerülnek.
-  const [style, setStyle] = useState("dio");
+  const [style, setStyle] = useState("narancs");
   const [activeAside, setActiveAside] = useState(false);
   const [errorModel, setErrorModel] = useState(false);
   const [appearUser, setAppearUser] = useState(false);

@@ -31,7 +31,7 @@ const List = ({ newimages }) => {
   return (
     <>
       {edit ? (
-        <EditItem item={actualItem} />
+        <EditItem item={actualItem} setEdit={setEdit} edit={edit}/>
       ) : (
         <div className="w-full flex justify-center border-0 border-red-400 my-10">
           <div className="overflow-x-auto max-w-full rounded-2xl">
@@ -48,9 +48,10 @@ const List = ({ newimages }) => {
                     </th>
                   ))}
                 </thead>
+
                 <tbody className="bg-white divide-y divide-gray-200">
                   {newimages.map((obj, index) => (
-                    <tr>
+                    <tr className=""  >
                       <td className="px-6 py-4 whitespace-nowrap">
                         {obj.name}
                       </td>
@@ -92,6 +93,7 @@ const List = ({ newimages }) => {
                     </tr>
                   ))}
                 </tbody>
+
               </table>
             </div>
           </div>

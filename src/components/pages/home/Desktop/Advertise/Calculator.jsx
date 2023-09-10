@@ -9,7 +9,7 @@ const Calculator = () => {
   }
 
   return (
-    <div className={`relative z-10 border-2 w-1/3 mt-5 mb-2 rounded-3xl ${style!=='dio'?'bg-gradient':''}`}>
+    <div className={`mx-2 bg-info relative z-10 border-0 w-1/4 mt-0 mb-0 rounded-3xl ${style!=='dio'?'bg-gradient':''}`}>
       <h1 className="text-2xl text-white mx-20 mt-5">
         Szeretne többet megtudni?
       </h1>

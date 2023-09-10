@@ -24,7 +24,9 @@ export const DataContextProvider = ({ children }) => {
     list: false,
     upload: false,
     users: false,
-    messages:false
+    messages:false,
+    calendar:false,
+    slider:false,
   });
   const [choosenIcon, setChoosenIcon] = useState("compact");
   const [search, setSearch] = useState("");

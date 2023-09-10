@@ -3,9 +3,10 @@ import DataUploadForm from "./DataUploadForm";
 import Fileupload from "./Fileupload";
 import { myAddGeneral } from "../../../../firebase/Firestore";
 import { MyDataContext } from "../../../../context/DataContext";
+import { FaBackward } from "react-icons/fa";
 
-const Upload = ({ item,setConfig }) => {
- /* const {  setConfig, } = MyDataContext();*/
+const Upload = ({ item, setConfig, edit, setEdit }) => {
+  /* const {  setConfig, } = MyDataContext();*/
   const [localItem, setLocalItem] = useState({
     name: "",
     englishName: "",
@@ -34,36 +35,56 @@ const Upload = ({ item,setConfig }) => {
     });
 
     // ide kell a visszairányítás a compact módba
-    setConfig((prevState)=>({
+    setConfig((prevState) => ({
       ...prevState,
       compact: true, // Update compact to true
-      list: false,   // Update other properties
+      list: false, // Update other properties
       upload: false,
       users: false,
       messages: false,
-    }))
-
+    }));
   };
 
+  const handleBack=()=>{
+    setEdit((prevState) => !prevState);
+  }
+
   useEffect(() => {
-    if(item){
-      setLocalItem(item)
+    if (item) {
+      setLocalItem(item);
     }
-  },[]);
+  }, []);
 
   return (
-    <div className="card-container border-0 border-red-400 flex flex-col md:flex-row bg-success ">
-      <DataUploadForm
-        handleInputChange={handleInputChange}
-        item={localItem}
-        setItem={setLocalItem}
-        sendHandler={sendHandler}
-      />
-      <div className="border-0  lg:w-1/2 my-10 lg:my-0 m-1 mx-1 justify-center items-center flex sm:shadow-none lg:shadow-xl w-96 h-96 lg:h-auto">
-        <Fileupload
+    <div className="flex flex-col">
+      <div className="flex justify-center my-5">
+        {edit ? (
+          <div className="flex items-center justify-center align-items border-0 border-primary ">
+            <FaBackward
+              className=" text-3xl text-info hover:text-primary   bg-transparent rounded cursor-pointer  m-0 p-1 "
+              title="Vissza"
+              onClick={()=>{setEdit((prevState) => !prevState);}}
+            />{" "}
+          
+            
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+      <div className="card-container border-0 border-red-400 flex flex-col md:flex-row bg-success ">
+        <DataUploadForm
           handleInputChange={handleInputChange}
-          url={localItem?.url}
-        />
+          item={localItem}
+          setItem={setLocalItem}
+          sendHandler={sendHandler}
+        />{" "}
+        <div className="border-0  lg:w-1/2 my-10 lg:my-0 m-1 mx-1 justify-center items-center flex sm:shadow-none lg:shadow-xl w-96 h-96 lg:h-auto">
+          <Fileupload
+            handleInputChange={handleInputChange}
+            url={localItem?.url}
+          />
+        </div>
       </div>
     </div>
   );
