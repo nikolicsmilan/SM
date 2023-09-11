@@ -5,7 +5,7 @@ import NavMobil from "./NavMobil";
 import LightBoxMobil from "./LightBoxMobil";
 import { MyDataContext } from "../../../../../context/DataContext";
 // Only display responsible
-const MobilKepnezegeto = () => {
+const MobileImageViewer = () => {
   const { newimages, sliderPosition, setSliderPosition, size } =
     MyDataContext();
   const [mobilegallery, setMobileGallery] = useState({
@@ -74,5 +74,5 @@ const MobilKepnezegeto = () => {
   );
 };
 
-export default MobilKepnezegeto;
+export default MobileImageViewer;
 

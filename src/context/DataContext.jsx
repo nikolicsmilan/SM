@@ -1,6 +1,7 @@
 import { useContext, createContext, useEffect, useState } from "react";
 import Scarlet from "../assets/konyhabutor/Scarlet.jpg";
 import { myOnSnapshotGeneral } from "../firebase/Firestore";
+import { sliderAdvsource } from "../data/reklam";
 const DataContext = createContext();
 const baseState = [
   {
@@ -24,9 +25,9 @@ export const DataContextProvider = ({ children }) => {
     list: false,
     upload: false,
     users: false,
-    messages:false,
-    calendar:false,
-    slider:false,
+    messages: false,
+    calendar: false,
+    slider: false,
   });
   const [choosenIcon, setChoosenIcon] = useState("compact");
   const [search, setSearch] = useState("");
@@ -34,6 +35,7 @@ export const DataContextProvider = ({ children }) => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
+  const [sliderAdv, setSliderAdv] = useState(sliderAdvsource);
 
   useEffect(() => {
     //Kitchen
@@ -136,6 +138,8 @@ export const DataContextProvider = ({ children }) => {
         setConfig,
         choosenIcon,
         setChoosenIcon,
+        sliderAdv,
+        setSliderAdv,
       }}
     >
       {children}

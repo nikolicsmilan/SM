@@ -3,24 +3,24 @@ import useWindowSize from "../hooks/use-windowsize";
 import Advertise from "../components/pages/home/Desktop/Advertise/Advertise";
 import MobileHome from "../components/pages/home/Mobil/MobileHome";
 import DesktopHome from "../components/pages/home/Desktop/DesktopHome";
-import DesktopKepnezegeto from "../components/pages/home/Desktop/DesktopKepnezegeto/DesktopKepnezegeto";
-import MobilKepnezegeto from "../components/pages/home/Mobil/MobilKepnezegeto/MobilKepnezegeto";
+import DesktopImageViewer from "../components/pages/home/Desktop/DesktopImageViewer/DesktopImageViewer";
+import MobileImageViewer from "../components/pages/home/Mobil/MobileImageViewer/MobileImageViewer";
 
 const Home = () => {
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
 
   console.log(width);
   return (
     <div className=" flex flex-col ">
       {width < 1024  ? (
         <MobileHome
-        //  Reklam={Advertise}
-          MobilKepnezegeto={MobilKepnezegeto}
+        //  Advertise={Advertise}
+        MobileImageViewer={MobileImageViewer}
         />
       ) : (
         <DesktopHome
-          Reklam={Advertise}
-          DesktopKepnezegeto={DesktopKepnezegeto}
+        Advertise={Advertise}
+        DesktopImageViewer={DesktopImageViewer}
         />
       )}
     </div>

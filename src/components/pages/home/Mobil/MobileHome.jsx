@@ -3,9 +3,9 @@ import MainMobileButton from "./MainMobileButton";
 import FurnitureTypeChoose from "./FurnitureTypeChoose";
 //import { MyDataContext } from "../../../../context/DataContext";
 
-import MobileDragingTeszt from "../Mobil/MobilKepnezegeto/MobileDragingTeszt";
+//import MobileDragingTeszt from "../Mobil/MobilKepnezegeto/MobileDragingTeszt";
 //Full Home page in Mobilview
-const MobileHome = ({ MobilKepnezegeto }) => {
+const MobileHome = ({ MobileImageViewer }) => {
   // const { size } = MyDataContext();
 
   return (
@@ -17,7 +17,7 @@ const MobileHome = ({ MobilKepnezegeto }) => {
         <FurnitureTypeChoose />
       </div>
       <div className="flex-2 flex items-center justify-center ">
-        <MobilKepnezegeto />
+        <MobileImageViewer />
       </div>
 
       <div className="flex-1 flex items-center justify-center"></div>

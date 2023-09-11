@@ -4,7 +4,7 @@ import Feed from "./Feed";
 import Info from "./Info";
 import { MyDataContext } from "../../../../../context/DataContext";
 
-const DesktopKepnezegeto = () => {
+const DesktopImageViewer = () => {
   const { newimages, sliderPosition, setSliderPosition, dataNet } =
     MyDataContext();
   const [gallery, setGallery] = useState({
@@ -93,4 +93,4 @@ const DesktopKepnezegeto = () => {
   );
 };
 
-export default DesktopKepnezegeto;
+export default DesktopImageViewer;

@@ -10,6 +10,7 @@ export const StyleContextProvider = ({ children }) => {
   const [activeAside, setActiveAside] = useState(false);
   const [errorModel, setErrorModel] = useState(false);
   const [appearUser, setAppearUser] = useState(false);
+  const [navBarHeight, setNavBarHeight] = useState(0); // Local state for NavBar height
   const [snap, setSnap] = useState({
     intro: true,
     color: "#EFBD48",
@@ -42,7 +43,7 @@ export const StyleContextProvider = ({ children }) => {
         errorModel,
         setErrorModel,
         appearUser,
-        setAppearUser,
+        setAppearUser,navBarHeight, setNavBarHeight
       }}
     >
       {children}

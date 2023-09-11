@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import NavBar from "../navigation/NavBar";
 import Aside from "./Aside";
 import BottomNavBar from "./BottomNavBar";
@@ -10,27 +10,13 @@ import ErrorModal from "../../utility/ErrorModal";
 
 const Layout = () => {
   const { width, height } = useWindowSize();
-  const { activeAside, setActiveAside, setAppearUser } = useStyleContext();
+  const { activeAside, setActiveAside, setAppearUser, navBarHeight } =
+    useStyleContext();
   const { error, showErrorModal, hideErrorModal } = useErrorModal();
-  const navBarRef = useRef(); // Create a Ref
 
-  const [navBarHeight, setNavBarHeight] = useState(0); // Local state for NavBar height
-  /*console.log('ez mi? 0',activeAside)*/
-
-  //Something not work with dynamic value first load
-  useLayoutEffect(() => {
-    console.log("fusssá le");
-    // Access the height of the NavBar element when it's rendered
-    const height = navBarRef.current.clientHeight;
-    console.log("Navbarheight: ", height);
-    setNavBarHeight(height); // Update the local state with the height
-  }, []); // Add dependencies that should trigger an update
-
-  // Define dynamicMaxHeight as a string
   // const dynamicMaxHeight = `${height - navBarHeight}px`;
-  //set static
+  //add static only this work
   const dynamicMaxHeight = `${height - 56}px`;
-
   // Define a style object for the max-height
   const maxHeightStyle = {
     maxHeight: dynamicMaxHeight,
@@ -64,10 +50,7 @@ const Layout = () => {
           </footer>
         </div>
       ) : (
-        <div
-          ref={navBarRef}
-          className="flex flex-col w-full border-0 border-lime-400 z-50 relative  "
-        >
+        <div className="flex flex-col w-full border-0 border-lime-400 z-50 relative  ">
           <div className="">
             <NavBar />
           </div>
@@ -84,6 +67,7 @@ const Layout = () => {
               style={maxHeightStyle}
               onClick={() => setAppearUser(false)}
             >
+            
               <Outlet />
             </div>
           </div>

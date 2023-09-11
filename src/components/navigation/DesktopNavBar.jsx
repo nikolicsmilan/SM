@@ -1,21 +1,34 @@
-import React from "react";
+import { useState, useEffect, useRef } from "react";
 import UserLogin from "./UserLogin";
 import { Link } from "react-router-dom";
 import { useStyleContext } from "../../context/StyleContext";
 import { UserAuth } from "../../context/AuthContext";
 import { MyDataContext } from "../../context/DataContext";
+import useWindowSize from "../../hooks/use-windowsize";
 
 const DesktopNavBar = ({ Logo, NavButton, Search, UserIcon }) => {
-  const { style, setAppearUser, appearUser } = useStyleContext();
+  const { style, setAppearUser, appearUser,setNavBarHeight,
+    navBarHeight} = useStyleContext();
   const { user, logOut, currentRole, setCurrentRole } = UserAuth();
   const { config, setConfig, setChoosenIcon } = MyDataContext();
+  const { width, height } = useWindowSize();
+  const navBarRef = useRef(); // Create a Ref
+  //Something not work with dynamic value first load
+  useEffect(() => {
+    console.log("fusssá le");
+    // Access the height of the NavBar element when it's rendered
+    const heightNavbar = navBarRef.current.clientHeight;
+    console.log("Navbarheight: ", heightNavbar);
+    setNavBarHeight(heightNavbar); // Update the local state with the height
+  }, [height]); // Add dependencies that should trigger an update
   return (
     // why opacity-95 affect the UserLogin.jsx opacity, not override inline and important
     <div
-      className={`z-40 relative flex border-0 border-red-400  w-full p-2 items-center h-14 ${
+    ref={navBarRef}
+      className={`z-40 relative flex border-0  border-red-400  w-full p-2 items-center h-14 ${
         style === "narancs" ? "bg-stone-100" : "bg-stone-700"
       }`}
-     >
+    >
       <div className="w-1/3 border-0  ">
         <Link to="/">
           <Logo />

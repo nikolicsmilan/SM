@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import useWindowSize from "../../hooks/use-windowsize";
 import ScreenSize from "./ScreenSize";
 import { Link } from "react-router-dom";
@@ -17,11 +17,14 @@ import { AiOutlineClose } from "react-icons/ai";
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
-  const { width } = useWindowSize();
+  const { width, height } = useWindowSize();
   const { user, logOut, currentRole, setCurrentRole } = UserAuth();
-  const { setActiveAside, appearUser, setAppearUser } = useStyleContext();
-
-
+  const {
+    setActiveAside,
+    appearUser,
+    setAppearUser,
+    
+  } = useStyleContext();
 
   return (
     //Here decided NavBar or LightBox appear
@@ -37,16 +40,38 @@ export default function NavBar() {
           appearUser={appearUser}
           setAppearUser={setAppearUser}
         />
-      )  : (
+      ) : (
         <DesktopNavBar
           Logo={Logo}
           NavButton={NavButton}
           Search={Search}
           UserIcon={FaUserAlt}
+          className="h-14"
         />
       )}
     </nav>
   );
 }
+/*
+  {width < 992 ? (
+        <MobileNavBar
+          Logo={Logo}
+          NavButton={NavButton}
+          Search={Search}
+          GiHamburgerMenu={GiHamburgerMenu}
+          AiOutlineClose={AiOutlineClose}
+          UserIcon={FaUserAlt}
+          appearUser={appearUser}
+          setAppearUser={setAppearUser}
+        />
+      ) : (
+        <DesktopNavBar
+          Logo={Logo}
+          NavButton={NavButton}
+          Search={Search}
+          UserIcon={FaUserAlt}
+          className="h-14"
+        />
+      )}
 
-
+*/

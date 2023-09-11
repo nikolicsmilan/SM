@@ -1,11 +1,12 @@
 import React from "react";
 
-const DesktopHome = ({ Reklam, DesktopKepnezegeto }) => {
+const DesktopHome = ({ Advertise, DesktopImageViewer }) => {
   return (
     <div className="flex flex-col  relative z-40">
-    
-      <Reklam />
-      <DesktopKepnezegeto />
+      {/* Upper part of screen 1/2*/}
+      <Advertise />
+      {/* Lower part of screen 1/2*/}
+      <DesktopImageViewer />
     </div>
   );
 };

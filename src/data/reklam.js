@@ -25,31 +25,53 @@ export const reklam2 =[
     },
 ]
 
-export const reklam =[
+export const sliderAdvsource =[
     {
-        foszoveg:"Nem tud dönteni?",
-        alszoveg:"Segítünk! ",
-         image:Hall
-
-    },
-    {
-        foszoveg:"Stílusos bútorok a Slider Bútorgyártótól!",
-        alszoveg:"Segítünk! Kattintson a gombra és néhány egyszerű léppésel rendelje meg álmai bútorát!",
+        maintext:"Ön megálmodja 1! ",
+        subtext:"Mi megvalósítjuk!",
         gomb:"Vásárlás most!",
+        stylegomb:"border-sky-400 border-4 right-2",
+        stylemaintext:"text-red-400 top-0",
+        stylesubtext:"text-lime-400 top-0",
         image:smmain
 
     },
     {
-        foszoveg:"Élvezze a stílust és minőséget ",
-        alszoveg:"Segítünk! Kattintson a gombra és néhány egyszerű léppésel rendelje meg álmai bútorát!",
+        maintext:"Ön megálmodja! 2",
+        subtext:"Mi megvalósítjuk!",
         gomb:"Vásárlás most!",
-        image:Kiulo
+        stylegomb:"border-sky-400 border-4 right-2",
+        stylemaintext:"text-red-400 top-0",
+        stylesubtext:"text-lime-400 top-0",
+        image:smmain
+
+    },
+    {
+        maintext:"Ön megálmodja!3 ",
+        subtext:"Mi megvalósítjuk!",
+        gomb:"Vásárlás most!",
+        stylegomb:"border-sky-400 border-4 right-2",
+        stylemaintext:"text-red-400 top-0",
+        stylesubtext:"text-lime-400 top-0",
+        image:smmain
 
     },  {
-        foszoveg:"22222t ",
-        alszoveg:"Segítünk! Kattintson a gombra és néhány egyszerű léppésel rendelje meg álmai bútorát!",
+        maintext:"Ön megálmodja!4 ",
+        subtext:"Mi megvalósítjuk!",
         gomb:"Vásárlás most!",
-        stylegomb:"border-sky-400 border-4 right-2"
+        stylegomb:"border-sky-400 border-4 right-2",
+        stylemaintext:"text-red-400 top-0",
+        stylesubtext:"text-lime-400 top-0",
+        image:smmain
+
+    },  {
+        maintext:"Ön megálmodja! 5",
+        subtext:"Mi megvalósítjuk!",
+        gomb:"Vásárlás most!",
+        stylegomb:"border-sky-400 border-4 right-2",
+        stylemaintext:"text-red-400 top-0",
+        stylesubtext:"text-lime-400 top-0",
+        image:smmain
 
     }
 ]

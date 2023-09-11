@@ -1,25 +1,30 @@
 import React, { useState, useRef } from "react";
-import ButtonAdv from "./ButtonAdv";
+import ButtonAdv from "./SliderNavigationButton";
 import { useNavigate } from "react-router-dom";
-import { reklam } from "../../../../../data/reklam";
-import AddContent from "./AddContent";
+import SliderContent from "./SliderContent";
+import SliderPagination from "./SliderPagination";
 import { useStyleContext } from "../../../../../context/StyleContext";
+import { MyDataContext } from "../../../../../context/DataContext";
 const Slider = () => {
   const navigate = useNavigate();
   const [contentsize, setContentSize] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
   const contentRef = useRef(null);
   const { style } = useStyleContext();
-
+  const { sliderAdv } = MyDataContext();
+  console.log("Logan vissazvág:", sliderAdv);
+  const numberHandler = (index) => {
+    setCurrentIndex(index);
+  };
   function handlesSwitchUrlap() {
     navigate("/sendmessage");
   }
 
   const prevHandler = () => {
-    setCurrentIndex((currentIndex - 1 + reklam.length) % reklam.length);
+    setCurrentIndex((currentIndex - 1 + sliderAdv.length) % sliderAdv.length);
   };
   const nextHandler = () => {
-    setCurrentIndex((currentIndex + 1) % reklam.length);
+    setCurrentIndex((currentIndex + 1) % sliderAdv.length);
   };
 
   const handleSize = (valami) => {
@@ -33,21 +38,18 @@ const Slider = () => {
         style !== "dio" ? "" : ""
       }`}
     >
-      <ButtonAdv
-        text=" ‹"
-        onClick={prevHandler}
-       
-      />
+      <ButtonAdv text=" ‹" onClick={prevHandler} />
       <div className="flex-grow overflow-hidden">
-        <AddContent
+        <SliderContent
           handlesSwitchUrlap={handlesSwitchUrlap}
           //size={size}
-          reklam={reklam}
+          sliderAdv={sliderAdv}
           currentIndex={currentIndex}
           handleContentRef={(ref) => (contentRef.current = ref)}
           contentsize={contentsize}
           handleSize={handleSize}
-        />
+        />{" "}
+       <SliderPagination sliderAdv={sliderAdv}   currentIndex={currentIndex} numberHandler={numberHandler}/>
       </div>
       <ButtonAdv text=" ›" onClick={nextHandler} />
     </div>
