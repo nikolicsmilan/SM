@@ -5,16 +5,20 @@ import useWindowSize from "../../../../hooks/use-windowsize";
 import { MyDataContext } from "../../../../context/DataContext";
 
 const SliderAdv = () => {
-  const {sliderAdv,setSliderAdv} = MyDataContext();
+  const { sliderAdv, setSliderAdv, sliderCurrentIndex, setSliderCurrentIndex } =
+    MyDataContext();
 
- 
   return (
     <div className="flex flex-col">
       <Slider />
       <div className="flex-grow ">
-        <SliderConf sliderAdv={sliderAdv} setSliderAdv={setSliderAdv}/>
+        <SliderConf
+          sliderAdv={sliderAdv}
+          setSliderAdv={setSliderAdv}
+          sliderCurrentIndex={sliderCurrentIndex}
+          setSliderCurrentIndex={setSliderCurrentIndex}
+        />
       </div>
-      
     </div>
   );
 };

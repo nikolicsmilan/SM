@@ -8,23 +8,26 @@ import { MyDataContext } from "../../../../../context/DataContext";
 const Slider = () => {
   const navigate = useNavigate();
   const [contentsize, setContentSize] = useState({});
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // const [currentIndex, setCurrentIndex] = useState(0);
   const contentRef = useRef(null);
   const { style } = useStyleContext();
-  const { sliderAdv } = MyDataContext();
+  const { sliderAdv, sliderCurrentIndex, setSliderCurrentIndex } =
+    MyDataContext();
   console.log("Logan vissazvág:", sliderAdv);
   const numberHandler = (index) => {
-    setCurrentIndex(index);
+    setSliderCurrentIndex(index);
   };
   function handlesSwitchUrlap() {
     navigate("/sendmessage");
   }
 
   const prevHandler = () => {
-    setCurrentIndex((currentIndex - 1 + sliderAdv.length) % sliderAdv.length);
+    setSliderCurrentIndex(
+      (sliderCurrentIndex - 1 + sliderAdv.length) % sliderAdv.length
+    );
   };
   const nextHandler = () => {
-    setCurrentIndex((currentIndex + 1) % sliderAdv.length);
+    setSliderCurrentIndex((sliderCurrentIndex + 1) % sliderAdv.length);
   };
 
   const handleSize = (valami) => {
@@ -44,12 +47,16 @@ const Slider = () => {
           handlesSwitchUrlap={handlesSwitchUrlap}
           //size={size}
           sliderAdv={sliderAdv}
-          currentIndex={currentIndex}
+          sliderCurrentIndex={sliderCurrentIndex}
           handleContentRef={(ref) => (contentRef.current = ref)}
           contentsize={contentsize}
           handleSize={handleSize}
         />{" "}
-       <SliderPagination sliderAdv={sliderAdv}   currentIndex={currentIndex} numberHandler={numberHandler}/>
+        <SliderPagination
+          sliderAdv={sliderAdv}
+          sliderCurrentIndex={sliderCurrentIndex}
+          numberHandler={numberHandler}
+        />
       </div>
       <ButtonAdv text=" ›" onClick={nextHandler} />
     </div>

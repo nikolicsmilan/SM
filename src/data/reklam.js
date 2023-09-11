@@ -29,9 +29,9 @@ export const sliderAdvsource =[
     {
         maintext:"Ön megálmodja 1! ",
         subtext:"Mi megvalósítjuk!",
-        gomb:"Vásárlás most!",
-        stylegomb:"border-sky-400 border-4 right-2",
-        stylemaintext:"text-red-400 top-0",
+        button:"Vásárlás most!",
+        styleButton:"border-sky-400 border-4 right-2",
+        stylemaintext:'',
         stylesubtext:"text-lime-400 top-0",
         image:smmain
 
@@ -39,8 +39,8 @@ export const sliderAdvsource =[
     {
         maintext:"Ön megálmodja! 2",
         subtext:"Mi megvalósítjuk!",
-        gomb:"Vásárlás most!",
-        stylegomb:"border-sky-400 border-4 right-2",
+        button:"Vásárlás most!",
+        styleButton:"border-sky-400 border-4 right-2",
         stylemaintext:"text-red-400 top-0",
         stylesubtext:"text-lime-400 top-0",
         image:smmain
@@ -49,8 +49,8 @@ export const sliderAdvsource =[
     {
         maintext:"Ön megálmodja!3 ",
         subtext:"Mi megvalósítjuk!",
-        gomb:"Vásárlás most!",
-        stylegomb:"border-sky-400 border-4 right-2",
+        button:"Vásárlás most!",
+        styleButton:"border-sky-400 border-4 right-2",
         stylemaintext:"text-red-400 top-0",
         stylesubtext:"text-lime-400 top-0",
         image:smmain
@@ -58,8 +58,8 @@ export const sliderAdvsource =[
     },  {
         maintext:"Ön megálmodja!4 ",
         subtext:"Mi megvalósítjuk!",
-        gomb:"Vásárlás most!",
-        stylegomb:"border-sky-400 border-4 right-2",
+        button:"Vásárlás most!",
+        styleButton:"border-sky-400 border-4 right-2",
         stylemaintext:"text-red-400 top-0",
         stylesubtext:"text-lime-400 top-0",
         image:smmain
@@ -67,8 +67,8 @@ export const sliderAdvsource =[
     },  {
         maintext:"Ön megálmodja! 5",
         subtext:"Mi megvalósítjuk!",
-        gomb:"Vásárlás most!",
-        stylegomb:"border-sky-400 border-4 right-2",
+        button:"Vásárlás most!",
+        styleButton:"border-sky-400 border-4 right-2",
         stylemaintext:"text-red-400 top-0",
         stylesubtext:"text-lime-400 top-0",
         image:smmain

@@ -21,21 +21,22 @@ export const DataContextProvider = ({ children }) => {
   const [bath, setBath] = useState(baseState);
   const [newimages, setNewImages] = useState(baseState);
   const [config, setConfig] = useState({
-    compact: true,
+    compact: false,
     list: false,
     upload: false,
     users: false,
     messages: false,
     calendar: false,
-    slider: false,
+    slider: true,
   });
-  const [choosenIcon, setChoosenIcon] = useState("compact");
+  const [choosenIcon, setChoosenIcon] = useState("slider");
   const [search, setSearch] = useState("");
   const [size, setSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
   const [sliderAdv, setSliderAdv] = useState(sliderAdvsource);
+  const [sliderCurrentIndex, setSliderCurrentIndex] = useState(0);
 
   useEffect(() => {
     //Kitchen
@@ -140,6 +141,8 @@ export const DataContextProvider = ({ children }) => {
         setChoosenIcon,
         sliderAdv,
         setSliderAdv,
+        sliderCurrentIndex,
+        setSliderCurrentIndex,
       }}
     >
       {children}
