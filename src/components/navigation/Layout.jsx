@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useLayoutEffect, useState } from "react";
 import NavBar from "../navigation/NavBar";
 import Aside from "./Aside";
 import BottomNavBar from "./BottomNavBar";
@@ -12,7 +12,29 @@ const Layout = () => {
   const { width, height } = useWindowSize();
   const { activeAside, setActiveAside, setAppearUser } = useStyleContext();
   const { error, showErrorModal, hideErrorModal } = useErrorModal();
+  const navBarRef = useRef(); // Create a Ref
+
+  const [navBarHeight, setNavBarHeight] = useState(0); // Local state for NavBar height
   /*console.log('ez mi? 0',activeAside)*/
+
+  //Something not work with dynamic value first load
+  useLayoutEffect(() => {
+    console.log("fusssá le");
+    // Access the height of the NavBar element when it's rendered
+    const height = navBarRef.current.clientHeight;
+    console.log("Navbarheight: ", height);
+    setNavBarHeight(height); // Update the local state with the height
+  }, []); // Add dependencies that should trigger an update
+
+  // Define dynamicMaxHeight as a string
+  // const dynamicMaxHeight = `${height - navBarHeight}px`;
+  //set static
+  const dynamicMaxHeight = `${height - 56}px`;
+
+  // Define a style object for the max-height
+  const maxHeightStyle = {
+    maxHeight: dynamicMaxHeight,
+  };
   return (
     <>
       {width < 1024 || width < height || 300 > height ? (
@@ -37,21 +59,31 @@ const Layout = () => {
             />
           </div>
           {/* BottomNavBar is now positioned outside the main content */}
-          <footer className="fixed bottom-0 z-100  w-full p-0 bg-secondary border-0 border-lime-400">
+          <footer className="fixed bottom-0 z-100  w-full p-0 bg-secondary border-0 border-lime-400 ">
             <BottomNavBar />
           </footer>
         </div>
       ) : (
-        <div className="flex flex-col w-full border-0 border-lime-400 z-50 relative"  >
+        <div
+          ref={navBarRef}
+          className="flex flex-col w-full border-0 border-lime-400 z-50 relative  "
+        >
           <div className="">
             <NavBar />
           </div>
 
           <div className="flex lg:flex-grow border-0 border-lime-400 ">
-            <div className=" flex w-1/6 bg-secondary relative z-40">
+            <div
+              className=" flex w-1/6 bg-secondary relative z-40"
+              style={maxHeightStyle}
+            >
               <Aside />
             </div>
-            <div className="w-5/6 bg-success  "  onClick={() => setAppearUser(false)}>
+            <div
+              className={`w-5/6 bg-success  relative border-0 border-orange-500 overflow-y-auto `}
+              style={maxHeightStyle}
+              onClick={() => setAppearUser(false)}
+            >
               <Outlet />
             </div>
           </div>
@@ -62,5 +94,6 @@ const Layout = () => {
 };
 
 export default Layout;
+//<h1 className="text-dark">height: {height} navBarHeight: {navBarHeight}</h1>
 // Width:{width} Height: {height}
 //h-screen overflow-x-hidden overflow-y-hidden ha végeztem

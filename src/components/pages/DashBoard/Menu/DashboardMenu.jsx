@@ -40,10 +40,10 @@ const DashboardMenu = ({
       {buttons.map((item, index) => (
         <div
           key={index}
-          className=" p-5 shadow-xl m-3 mt-4  text-info border-0 flex flex-col border-sky-400"
+          className=" p-5 shadow-xl m-1 mt-0  text-dark border-0 flex flex-col border-sky-400"
         >
           {item.title !== "Pages" ? (
-            <p className="font-bold text-sm lg:text-lg">{item.title}</p>
+            <p className="font-bold text-sm lg:text-md">{item.title}</p>
           ) : (
             ""
           )}
@@ -52,7 +52,7 @@ const DashboardMenu = ({
               <div
                 onClick={() => handleConfig(link.name)}
                 key={link.name}
-                className={`flex w-8 lg:w-16 flex-row border-0 text-xl lg:text-4xl text-info rounded hover:text-primary p-0 m-1 cursor-pointer ${
+                className={`flex w-8 lg:w-16 flex-row border-0 text-xl lg:text-2xl text-info rounded hover:text-primary p-0 m-1 cursor-pointer ${
                   link.name === choosenIcon ? "text-primary" : "text-info"
                 }`}
               >

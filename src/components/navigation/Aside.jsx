@@ -63,7 +63,7 @@ const Aside = () => {
   };
 
   return (
-    <div className="border-0 border-red-400  z-50 relative">
+    <div className="border-0 border-red-400  z-50 relative max-h-[800px] ">
       <div className="border-0 ">
         {links.map((item) => (
           <div key={item.title} className=" border-0 m-3 mt-4  text-info  z-50 relative">
