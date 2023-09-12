@@ -16,6 +16,8 @@ const SliderContent = ({
   useEffect(() => {
     handleSize(contentRef);
   }, [contentRef, size]);
+
+  console.log('In SliderContent sliderAdv state: ',sliderAdv)
   return (
     <div className="flex overflow-hidden border-0 h-96">
       {sliderAdv?.map((item, index) => (
@@ -37,12 +39,12 @@ const SliderContent = ({
           <h1
             className={`${item.stylemaintext} text-2xl text-gradient mx-20 mt-10 border-0 border-lime-400 fixed bottom-10`}
             style={{
-              color: '#3e5a20', // Replace 'yourColorValue' with your desired color
+              color: item.stylemaintext, // Replace 'yourColorValue' with your desired color
               backgroundColor: "yourBackgroundColorValue", // Replace 'yourBackgroundColorValue' with your desired background color
               fontSize: "yourFontSizeValue", // Replace 'yourFontSizeValue' with your desired font size (e.g., '16px')
             }}
-          >
-            {item.maintext}
+          >{console.log("Közvetlenül előtte: ",item.stylemaintext)}
+            {item.maintext} és {item.stylemaintext} vége
           </h1>
           {console.log('kívánicsi vagyok rá hogy ez mi?',item.stylemaintext)}
           <p

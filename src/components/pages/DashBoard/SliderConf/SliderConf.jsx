@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { SketchPicker } from "react-color"; // Import the SketchPicker component
+import { SketchPicker } from "react-color";
 
 const SliderConf = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
   const [maintext, setMaintext] = useState(
@@ -16,7 +16,7 @@ const SliderConf = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
   const [stylesubtext, setStylesubtext] = useState(
     sliderAdv[sliderCurrentIndex].stylesubtext
   );
-  const [buttonColor, setButtonColor] = useState("#000"); // Initialize color state
+  const [buttonColor, setButtonColor] = useState("#000");
 
   useEffect(() => {
     setMaintext(sliderAdv[sliderCurrentIndex].maintext);
@@ -28,6 +28,14 @@ const SliderConf = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
   }, [sliderCurrentIndex, sliderAdv]);
 
   const updateProperty = (property, value) => {
+    // Debugging: Check if this function is being called
+    console.log(
+      "UUUUUUUUUUUUUUpdateProperty is running. Property:",
+      property,
+      "Value:",
+      value
+    );
+
     setSliderAdv((prevConfig) => {
       const updatedConfig = [...prevConfig];
       updatedConfig[sliderCurrentIndex][property] = value;
@@ -35,16 +43,25 @@ const SliderConf = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
     });
   };
 
-  // Handle color change and update styleButton
-// Handle color change and update styleButton
-const handleColorChange = (color) => {
-  const tailwindColorClass = `#${color.hex.substr(1)}`; // Generate Tailwind CSS class
-
-  setButtonColor(color.hex); // Update the color state
-  console.log('ez meg mi?',tailwindColorClass)
-  // Append the new class to the existing styleButton state
-  setStyleButton((prevStyleButton) => prevStyleButton + ' ' + tailwindColorClass);
-};
+  const handleColorChange = (color) => {
+    const tailwindColorClass = `#${color.hex.substr(1)}`;
+    console.log(
+      "handleColorChangeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+    );
+    // Update stylemaintext in the appropriate currentIndex
+    setSliderAdv((prevSliderAdv) => {
+      console.log(
+        "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEz lefut setSliderAdv: ",
+        prevSliderAdv,
+        "sliderCurrentIndex: ",
+        sliderCurrentIndex
+      );
+      const updatedSliderAdv = [...prevSliderAdv];
+      updatedSliderAdv[sliderCurrentIndex].stylemaintext = tailwindColorClass;
+      console.log("updatedSliderAdv: ", updatedSliderAdv);
+      return updatedSliderAdv;
+    });
+  };
 
   return (
     <div className="flex flex-col border-0 border-orange-400 mx-10">
@@ -55,18 +72,20 @@ const handleColorChange = (color) => {
         <input
           className="bg-info appearance-none w-1/3 py-2 px-3 leading-tight rounded-lg shadow-md focus:outline-none focus:shadow-outline"
           onChange={(e) => {
+            console.log(
+              "This input is not changed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+            );
             setMaintext(e.target.value);
+
             updateProperty("maintext", e.target.value);
           }}
           placeholder="Cím"
           value={maintext}
         />
       </div>
-
-      {/* Color Picker */}
       <div>
         <label className="block mb-2 text-sm font-bold text-gray-700">
-          Háttérszín kiválasztása
+          Háttérszín kiválasztása: {stylemaintext}
         </label>
         <SketchPicker
           color={buttonColor}
@@ -78,8 +97,6 @@ const handleColorChange = (color) => {
 };
 
 export default SliderConf;
-
-
 
 /*
       <div className="mb-4">

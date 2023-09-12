@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "../../home/Desktop/Advertise/Slider";
-import SliderConf from "./SliderConf";
+import SliderConf from "../SliderConf/SliderConf";
 import useWindowSize from "../../../../hooks/use-windowsize";
 import { MyDataContext } from "../../../../context/DataContext";
 
