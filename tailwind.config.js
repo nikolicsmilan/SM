@@ -62,6 +62,7 @@ module.exports = {
            // success: "rgb(111, 101, 67)", //#EDEDED >> hátttér2
               info: "rgb(191, 191, 191)", //#BFBFBF >> szöveg
               dark: "rgb(0, 0, 0)",
+              'gradient': 'linear-gradient(130deg, #EB8814 23.41%, #1A1918 88.02%)',
             },            
             fontFamily: {
               sans: "Inter",

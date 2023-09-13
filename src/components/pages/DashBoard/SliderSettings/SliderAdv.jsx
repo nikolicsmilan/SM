@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "../../home/Desktop/Advertise/Slider";
+import Articels from "../../home/Desktop/Advertise/Articels"
 import SliderSettings from "./SliderSettings";
 import useWindowSize from "../../../../hooks/use-windowsize";
 import { MyDataContext } from "../../../../context/DataContext";
@@ -10,7 +11,10 @@ const SliderAdv = () => {
 
   return (
     <div className="flex flex-col">
-      <Slider />
+      <div className="flex">
+      <Slider /><Articels/>
+      </div>
+      
       <div className="flex-grow ">
         <SliderSettings
           sliderAdv={sliderAdv}
