@@ -29,20 +29,28 @@ export const sliderAdvsource =[
     {
         maintext:"Ön megálmodja 1! ",
         subtext:"Mi megvalósítjuk!",
-        button:"Vásárlás most!",
-        styleButton:"border-sky-400 border-4 right-2",
+        button:"Vásárlás most!",       
         stylemaintext:'',
-        stylesubtext:"text-lime-400 top-0",
+        maintextcolor:"",
+        stylesubtext:"",
+        subtextcolor:"",
+        stylebutton:"border-sky-400 border-4 right-2",
+        buttoncolor:"",
+        buttonbackgroundcolor:"",
         image:smmain
 
     },
     {
         maintext:"Ön megálmodja! 2",
         subtext:"Mi megvalósítjuk!",
-        button:"Vásárlás most!",
-        styleButton:"border-sky-400 border-4 right-2",
-        stylemaintext:"text-red-400 top-0",
-        stylesubtext:"text-lime-400 top-0",
+        button:"Vásárlás most!",     
+        stylemaintext:" ",
+        maintextcolor:"",
+        stylesubtext:"text-lime-400 top-0 ",
+        subtextcolor:"",
+        stylebutton:"border-sky-400 border-4 right-2 ",
+        buttoncolor:"",
+        buttonbackgroundcolor:"",
         image:smmain
 
     },
@@ -50,27 +58,39 @@ export const sliderAdvsource =[
         maintext:"Ön megálmodja!3 ",
         subtext:"Mi megvalósítjuk!",
         button:"Vásárlás most!",
-        styleButton:"border-sky-400 border-4 right-2",
         stylemaintext:"text-red-400 top-0",
+        maintextcolor:"",
         stylesubtext:"text-lime-400 top-0",
+        subtextcolor:"",
+        stylebutton:"border-sky-400 border-4 right-2 ",
+        buttoncolor:"",
+        buttonbackgroundcolor:"",
         image:smmain
 
     },  {
         maintext:"Ön megálmodja!4 ",
         subtext:"Mi megvalósítjuk!",
         button:"Vásárlás most!",
-        styleButton:"border-sky-400 border-4 right-2",
         stylemaintext:"text-red-400 top-0",
+        maintextcolor:"",
         stylesubtext:"text-lime-400 top-0",
+        subtextcolor:"",
+        stylebutton:"border-sky-400 border-4 right-2 ",
+        buttoncolor:"",
+        buttonbackgroundcolor:"",
         image:smmain
 
     },  {
         maintext:"Ön megálmodja! 5",
         subtext:"Mi megvalósítjuk!",
         button:"Vásárlás most!",
-        styleButton:"border-sky-400 border-4 right-2",
         stylemaintext:"text-red-400 top-0",
+        maintextcolor:"",
         stylesubtext:"text-lime-400 top-0",
+        subtextcolor:"",
+        stylebutton:"border-sky-400 border-4 right-2 ",
+        buttoncolor:"",
+        buttonbackgroundcolor:"",
         image:smmain
 
     }

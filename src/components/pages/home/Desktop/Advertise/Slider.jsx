@@ -13,7 +13,7 @@ const Slider = () => {
   const { style } = useStyleContext();
   const { sliderAdv, sliderCurrentIndex, setSliderCurrentIndex } =
     MyDataContext();
-  console.log("Logan vissazvág:", sliderAdv);
+ // console.log("Logan vissazvág:", sliderAdv);
   const numberHandler = (index) => {
     setSliderCurrentIndex(index);
   };

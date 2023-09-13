@@ -7,7 +7,7 @@ import List from "../components/pages/DashBoard/List/List";
 import Users from "../components/pages/DashBoard/Users/Users";
 import Calendar from "../components/pages/DashBoard/Calendar/Calendar";
 import Messages from "../components/pages/DashBoard/Messages/Messages";
-import SliderAdv from "../components/pages/DashBoard/SliderConf/SliderAdv";
+import SliderAdv from "../components/pages/DashBoard/SliderSettings/SliderAdv";
 import { MyDataContext } from "../context/DataContext";
 
 import useErrorModal from "../hooks/useErrorModal";
@@ -29,9 +29,8 @@ const DashBoard = () => {
       {config?.list && <List newimages={newimages} />}
       {config?.users && <Users />}
       {config?.calendar && <Calendar />}
-     {config?.messages && <Messages />}
-     {config?.slider && <SliderAdv />}
-    
+      {config?.messages && <Messages />}
+      {config?.slider && <SliderAdv />}
     </div>
   );
 };

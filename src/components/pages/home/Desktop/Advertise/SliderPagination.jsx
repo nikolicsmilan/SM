@@ -13,6 +13,7 @@ const SliderPagination = ({sliderAdv,sliderCurrentIndex,numberHandler}) => {
               {index + 1}
             </div>
           ))}
+          
         </div>
   )
 }

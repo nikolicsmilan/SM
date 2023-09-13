@@ -45,7 +45,7 @@ export const myOnSnapshotGeneral = (setter, mycollection) => {
 };
 
 export const myAddGeneral = async (categoryName, elementName, formData) => {
- // console.log(`myAddGeneral`, formData);
+  console.log(`myAddGeneral`, formData);
   const docRef = elementName
     ? doc(db, categoryName, elementName)
     : doc(collection(db, categoryName));

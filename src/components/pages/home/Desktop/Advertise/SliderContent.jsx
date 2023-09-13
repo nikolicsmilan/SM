@@ -17,7 +17,7 @@ const SliderContent = ({
     handleSize(contentRef);
   }, [contentRef, size]);
 
-  console.log('In SliderContent sliderAdv state: ',sliderAdv)
+  //console.log('In SliderContent sliderAdv state: ',sliderAdv)
   return (
     <div className="flex overflow-hidden border-0 h-96">
       {sliderAdv?.map((item, index) => (
@@ -39,25 +39,40 @@ const SliderContent = ({
           <h1
             className={`${item.stylemaintext} text-2xl text-gradient mx-20 mt-10 border-0 border-lime-400 fixed bottom-10`}
             style={{
-              color: item.stylemaintext, // Replace 'yourColorValue' with your desired color
-              backgroundColor: "yourBackgroundColorValue", // Replace 'yourBackgroundColorValue' with your desired background color
-              fontSize: "yourFontSizeValue", // Replace 'yourFontSizeValue' with your desired font size (e.g., '16px')
+              color: item.maintextcolor,
             }}
-          >{console.log("Közvetlenül előtte: ",item.stylemaintext)}
-            {item.maintext} és {item.stylemaintext} vége
+          >
+            {/*console.log("Közvetlenül előtte: ",item.stylemaintext)*/}
+            {item.maintext}
           </h1>
-          {console.log('kívánicsi vagyok rá hogy ez mi?',item.stylemaintext)}
-          <p
-            className={`${item.stylesubtext} fixed bottom-0 font-bold text-base text-stone-700 m-2 mx-20 w-96`}
-          >
-            {item.subtext}
-          </p>
-          <button
-            onClick={handlesSwitchUrlap}
-            className={`border-lime-400 ${item.styleButton} fixed  right-0 bottom-0 font-bold m-2 mx-20 p-2 w-36 md:w-36 max-w-sm bg-success border-0 rounded text-center cursor-pointer bg-gradient text-white border-lime-400`}
-          >
-            {item.button ? item.button : "Megveszem!"}
-          </button>
+          {/*console.log('kívánicsi vagyok rá hogy ez mi?',item.stylemaintext)*/}
+
+          {item.subtext ? (
+            <p
+              className={`${item.stylesubtext} fixed bottom-0 font-bold text-base text-stone-700 m-2 mx-20 w-96`}
+              style={{
+                color: item.subtextcolor,
+              }}
+            >
+              {item.subtext}ssaaaaaaaaaaa
+            </p>
+          ) : (
+            ""
+          )}
+
+          {item.button ? (
+            <button
+              onClick={handlesSwitchUrlap}
+              className={`border-lime-400 ${item.styleButton} fixed  right-0 bottom-0 font-bold m-2 mx-20 p-2 w-36 md:w-36 max-w-sm bg-success border-0 rounded text-center cursor-pointer bg-gradient text-white border-lime-400`}
+              style={{
+                color: item.buttoncolor,
+              }}
+            >
+              {item.button ? item.button : ""}
+            </button>
+          ) : (
+            ""
+          )}
         </div>
       ))}
     </div>

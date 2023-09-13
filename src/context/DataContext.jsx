@@ -2,6 +2,7 @@ import { useContext, createContext, useEffect, useState } from "react";
 import Scarlet from "../assets/konyhabutor/Scarlet.jpg";
 import { myOnSnapshotGeneral } from "../firebase/Firestore";
 import { sliderAdvsource } from "../data/reklam";
+import { sliderSubmenu } from "../data/dashboard";
 const DataContext = createContext();
 const baseState = [
   {
@@ -37,6 +38,7 @@ export const DataContextProvider = ({ children }) => {
   });
   const [sliderAdv, setSliderAdv] = useState(sliderAdvsource);
   const [sliderCurrentIndex, setSliderCurrentIndex] = useState(0);
+
   console.log('In DataContext sliderAdv state: ',sliderAdv)
   useEffect(() => {
     //Kitchen

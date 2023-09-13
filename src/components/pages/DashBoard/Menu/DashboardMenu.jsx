@@ -42,7 +42,7 @@ const DashboardMenu = ({
           key={index}
           className=" p-5 shadow-xl m-1 mt-0  text-dark border-0 flex flex-col border-sky-400"
         >
-          {item.title !== "Pages" ? (
+          {item.title ? (
             <p className="font-bold text-sm lg:text-md">{item.title}</p>
           ) : (
             ""

@@ -1,4 +1,3 @@
-
 import { GrRotateLeft } from "react-icons/gr";
 import { IoMdColorFill } from "react-icons/io";
 import { GiWoodPile } from "react-icons/gi";
@@ -8,7 +7,7 @@ import {
   BsFill2CircleFill,
   BsFill3CircleFill,
   BsFill4CircleFill,
-  BsBarChartFill
+  BsBarChartFill,
 } from "react-icons/bs";
 
 //GiWoodBeam
@@ -29,11 +28,16 @@ import {
   FaRegCalendarAlt,
   FaUsers,
   FaTools,
-  FaThLarge,FaClipboardList,FaPlus,FaCodeBranch, FaEnvelope,
-} from "react-icons/fa";
-import { AiFillDatabase } from "react-icons/ai";
-import { TfiLayoutSlider } from "react-icons/tfi";
+  FaThLarge,
+  FaClipboardList,
+  FaPlus,
+  FaCodeBranch,
+  FaEnvelope,
+  FaArrowsAlt,
 
+} from "react-icons/fa";
+import { AiFillDatabase, AiOutlineFontColors,AiOutlineBgColors } from "react-icons/ai";
+import { TfiLayoutSlider } from "react-icons/tfi";
 
 export const buttons = [
   {
@@ -59,7 +63,7 @@ export const buttons = [
       },
     ],
   },
- 
+
   {
     title: "Felhasználók",
     items: [
@@ -69,7 +73,6 @@ export const buttons = [
         type: "route",
         to: "/",
       },
-     
     ],
   },
   {
@@ -77,11 +80,10 @@ export const buttons = [
     items: [
       {
         name: "messages",
-        icon: < FaEnvelope />,
+        icon: <FaEnvelope />,
         type: "route",
         to: "/",
       },
-     
     ],
   },
   {
@@ -89,11 +91,10 @@ export const buttons = [
     items: [
       {
         name: "calendar",
-        icon: < FaRegCalendarAlt />,
+        icon: <FaRegCalendarAlt />,
         type: "route",
         to: "/",
       },
-     
     ],
   },
   {
@@ -101,14 +102,68 @@ export const buttons = [
     items: [
       {
         name: "slider",
-        icon: < TfiLayoutSlider />,
+        icon: <TfiLayoutSlider />,
         type: "route",
         to: "/",
       },
-     
+      {
+        name: "plusslider",
+        icon: <FaPlus />,
+        type: "route",
+        to: "/",
+      },
     ],
   },
 ];
+
+export const sliderSubmenu = [
+  {
+    title: "Szín",
+    items: [
+      {
+        name: "color",
+        icon: <AiOutlineFontColors />,
+        type: "route",
+        to: "/",
+      },
+    ],
+  },
+  {
+    title: "Háttér Szín",
+    items: [
+      {
+        name: "bgcolor",
+        icon: <AiOutlineBgColors />,
+        type: "route",
+        to: "/",
+      },
+    ],
+  },
+  {
+    title: "Tájolás",
+    items: [
+      {
+        name: "orientation",
+        icon: <FaArrowsAlt />,
+        type: "route",
+        to: "/",
+      },
+    ],
+  },
+  {
+    title: "Kép",
+    items: [
+      {
+        name: "image",
+        icon: <FaRegImages />,
+        type: "route",
+        to: "/",
+      },
+    ],
+  },
+];
+
+
 /* {
     title: "Kategóriák",
     items: [
