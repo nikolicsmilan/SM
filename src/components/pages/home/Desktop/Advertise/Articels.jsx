@@ -11,7 +11,7 @@ const Articels = () => {
 
   return (
     <div
-      className={`h-96 my-1 bg-info relative z-10 border-0 w-1/4 mb-0 rounded-3xl ${
+      className={`h-96 my-1 bg-info relative z-10 border-0 m-5 lg:m-0 lg:w-1/4 mb-0 rounded-3xl ${
         style !== "dio" ? "bg-gradient" : ""
       }`}
       style={{

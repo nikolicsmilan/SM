@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import SliderSubMenu from "./SliderSubMenu";
 import SliderInput from "./SliderInput";
-import SliderColorConf from "./SliderColorConf";
+import ColorRadioButtons from "./ColorRadioButtons";
 import SliderOrientationConf from "./SliderOrientationConf";
 import SliderImageConf from "./SliderImageConf";
 
 const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
   const [currentStyle, setCurrentStyle] = useState("maintext");
+  const [theColors, setTheColors] = useState("maintextcolor");
   const [currentColor, setCurrentColor] = useState("");
   const [currentBgColor, setCurrentBgColor] = useState("");
   const [maintext, setMaintext] = useState(
@@ -23,7 +24,11 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
   const [stylesubtext, setStylesubtext] = useState(
     sliderAdv[sliderCurrentIndex].stylesubtext
   );
-  const [buttonColor, setButtonColor] = useState("#000");
+
+  const [maintextColor, setMainTextColor] = useState("#321321");
+  const [subtextColor, setSubtextColor] = useState("#321321");
+  const [buttonColor, setButtonColor] = useState("#321221");
+
   const [config, setConfig] = useState({
     color: true,
     bgcolor: false,
@@ -56,6 +61,7 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
 
     // A config fogja eldönteni melyiket állítom
     setCurrentStyle(styletext);
+    setTheColors(stylecolor);
   };
   const updateProperty = (property, value) => {
     // Debugging: Check if this function is being called
@@ -70,23 +76,62 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
   //és akkor ez fogja tudni kezelni az
   //összes tulajdonságot
   const handleColorChange = (color) => {
-    const tailwindColorClass = `#${color.hex.substr(1)}`;
+    // const tailwindColorClass = `#${color.hex.substr(1)}`;
+    const tailwindColorClass = `#${color}`;
     // Update stylemaintext in the appropriate currentIndex
     setSliderAdv((prevSliderAdv) => {
       const updatedSliderAdv = [...prevSliderAdv];
       // neeeeeeeeem inherit from config the last property which is true
       //updatedSliderAdv[sliderCurrentIndex].stylemaintext = tailwindColorClass;
-
+      setCurrentColor(color);
       //itt kell a colorokat szétválasztani
-      updatedSliderAdv[sliderCurrentIndex][currentStyle] = tailwindColorClass;
+      //  updatedSliderAdv[sliderCurrentIndex][currentStyle] = tailwindColorClass;
+      /*  updatedSliderAdv[sliderCurrentIndex].maintextColor = tailwindColorClass;
+      updatedSliderAdv[sliderCurrentIndex].subtextColor = tailwindColorClass;
+      updatedSliderAdv[sliderCurrentIndex].buttoncolor = tailwindColorClass;*/
+      updatedSliderAdv[sliderCurrentIndex][theColors] = tailwindColorClass;
       return updatedSliderAdv;
     });
   };
 
   return (
     <div className="flex flex-col border-0 border-orange-400 mx-10">
-      <div className="flex border-0 border-sky-400">
-        <div className="m-4 w-1/2 border-t border-info">
+      <div className="flex flex-col-reverse lg:flex-row-reverse border-0 border-sky-400">
+        <div className="flex flex-col  m-4 border-t border-info  lg:w-1/2 ">
+          <SliderSubMenu
+            config={config}
+            setConfig={setConfig}
+            currentStyle={currentStyle}
+          />
+          {config.color ? (
+            <ColorRadioButtons
+              config={config}
+              currentColor={currentColor}
+              handleColorChange={handleColorChange}
+            />
+          ) : (
+            ""
+          )}
+          {config.orientation ? (
+            <SliderOrientationConf
+              config={config}
+              buttonColor={buttonColor}
+              handleColorChange={handleColorChange}
+            />
+          ) : (
+            ""
+          )}
+          {config.image ? (
+            <SliderImageConf
+              config={config}
+              buttonColor={buttonColor}
+              handleColorChange={handleColorChange}
+            />
+          ) : (
+            ""
+          )}
+        </div>
+        <div className="m-4 lg:w-1/2 border-t border-info">
           {/*Ha ez az aktív akkor stylemaintext legyen a colorchangben */}
           <SliderInput
             label="Cím"
@@ -128,40 +173,6 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
             }
             config={config}
           />
-        </div>
-        <div className="flex flex-col  m-4 border-t border-info  w-1/2 ">
-          <SliderSubMenu
-            config={config}
-            setConfig={setConfig}
-            currentStyle={currentStyle}
-          />
-          {config.color ? (
-            <SliderColorConf
-              config={config}
-              buttonColor={buttonColor}
-              handleColorChange={handleColorChange}
-            />
-          ) : (
-            ""
-          )}
-          {config.orientation ? (
-            <SliderOrientationConf
-              config={config}
-              buttonColor={buttonColor}
-              handleColorChange={handleColorChange}
-            />
-          ) : (
-            ""
-          )}
-          {config.image ? (
-            <SliderImageConf
-              config={config}
-              buttonColor={buttonColor}
-              handleColorChange={handleColorChange}
-            />
-          ) : (
-            ""
-          )}
         </div>
       </div>
     </div>

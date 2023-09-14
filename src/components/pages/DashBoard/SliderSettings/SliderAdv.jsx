@@ -12,7 +12,7 @@ const SliderAdv = () => {
   return (
     <div className="flex flex-col">
       <div className="flex flex-col md:flex-row">
-      <Slider /><Articels/>
+      <Slider />
       </div>
       
       <div className="flex-grow ">

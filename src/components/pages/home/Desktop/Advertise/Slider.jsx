@@ -37,7 +37,7 @@ const Slider = () => {
 
   return (
     <div
-      className={`border-0 w-3/4 p-1 mt-0 m-1 rounded-3xl  flex items-center justify-between ${
+      className={`border-0 lg:w-3/4 p-1 mt-0 m-1 rounded-3xl  flex items-center justify-between ${
         style !== "dio" ? "" : ""
       }`}
     >
