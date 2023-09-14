@@ -113,7 +113,7 @@ export const AuthContextProvider = ({ children }) => {
   //console.log("formData in AuthContext", formData);
   // UseEffect hook to listen to changes in authentication state in Firebase and update the user state accordingly
   useEffect(() => {
-    const unsubscribe = myOnAuthStateChange(setUser);
+    const unsubscribe = myOnAuthStateChange(setUser,user);
     //lehet moziilának ezzel van gondja?
     return () => {
       unsubscribe();

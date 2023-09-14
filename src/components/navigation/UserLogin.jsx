@@ -14,8 +14,9 @@ const UserLogin = ({
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    console.log("erz le fog futni");
+    console.log("Run HandleLogin");
     navigate("/Login");
+    console.log(" most mi a baja? HandleLogin");
   };
 
   const handleConfig = (property, akarmi) => {
@@ -82,7 +83,7 @@ const UserLogin = ({
       <p
         className=" border-0 text-info font-bold cursor-pointer"
         onClick={() => {
-          logOut();
+          logOut(user);
         }}
       >
         <MdLogout className="inline m-2 text-2xl" />

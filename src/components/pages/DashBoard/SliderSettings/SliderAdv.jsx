@@ -11,7 +11,7 @@ const SliderAdv = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
       <Slider /><Articels/>
       </div>
       

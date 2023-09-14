@@ -19,11 +19,11 @@ const SliderContent = ({
 
   //console.log('In SliderContent sliderAdv state: ',sliderAdv)
   return (
-    <div className="flex overflow-hidden border-0 h-96">
+    <div className="flex overflow-hidden border-0 border-red-400 h-96 w-full  lg:w-auto">
       {sliderAdv?.map((item, index) => (
         <div
           key={index}
-          className="flex-shrink-0 rounded-2xl  w-full border-0 m-0 overflow-hidden h-auto"
+          className="flex-shrink-0 rounded-2xl  w-full border-0 border-sky-400 m-0 overflow-hidden h-auto"
           style={{
             backgroundImage: `url("${item.image}")`,
             backgroundSize: "cover", // Adjust as needed
@@ -54,7 +54,7 @@ const SliderContent = ({
                 color: item.subtextcolor,
               }}
             >
-              {item.subtext}ssaaaaaaaaaaa
+              {item.subtext}
             </p>
           ) : (
             ""

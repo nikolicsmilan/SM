@@ -5,6 +5,7 @@ const SliderPagination = ({sliderAdv,sliderCurrentIndex,numberHandler}) => {
     <div className="border-0 flex border-sky-400 w-full justify-center">
           {sliderAdv.map((item, index) => (
             <div
+            key={index}
               className={`px-2 text-dark cursor-pointer ${
                 sliderCurrentIndex === index ? "bg-primary rounded-full" : ""
               }`}
