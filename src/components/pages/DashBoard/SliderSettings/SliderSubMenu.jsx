@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { sliderSubmenu } from "../../../../data/dashboard";
-const SliderSubMenu = ({ config, setConfig, currentStyle }) => {
+const SliderSubMenu = ({ config, setConfig, currentStyle,setTheColors,currentColor }) => {
   const [buttons, setButtons] = useState(sliderSubmenu);
   const [choosenIcon, setChoosenIcon] = useState("slider");
 
   const handleConfig = (property, akarmi) => {
+    //ezzel van a probléma
     setConfig((prevConfig) => ({
       ...prevConfig,
       [property]: !prevConfig[property],
       [property]: akarmi,
     }));
+    setChoosenIcon(property)
+
     if (!config[property]) {
       // Check if the property is not already true
       setChoosenIcon(property); // Set the chosen icon based on the property
@@ -30,6 +33,17 @@ const SliderSubMenu = ({ config, setConfig, currentStyle }) => {
         return updatedConfig;
       });
     }
+
+
+console.log("config",config)
+
+    if (config.bgcolor) {
+      console.log("ez lefut buttonbackgroundcolor?")
+      setTheColors("buttonbackgroundcolor");
+    } else {
+      setTheColors(currentColor);
+    }
+
   };
   let count = 0;
   // Filter the buttons based on currentStyle

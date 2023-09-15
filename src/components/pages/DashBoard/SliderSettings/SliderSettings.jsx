@@ -25,10 +25,6 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
     sliderAdv[sliderCurrentIndex].stylesubtext
   );
 
-  const [maintextColor, setMainTextColor] = useState("#321321");
-  const [subtextColor, setSubtextColor] = useState("#321321");
-  const [buttonColor, setButtonColor] = useState("#321221");
-
   const [config, setConfig] = useState({
     color: true,
     bgcolor: false,
@@ -44,6 +40,7 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
     setStylemaintext(sliderAdv[sliderCurrentIndex].stylemaintext);
     setStylesubtext(sliderAdv[sliderCurrentIndex].stylesubtext);
   }, [sliderCurrentIndex, sliderAdv]);
+
   // Update currentStyle based on the input field being focused
   const handleInputFocus = (
     styletext, //stylemaintext, stylesubtext, or stylebutton
@@ -59,12 +56,45 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
       buttonbackgroundcolor
     );
 
-    // A config fogja eldönteni melyiket állítom
     setCurrentStyle(styletext);
     setTheColors(stylecolor);
   };
+
+
+  //Az a probléma hogy a 2 funkició nem konzisztens egymással
+  // a két funkcióból egyet kell csinálni
+  //melyben mind a submenü mind a textinput a 
+  // megfelelő property t állítja
+  // a colort lent a color kompoenenben kell
+  //összeálítani ez lesz az érték majd a megfelelő
+  //propertyre továbbítani tehát
+  //az update proerty marad ugyanaz
+  //Itt egyenlőre az a gond
+  //hogy a submenüből megérkezik a property
+  // vagy megérkezhet inkább a property ha beállítom
+  // de nem érkezik meg a value
+  // a buttonbackgroundcolor a property de a szín
+  //továbbra is ColorRadioButtons ból kell érkeznie
+  // A ColorRadioButtons nak mindenkép csak színt szabad állítania
+  // amit aztán lepaszolok a SliderSubMenu nek
+  // hogy aztán visszadja az updateProperty nak
   const updateProperty = (property, value) => {
-    // Debugging: Check if this function is being called
+    //vizsont el kell dönteni valahol hogy az inputra való fókusz
+    // ezt a hármat állítja 
+    // maintext:"Ön megálmodja 1! ",
+      //  subtext:"Mi megvalósítjuk!",
+     //   button:"Vásárlás most!",     
+     //tulajdonképpen a fókuszal az updateProperty nak átadott
+     //értéket változtatom
+     // még a submenüben is ugyanezt teszem
+     //Sokkal jobb megoldás
+     //HA ITT KINT LÉTREHOZOK EGY STATE -T
+     //PROPERTY NÉVEN ÉS EZT A PROPERTY ÁLLÍTJA MIND A 
+     //SUBMENU MIND A SliderInput
+     // A ColorRadioButtons PEDIG CSAK EGY SZÍNT ADD VISSZA
+     // AZ updateProperty FUNKIÓNAK A VALUE ÉRTÉKBEN
+     //A PROPERTY PEDIG A LEPASZOLT STATE
+     //VISSZAADÁSA LESZ AMI A SUBMENU ILLETVE A SliderInput ÁLLÍTANAK
     setSliderAdv((prevConfig) => {
       const updatedConfig = [...prevConfig];
       updatedConfig[sliderCurrentIndex][property] = value;
@@ -72,23 +102,13 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
     });
   };
 
-  // itt kell átálítani a propertyt dinamikusra
-  //és akkor ez fogja tudni kezelni az
-  //összes tulajdonságot
   const handleColorChange = (color) => {
-    // const tailwindColorClass = `#${color.hex.substr(1)}`;
     const tailwindColorClass = `#${color}`;
-    // Update stylemaintext in the appropriate currentIndex
     setSliderAdv((prevSliderAdv) => {
       const updatedSliderAdv = [...prevSliderAdv];
-      // neeeeeeeeem inherit from config the last property which is true
-      //updatedSliderAdv[sliderCurrentIndex].stylemaintext = tailwindColorClass;
       setCurrentColor(color);
-      //itt kell a colorokat szétválasztani
-      //  updatedSliderAdv[sliderCurrentIndex][currentStyle] = tailwindColorClass;
-      /*  updatedSliderAdv[sliderCurrentIndex].maintextColor = tailwindColorClass;
-      updatedSliderAdv[sliderCurrentIndex].subtextColor = tailwindColorClass;
-      updatedSliderAdv[sliderCurrentIndex].buttoncolor = tailwindColorClass;*/
+         //ezt a property-t kell átálítani buttoncolor
+      // ról buttonbackgroundcolorra
       updatedSliderAdv[sliderCurrentIndex][theColors] = tailwindColorClass;
       return updatedSliderAdv;
     });
@@ -98,10 +118,16 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
     <div className="flex flex-col border-0 border-orange-400 mx-10">
       <div className="flex flex-col-reverse lg:flex-row-reverse border-0 border-sky-400">
         <div className="flex flex-col  m-4 border-t border-info  lg:w-1/2 ">
+          The Colors: {theColors}
           <SliderSubMenu
             config={config}
             setConfig={setConfig}
             currentStyle={currentStyle}
+            setTheColors={setTheColors}
+            currentColor={currentColor}
+            updateProperty={updateProperty}
+            handleColorChange={handleColorChange}
+            //stylecolor={stylecolor}
           />
           {config.color ? (
             <ColorRadioButtons
@@ -115,7 +141,6 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
           {config.orientation ? (
             <SliderOrientationConf
               config={config}
-              buttonColor={buttonColor}
               handleColorChange={handleColorChange}
             />
           ) : (
@@ -124,7 +149,6 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
           {config.image ? (
             <SliderImageConf
               config={config}
-              buttonColor={buttonColor}
               handleColorChange={handleColorChange}
             />
           ) : (

@@ -28,7 +28,7 @@ const SliderInput = ({
         {label}
       </label>
       <input
-        className="bg-info appearance-none w-full py-2 px-3 leading-tight rounded-lg shadow-md focus:outline-none focus:shadow-outline"
+        className="text-primary bg-primary text-white appearance-none w-full py-2 px-3 leading-tight rounded-lg shadow-md border focus:border-primary "
         onChange={(e) => {
           setValue(e.target.value);
           updateProperty(property, e.target.value);
