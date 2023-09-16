@@ -27,9 +27,9 @@ export const reklam2 =[
 
 export const sliderAdvsource =[
     {
-        maintext:"Ön megálmodja 1! ",
+        maintext:"Ön megálmodja! ",
         subtext:"Mi megvalósítjuk!",
-        button:"Vásárlás most!",       
+        buttontext :"Vásárlás most!",       
         stylemaintext:'',
         maintextcolor:"",
         stylesubtext:"",
@@ -43,7 +43,7 @@ export const sliderAdvsource =[
     {
         maintext:"Ön megálmodja! 2",
         subtext:"Mi megvalósítjuk!",
-        button:"Vásárlás most!",     
+        buttontext:"Vásárlás most!",     
         stylemaintext:" ",
         maintextcolor:"",
         stylesubtext:"text-lime-400 top-0 ",
@@ -57,7 +57,7 @@ export const sliderAdvsource =[
     {
         maintext:"Ön megálmodja!3 ",
         subtext:"Mi megvalósítjuk!",
-        button:"Vásárlás most!",
+        buttontext:"Vásárlás most!",
         stylemaintext:"text-red-400 top-0",
         maintextcolor:"",
         stylesubtext:"text-lime-400 top-0",
@@ -70,7 +70,7 @@ export const sliderAdvsource =[
     },  {
         maintext:"Ön megálmodja!4 ",
         subtext:"Mi megvalósítjuk!",
-        button:"Vásárlás most!",
+        buttontext:"Vásárlás most!",
         stylemaintext:"text-red-400 top-0",
         maintextcolor:"",
         stylesubtext:"text-lime-400 top-0",
@@ -83,7 +83,7 @@ export const sliderAdvsource =[
     },  {
         maintext:"Ön megálmodja! 5",
         subtext:"Mi megvalósítjuk!",
-        button:"Vásárlás most!",
+        buttontext:"Vásárlás most!",
         stylemaintext:"text-red-400 top-0",
         maintextcolor:"",
         stylesubtext:"text-lime-400 top-0",

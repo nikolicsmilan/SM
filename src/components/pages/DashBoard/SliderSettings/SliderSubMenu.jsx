@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { sliderSubmenu } from "../../../../data/dashboard";
-const SliderSubMenu = ({ config, setConfig, currentStyle,setTheColors,currentColor }) => {
+const SliderSubMenu = ({ config, setConfig, currentStyle,setTheColors,property, currentColor,setProperty }) => {
   const [buttons, setButtons] = useState(sliderSubmenu);
   const [choosenIcon, setChoosenIcon] = useState("slider");
 
@@ -36,26 +36,26 @@ const SliderSubMenu = ({ config, setConfig, currentStyle,setTheColors,currentCol
 
 
 console.log("config",config)
-
+/*
     if (config.bgcolor) {
       console.log("ez lefut buttonbackgroundcolor?")
       setTheColors("buttonbackgroundcolor");
     } else {
       setTheColors(currentColor);
-    }
+    }*/
 
   };
-  let count = 0;
+  //let count = 0;
   // Filter the buttons based on currentStyle
   const filteredButtons = buttons.filter((item) => {
-    if (currentStyle === "stylebutton") {
+    if (property === "buttontext") {
       // Return only the "Háttér Szín" button for stylebutton
       return item;
     } else {
       if (item.title !== "Háttér Szín") {
         return item;
       }
-      console.log("ez egy item: ", count++, item);
+     // console.log("ez egy item: ", count++, item);
     }
     // Return all buttons for other styles
     return false;

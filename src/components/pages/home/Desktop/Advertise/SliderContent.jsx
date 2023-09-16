@@ -17,8 +17,6 @@ const SliderContent = ({
     handleSize(contentRef);
   }, [contentRef, size]);
 
-
-
   //console.log('In SliderContent sliderAdv state: ',sliderAdv)
   return (
     <div className="flex overflow-hidden border-0 border-red-400 h-96 w-full  lg:w-auto">
@@ -61,19 +59,17 @@ const SliderContent = ({
           ) : (
             ""
           )}
-
-          {item.button ? (
-
-
+          
+          {item.buttontext ? (
             <button
               onClick={handlesSwitchUrlap}
-              className={`border-lime-400 ${item.styleButton} fixed  right-0 bottom-0 font-bold m-2 mx-20 p-2 w-36 md:w-36 max-w-sm bg-success border-0 rounded text-center cursor-pointer bg-gradient text-white border-lime-400`}
+              className={`border-lime-400 ${item.styleButton} fixed  right-0 bottom-0 font-bold m-2 mx-20 p-2 w-36 md:w-36 max-w-sm bg-success border-0 rounded text-center cursor-pointer  text-white border-lime-400 `}
               style={{
                 color: item.buttoncolor,
-                backgroundColor: item.buttonbackgroundcolor
+                backgroundColor: item.buttonbackgroundcolor,
               }}
             >
-              {item.button ? item.button : ""}bg: {item.buttonbackgroundcolor}
+              {item.buttontext ? item.buttontext : ""}
             </button>
           ) : (
             ""
@@ -85,3 +81,6 @@ const SliderContent = ({
 };
 
 export default SliderContent;
+/*<p className="text-red-400">
+            item.buttonbackgroundcolor: {item.buttonbackgroundcolor}
+          </p> */

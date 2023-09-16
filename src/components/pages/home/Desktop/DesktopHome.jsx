@@ -1,4 +1,5 @@
 import React from "react";
+import Articels from "../Desktop/Artciles/Articels_1";
 
 const DesktopHome = ({ Advertise, DesktopImageViewer }) => {
   return (
@@ -7,6 +8,7 @@ const DesktopHome = ({ Advertise, DesktopImageViewer }) => {
       <Advertise />
       {/* Lower part of screen 1/2*/}
       <DesktopImageViewer />
+      <Articels/>ddasdas
     </div>
   );
 };
