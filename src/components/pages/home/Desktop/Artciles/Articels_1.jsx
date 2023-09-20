@@ -50,7 +50,7 @@ const Articels_1 = () => {
       id: 5,
       title: "A bútorgyártás művészete",
       content:
-        "A bútorgyártás a művészet és a funkcionalitás találkozása. Hozzáértő mesterembereink szenvedéllyel dolgoznak, hogy műalkotásokat hozzanak létre, amelyek nemcsak szépek, hanem hasznosak is. Fedezze fel a bútorgyártás varázsát velünk!"
+        "A bútorgyártás a művészet és a funkcionalitás találkozása. Hozzáértő mesterembereink szenvedéllyel dolgoznak, hogy műalkotásokat hozzanak létre, amelyek nemcsak szépek, hanem hasznosak is. Fedezze fel a bútorgyártás művészetét velünk!"
     },
     {
       id: 6,

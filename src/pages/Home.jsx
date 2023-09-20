@@ -1,6 +1,6 @@
 import React from "react";
 import useWindowSize from "../hooks/use-windowsize";
-import Advertise from "../components/pages/home/Desktop/Advertise/Advertise";
+import Advertise from "../components/pages/home/Desktop/Slider/Advertise";
 import MobileHome from "../components/pages/home/Mobil/MobileHome";
 import DesktopHome from "../components/pages/home/Desktop/DesktopHome";
 import DesktopImageViewer from "../components/pages/home/Desktop/DesktopImageViewer/DesktopImageViewer";

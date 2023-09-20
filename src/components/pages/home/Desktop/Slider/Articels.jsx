@@ -33,7 +33,7 @@ const Articels = () => {
         onClick={handleSwitchCalculator}
         className="m-2 mx-20 p-2 w-36 md:w-36 max-w-sm bg-gradient border-0 border-secondary rounded text-center cursor-pointer text-white font-bold"
       >
-        Igen!
+       Ez igen!
       </button>
     </div>
   );

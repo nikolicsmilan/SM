@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import SliderSubMenu from "./SliderSubMenu";
 import SliderInput from "./SliderInput";
 import ColorRadioButtons from "./ColorRadioButtons";
+import BgColorRadioButtons from "./BgColorRadioButtons";
 import SliderOrientationConf from "./SliderOrientationConf";
 import SliderImageConf from "./SliderImageConf";
 
 const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
-  const [property, setProperty] = useState("maintext");
-  const [currentStyle, setCurrentStyle] = useState("maintext");
-  const [theColors, setTheColors] = useState("maintextcolor");
+  const [selectedText, setSelectedText] = useState("maintext");
+  // const [currentStyle, setCurrentStyle] = useState("maintext");
   const [currentColor, setCurrentColor] = useState("");
-  const [currentBgColor, setCurrentBgColor] = useState("");
   const [maintext, setMaintext] = useState(
     sliderAdv[sliderCurrentIndex].maintext
   );
@@ -44,83 +43,181 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
     setStylesubtext(sliderAdv[sliderCurrentIndex].stylesubtext);
   }, [sliderCurrentIndex, sliderAdv]);
 
-  const updateProperty = (property, value) => {
+  const updateText = (value) => {
     setSliderAdv((prevConfig) => {
       const updatedConfig = [...prevConfig];
-      console.log("updateProperty: ", "property:", property, "value: ", value);
-      updatedConfig[sliderCurrentIndex][property] = value;
+      updatedConfig[sliderCurrentIndex][selectedText] = value;
       return updatedConfig;
     });
   };
 
+  const updateColor = (type, color) => {
+    console.log("updateColor run");
+    if (type === "specified") {
+      console.log("updateColor run specified branch");
+      if (selectedText === "maintext") {
+        console.log("updateColor run specified maintext branch");
+        setSliderAdv((prevConfig) => {
+          const updatedConfig = [...prevConfig];
+          updatedConfig[sliderCurrentIndex].maintextSpecifiedcolor = color;
+          updatedConfig[sliderCurrentIndex].maintextCustomColor = "";
+          return updatedConfig;
+        });
+      } else if (selectedText === "subtext") {
+        console.log("updateColor run specified subtext branch");
+        setSliderAdv((prevConfig) => {
+          const updatedConfig = [...prevConfig];
+          updatedConfig[sliderCurrentIndex].subtextSpecifiedColor = color;
+          updatedConfig[sliderCurrentIndex].subtextCustomColor = "";
+          return updatedConfig;
+        });
+      } else if (selectedText === "buttontext") {
+        console.log("updateColor run specified buttontext branch");
+        setSliderAdv((prevConfig) => {
+          const updatedConfig = [...prevConfig];
+          updatedConfig[sliderCurrentIndex].buttontextSpecifiedColor = color;
+          updatedConfig[sliderCurrentIndex].buttontextCustomColor = "";
+          return updatedConfig;
+        });
+      }
+    } else {
+      console.log("updateColor run custom branch");
+      if (selectedText === "maintext") {
+        console.log("updateColor run custom maintext branch");
+        setSliderAdv((prevConfig) => {
+          const updatedConfig = [...prevConfig];
+          updatedConfig[sliderCurrentIndex].maintextCustomColor = color;
+          return updatedConfig;
+        });
+      } else if (selectedText === "subtext") {
+        console.log("updateColor run custom subtext branch");
+        setSliderAdv((prevConfig) => {
+          const updatedConfig = [...prevConfig];
+          updatedConfig[sliderCurrentIndex].subtextCustomColor = color;
+          return updatedConfig;
+        });
+      } else if (selectedText === "buttontext") {
+        console.log("updateColor run custom buttontext branch");
+        setSliderAdv((prevConfig) => {
+          const updatedConfig = [...prevConfig];
+          updatedConfig[sliderCurrentIndex].buttontextCustomColor = color;
+          return updatedConfig;
+        });
+      }
+    }
+  };
+
+  const updateBgColor = (type, color) => {
+    console.log("updateBgColor run");
+    if (type === "specified") {
+      console.log("updateBgColor run specified branch");
+      setSliderAdv((prevConfig) => {
+        const updatedConfig = [...prevConfig];
+        updatedConfig[sliderCurrentIndex].buttonSpecifiedBackgroundcolor =
+          color;
+        updatedConfig[sliderCurrentIndex].buttonCustomBackgroundColor = "";
+        return updatedConfig;
+      });
+    } else if (type === "custom") {
+      console.log("updateBgColor run custom branch");
+      setSliderAdv((prevConfig) => {
+        const updatedConfig = [...prevConfig];
+        updatedConfig[sliderCurrentIndex].buttonCustomBackgroundColor = color;
+        updatedConfig[sliderCurrentIndex].buttonSpecifiedBackgroundcolor = "";
+        return updatedConfig;
+      });
+    }
+  };
+
   return (
     <div className="flex flex-col border-0 border-orange-400 mx-10">
+      <h1>
+        sliderCurrentIndex: {sliderCurrentIndex} selectedText:{selectedText}{" "}
+      </h1>
+      <h2>Tulajdonságok</h2>
+      <ul className="flex flex-wrap">
+        <li className="m-1 p-1 border-2 border-primary rounded">
+          maintext: {sliderAdv[sliderCurrentIndex].maintext}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+          subtext: {sliderAdv[sliderCurrentIndex].subtext}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+          buttontext: {sliderAdv[sliderCurrentIndex].buttontext}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+          maintext: {sliderAdv[sliderCurrentIndex].maintext}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+          stylemaintext: {sliderAdv[sliderCurrentIndex].stylemaintext}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+          maintextcolor: {sliderAdv[sliderCurrentIndex].maintextcolor}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+          stylesubtext: {sliderAdv[sliderCurrentIndex].stylesubtext}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+          subtextcolor: {sliderAdv[sliderCurrentIndex].subtextcolor}
+        </li>
+        <li className="m-1 p-1 border-2 border-sky-400 rounded">
+          stylebutton: {sliderAdv[sliderCurrentIndex].stylebutton}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+          buttontextcolor: {sliderAdv[sliderCurrentIndex].buttontextcolor}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+          buttonbackgroundcolor:{" "}
+          {sliderAdv[sliderCurrentIndex].buttonbackgroundcolor}
+        </li>
+      </ul>
       <div className="flex flex-col-reverse lg:flex-row-reverse border-0 border-sky-400">
         <div className="flex flex-col  m-4 border-t border-info  lg:w-1/2 ">
-        
           <SliderSubMenu
             config={config}
             setConfig={setConfig}
-            currentStyle={currentStyle}
-            setTheColors={setTheColors}
-            currentColor={currentColor}
-            updateProperty={updateProperty}
-            setProperty={setProperty}
-            property={property}
-            //stylecolor={stylecolor}
+            selectedText={selectedText}
           />
-          {config.color || config.bgcolor ? (
+          {config.color ? (
             <ColorRadioButtons
-              config={config}
               currentColor={currentColor}
-              setProperty={setProperty}
-              property={property}
-              updateProperty={updateProperty}
-              setCurrentColor={setCurrentColor}
+              updateColor={updateColor}
             />
           ) : (
             ""
           )}
+          {config.bgcolor ? (
+            <BgColorRadioButtons
+              currentColor={currentColor}
+              updateBgColor={updateBgColor}
+            />
+          ) : (
+            ""
+          )}
+
           {config.orientation ? <SliderOrientationConf config={config} /> : ""}
           {config.image ? <SliderImageConf config={config} /> : ""}
         </div>
         <div className="m-4 lg:w-1/2 border-t border-info">
           <SliderInput
-            label="Cím"
+            onFocus={() => setSelectedText("maintext")}
             value={maintext}
-            property="maintext"
-            setValue={setMaintext}
-            updateProperty={updateProperty}
-            placeholder="Cím"
-            onFocus={() => setProperty("maintext")}
-            config={config}
-            setProperty={setProperty}
+            label="Cím"
+            updateText={updateText}
           />
-
           <SliderInput
-            label="Alcím"
-            property="subtext"
+            onFocus={() => setSelectedText("subtext")}
             value={subtext}
-            setValue={setSubtext}
-            updateProperty={updateProperty}
-            placeholder="Alcím"
-            onFocus={() => setProperty("subtext")}
-            config={config}
-            setProperty={setProperty}
+            label="Alcím"
+            updateText={updateText}
           />
           <SliderInput
-            label="Gomb"
-            property="buttontext"
+            onFocus={() => setSelectedText("buttontext")}
             value={button}
-            setValue={setButton}
-            updateProperty={updateProperty}
-            placeholder="Gomb"
-            onFocus={() => setProperty("buttontext")}
-            config={config}
-            setProperty={setProperty}
+            label="Gomb"
+            updateText={updateText}
           />
         </div>
-      
       </div>
     </div>
   );

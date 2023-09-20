@@ -39,7 +39,7 @@ export const DataContextProvider = ({ children }) => {
   const [sliderAdv, setSliderAdv] = useState(sliderAdvsource);
   const [sliderCurrentIndex, setSliderCurrentIndex] = useState(0);
 
-  console.log('In DataContext sliderAdv state: ',sliderAdv)
+ // console.log('In DataContext sliderAdv state: ',sliderAdv)
   useEffect(() => {
     //Kitchen
     const unsubscribe = myOnSnapshotGeneral(setKitchen, "Konyha");

@@ -37,12 +37,12 @@ const Slider = () => {
 
   return (
     <div
-      className={`border-0 lg:w-3/4 p-1 mt-0 m-1 rounded-3xl  flex items-center justify-between ${
+      className={`border-0 lg:w-3/4 p-1 mt-0 m-1 rounded-3xl  flex items-center justify-between  border-lime-400 w-full${
         style !== "dio" ? "" : ""
       }`}
     >
       <ButtonAdv text=" ‹" onClick={prevHandler} />
-      <div className="flex-grow overflow-hidden">
+      <div className="flex-grow overflow-hidden border-0 border-sky-400">
         <SliderContent
           handlesSwitchUrlap={handlesSwitchUrlap}
           //size={size}
