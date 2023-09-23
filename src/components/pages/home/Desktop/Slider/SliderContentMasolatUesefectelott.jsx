@@ -15,13 +15,35 @@ const SliderContent = ({
     handleSize(contentRef);
   }, [contentRef, size]);
 
+  useEffect(() => {
+    console.log("SliderContent run UseEffect for rendering css style again");
+  }, [sliderAdv]);
+
+//ENNEK ITT LENNE A HELYE ÉS AZ ADATBÁZISBÓL INICIALIÁLT ÉRTÉKEKET IS
+//ITT KELL VALAHOL BEÁLLÍTANI.
+  /*
+    useEffect(() => {
+    console.log("Useffect run")
+    setSliderAdv((prevConfig) => {
+      const updatedConfig = [...prevConfig];
+      updatedConfig[sliderCurrentIndex][selectedAttribute] = selectedPosition;
+      return updatedConfig;
+    });
+  }, [selectedAttribute,selectedPosition,setSliderAdv,sliderCurrentIndex]);
+  
+  
+  */
+
+  useEffect(() => {
+   
+  }, []);
 
   return (
     <div className="flex overflow-hidden border-0 border-red-400 h-96 w-full  lg:w-auto">
       {sliderAdv?.map((item, index) => (
         <div
           key={index}
-          className="flex-shrink-0 rounded-2xl  w-full border-0 border-sky-400 m-0 overflow-hidden h-auto relative"
+          className="flex-shrink-0 rounded-2xl  w-full border-2 border-sky-400 m-0 overflow-hidden h-auto relative"
           style={{
             backgroundImage: `url("${item.image}")`,
             backgroundSize: "cover",
@@ -48,12 +70,12 @@ const SliderContent = ({
 righ-10 el múködik right-0 val is működik
 */}
           <div
-            className={`${item.maintextPosition} absolute  my-0 border-0 border-lime-400  `}
+            className={`${item.maintextPosition} absolute  my-0 border-2 border-lime-400  `}
             // style={(item.maintextPosition)}
           >
-          
+            {item.maintextPosition}
             <h1
-              className={`${item.maintextSpecifiedcolor} border-0 border-lime-400 text-2xl  mx-2 mt-0 `}
+              className={`${item.maintextSpecifiedcolor} border-2 border-lime-400 text-2xl  mx-2 mt-0 `}
               style={{
                 color: item.maintextCustomColor,
               }}
@@ -63,7 +85,7 @@ righ-10 el múködik right-0 val is működik
           </div>
 
           <div
-            className={`${item.subtexttextPosition} absolute  my-10 border-0 border-red-400  `}
+            className={`${item.subtexttextPosition} absolute right-0 top-10 my-10 border-0 border-red-400  `}
           >
             <p
               className={`${item.subtextSpecifiedColor}  border-0 border-red-400 font-bold text-base mx-2 mt-0 `}
@@ -77,7 +99,7 @@ righ-10 el múködik right-0 val is működik
 
           {item.buttontext ? (
             <div
-              className={`${item.buttontextPosition} absolute  my-10 py-0 border-0  border-sky-400 `}
+              className={`absolute right-0 top-10  my-10 py-0 border-0  border-sky-400 ${item.buttontextPosition}`}
             >
               <button
                 onClick={handlesSwitchUrlap}

@@ -15,13 +15,12 @@ const SliderContent = ({
     handleSize(contentRef);
   }, [contentRef, size]);
 
-
   return (
     <div className="flex overflow-hidden border-0 border-red-400 h-96 w-full  lg:w-auto">
       {sliderAdv?.map((item, index) => (
         <div
           key={index}
-          className="flex-shrink-0 rounded-2xl  w-full border-0 border-sky-400 m-0 overflow-hidden h-auto relative"
+          className="flex-shrink-0 rounded-2xl  w-full border-2 border-sky-400 m-0 overflow-hidden h-auto"
           style={{
             backgroundImage: `url("${item.image}")`,
             backgroundSize: "cover",
@@ -34,36 +33,23 @@ const SliderContent = ({
           }}
           ref={contentRef}
         >
-          {/*RÁJÖTTEM NAGYVALÓSZÍNŰSÉGGEL
-     MI A PROBLÉMA CSS RENDERŐLÉDI PROBLÉMA
-     IGEN? NEM: EZ LEGYEN USSEFECTES IZÉ!!!!!!!!!!!!!!!
-     NEM RENDELI ÚJRA A CSS VÁLOZÓT BIZONYOS ESETKBEN
-     EZT KELL KITAPASZTALNI MEGÉRTENI
-     A KIÍRÁSBAN MEGVÁLTOZIK DE ITT NEM VALÓSZÍNŰ
-     VAGY JOBBAN MONDVA NEM IDŐBEN VÁLTOZIK MEG
-     MEG FELÜLÍRÁSI PROBLÉÁMA!!!!!!!!! 
      
-      */}
-          {/* ITT VALAMI TURPISÁG VAN  left-10 el nem működik left-0 val alig
-righ-10 el múködik right-0 val is működik
-*/}
+
           <div
-            className={`${item.maintextPosition} absolute  my-0 border-0 border-lime-400  `}
-            // style={(item.maintextPosition)}
+            className={`absolute right-0 top-10 my-0 border-0 border-lime-400 ${item.maintextPosition} `}
           >
-          
             <h1
               className={`${item.maintextSpecifiedcolor} border-0 border-lime-400 text-2xl  mx-2 mt-0 `}
               style={{
                 color: item.maintextCustomColor,
               }}
             >
-              {item.maintext}
+              {item.maintext} 
             </h1>
           </div>
 
           <div
-            className={`${item.subtexttextPosition} absolute  my-10 border-0 border-red-400  `}
+            className={`absolute right-0 top-10 my-10 border-0 border-red-400 ${item.subtexttextPosition} `}
           >
             <p
               className={`${item.subtextSpecifiedColor}  border-0 border-red-400 font-bold text-base mx-2 mt-0 `}
@@ -71,13 +57,13 @@ righ-10 el múködik right-0 val is működik
                 color: item.subtextCustomColor,
               }}
             >
-              {item.subtext}
+              {item.subtext} 
             </p>
           </div>
 
           {item.buttontext ? (
             <div
-              className={`${item.buttontextPosition} absolute  my-10 py-0 border-0  border-sky-400 `}
+              className={`absolute right-0 top-10  my-10 py-0 border-0  border-sky-400 ${item.buttontextPosition}`}
             >
               <button
                 onClick={handlesSwitchUrlap}
@@ -93,6 +79,8 @@ righ-10 el múködik right-0 val is működik
           ) : (
             ""
           )}
+
+
         </div>
       ))}
     </div>
@@ -100,19 +88,6 @@ righ-10 el múködik right-0 val is működik
 };
 
 export default SliderContent;
-
-/*
- <div
-            className={`${item.maintextPosition} absolute  my-0 border-2 border-lime-400  `}
-           // style={(item.maintextPosition)}
-       
-          >
-*/
-
-/*
-style={{
-  left:item.maintextPosition
- }}*/
 /*
   {item.subtext ? (
             <div
@@ -201,6 +176,7 @@ style={{
 
 
 */
+
 
 /*
 ezzel működött:

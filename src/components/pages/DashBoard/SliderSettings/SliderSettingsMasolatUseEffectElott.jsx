@@ -10,51 +10,22 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
   const [selectedText, setSelectedText] = useState("maintext");
   // const [currentStyle, setCurrentStyle] = useState("maintext");
   const [currentColor, setCurrentColor] = useState("");
-  const [selectedPosition, setSelectedPosition] = useState(
-    sliderAdv[sliderCurrentIndex].maintextPosition
-  );
-  const [selectedAttribute, setSelectedAttribute] =
-    useState("maintextPosition");
   const [maintext, setMaintext] = useState(
     sliderAdv[sliderCurrentIndex].maintext
   );
   const [subtext, setSubtext] = useState(sliderAdv[sliderCurrentIndex].subtext);
-  const [buttontext, setButtonText] = useState(
+  const [button, setButton] = useState(
     sliderAdv[sliderCurrentIndex].buttontext
   );
-
-  const [maintextSpecifiedcolor, setMaintextSpecifiedColor] = useState(
-    sliderAdv[sliderCurrentIndex].maintextSpecifiedcolor
+  const [stylebutton, setStyleButton] = useState(
+    sliderAdv[sliderCurrentIndex].styleButton
   );
-  const [maintextCustomColor, setMaintextCustomColor] = useState(
-    sliderAdv[sliderCurrentIndex].maintextCustomColor
+  const [stylemaintext, setStylemaintext] = useState(
+    sliderAdv[sliderCurrentIndex].stylemaintext
   );
-  const [subtextSpecifiedColor, setSubtextSpecifiedColor] = useState(
-    sliderAdv[sliderCurrentIndex].subtextSpecifiedColor
+  const [stylesubtext, setStylesubtext] = useState(
+    sliderAdv[sliderCurrentIndex].stylesubtext
   );
-  const [subtextCustomColor, setSubtextCustomColor] = useState(
-    sliderAdv[sliderCurrentIndex].subtextCustomColor
-  );
-  const [buttontextSpecifiedColor, setButtonTextSpecifiedColor] = useState(
-    sliderAdv[sliderCurrentIndex].buttontextSpecifiedColor
-  );
-  const [buttontextCustomColor, setButtonTextCustomColor] = useState(
-    sliderAdv[sliderCurrentIndex].buttontextCustomColor
-  );
-  const [buttonSpecifiedBackgroundcolor, setButtonSpecifiedBackgroundColor] =
-    useState(sliderAdv[sliderCurrentIndex].buttonSpecifiedBackgroundcolor);
-  const [buttonCustomBackgroundColor, setButtonCustomBackgroundColor] =
-    useState(sliderAdv[sliderCurrentIndex].buttonCustomBackgroundColor);
-  const [maintextPosition, setMaintextPosition] = useState(
-    sliderAdv[sliderCurrentIndex].maintextPosition
-  );
-  const [subtextPosition, setSubtextPosition] = useState(
-    sliderAdv[sliderCurrentIndex].subtextPosition
-  );
-  const [buttontextPosition, setButtonTextPosition] = useState(
-    sliderAdv[sliderCurrentIndex].buttontextPosition
-  );
-  const [image, setImage] = useState(sliderAdv[sliderCurrentIndex].image);
 
   const [config, setConfig] = useState({
     color: true,
@@ -62,35 +33,14 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
     orientation: false,
     image: false,
   });
-
+//ilyet kell megvalósítani positionnál is
   useEffect(() => {
     setMaintext(sliderAdv[sliderCurrentIndex].maintext);
     setSubtext(sliderAdv[sliderCurrentIndex].subtext);
-    setButtonText(sliderAdv[sliderCurrentIndex].buttontext);
-    setMaintextSpecifiedColor(
-      sliderAdv[sliderCurrentIndex].maintextSpecifiedColor
-    );
-    setMaintextCustomColor(sliderAdv[sliderCurrentIndex].maintextCustomColor);
-    setSubtextSpecifiedColor(
-      sliderAdv[sliderCurrentIndex].subtextSpecifiedColor
-    );
-    setSubtextCustomColor(sliderAdv[sliderCurrentIndex].subtextCustomColor);
-    setButtonTextSpecifiedColor(
-      sliderAdv[sliderCurrentIndex].buttontextSpecifiedColor
-    );
-    setButtonTextCustomColor(
-      sliderAdv[sliderCurrentIndex].buttontextCustomColor
-    );
-    setButtonSpecifiedBackgroundColor(
-      sliderAdv[sliderCurrentIndex].buttonSpecifiedBackgroundColor
-    );
-    setButtonCustomBackgroundColor(
-      sliderAdv[sliderCurrentIndex].buttonCustomBackgroundColor
-    );
-    setMaintextPosition(sliderAdv[sliderCurrentIndex].maintextPosition);
-    setSubtextPosition(sliderAdv[sliderCurrentIndex].subtextPosition);
-    setButtonTextPosition(sliderAdv[sliderCurrentIndex].buttontextPosition);
-    setImage(sliderAdv[sliderCurrentIndex].image);
+    setButton(sliderAdv[sliderCurrentIndex].buttontext);
+    setStyleButton(sliderAdv[sliderCurrentIndex].styleButton);
+    setStylemaintext(sliderAdv[sliderCurrentIndex].stylemaintext);
+    setStylesubtext(sliderAdv[sliderCurrentIndex].stylesubtext);
   }, [sliderCurrentIndex, sliderAdv]);
 
   const updateText = (value) => {
@@ -179,9 +129,62 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
     }
   };
 
+
+
   return (
     <div className="flex flex-col border-0 border-orange-400 mx-10">
-    
+      <h1>
+        sliderCurrentIndex: {sliderCurrentIndex} selectedText:{selectedText}{" "}
+      </h1>
+      <h2>Tulajdonságok</h2>
+      <ul className="flex flex-wrap">
+        <li className="m-1 p-1 border-2 border-primary rounded">
+          maintext: {sliderAdv[sliderCurrentIndex].maintext}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+          subtext: {sliderAdv[sliderCurrentIndex].subtext}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+          buttontext: {sliderAdv[sliderCurrentIndex].buttontext}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+        maintextSpecifiedcolor: {sliderAdv[sliderCurrentIndex].maintextSpecifiedcolor}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+        maintextCustomColor: {sliderAdv[sliderCurrentIndex].maintextCustomColor}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+        subtextSpecifiedColor: {sliderAdv[sliderCurrentIndex].subtextSpecifiedColor}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+        subtextCustomColor: {sliderAdv[sliderCurrentIndex].subtextCustomColor}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+        buttontextSpecifiedColor: {sliderAdv[sliderCurrentIndex].buttontextSpecifiedColor}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+        buttontextCustomColor: {sliderAdv[sliderCurrentIndex].buttontextCustomColor}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+        buttonSpecifiedBackgroundcolor: {sliderAdv[sliderCurrentIndex].buttonSpecifiedBackgroundcolor}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+        buttonCustomBackgroundColor:{" "}
+          {sliderAdv[sliderCurrentIndex].buttonCustomBackgroundColor}
+        </li>
+        <li className="m-1 p-1 border-2 border-sky-400 rounded">
+        maintextPosition:
+          {sliderAdv[sliderCurrentIndex].maintextPosition}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+        subtexttextPosition:{" "}
+          {sliderAdv[sliderCurrentIndex].subtexttextPosition}
+        </li>
+        <li className="m-1 p-1 border-2 border-primary rounded">
+        buttontextPosition:{" "}
+          {sliderAdv[sliderCurrentIndex].buttontextPosition}
+        </li>
+      </ul>
       <div className="flex flex-col-reverse lg:flex-row-reverse border-0 border-sky-400">
         <div className="flex flex-col  m-4 border-t border-info  lg:w-1/2 ">
           <SliderSubMenu
@@ -206,19 +209,7 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
             ""
           )}
 
-          {config.orientation ? (
-            <SliderOrientationConf
-              sliderCurrentIndex={sliderCurrentIndex}
-              selectedText={selectedText}
-              setSliderAdv={setSliderAdv}
-              selectedAttribute={selectedAttribute}
-              setSelectedAttribute={setSelectedAttribute}
-              selectedPosition={selectedPosition}
-              setSelectedPosition={setSelectedPosition}
-            />
-          ) : (
-            ""
-          )}
+          {config.orientation ? <SliderOrientationConf sliderCurrentIndex={sliderCurrentIndex} selectedText={selectedText} setSliderAdv={setSliderAdv}/> : ""}
           {config.image ? <SliderImageConf config={config} /> : ""}
         </div>
         <div className="m-4 lg:w-1/2 border-t border-info">
@@ -236,7 +227,7 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
           />
           <SliderInput
             onFocus={() => setSelectedText("buttontext")}
-            value={buttontext}
+            value={button}
             label="Gomb"
             updateText={updateText}
           />
@@ -247,62 +238,3 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
 };
 
 export default SliderSettings;
-
-/*
-  <h1>
-        sliderCurrentIndex: {sliderCurrentIndex} selectedText:{selectedText}{" "}
-      </h1>
-      <h2>Tulajdonságok</h2>
-      <ul className="flex flex-wrap">
-        <li className="m-1 p-1 border-2 border-primary rounded">
-          maintext: {sliderAdv[sliderCurrentIndex].maintext}
-        </li>
-        <li className="m-1 p-1 border-2 border-primary rounded">
-          subtext: {sliderAdv[sliderCurrentIndex].subtext}
-        </li>
-        <li className="m-1 p-1 border-2 border-primary rounded">
-          buttontext: {sliderAdv[sliderCurrentIndex].buttontext}
-        </li>
-        <li className="m-1 p-1 border-2 border-primary rounded">
-          maintextSpecifiedcolor:{" "}
-          {sliderAdv[sliderCurrentIndex].maintextSpecifiedcolor}
-        </li>
-        <li className="m-1 p-1 border-2 border-primary rounded">
-          maintextCustomColor:{" "}
-          {sliderAdv[sliderCurrentIndex].maintextCustomColor}
-        </li>
-        <li className="m-1 p-1 border-2 border-primary rounded">
-          subtextSpecifiedColor:{" "}
-          {sliderAdv[sliderCurrentIndex].subtextSpecifiedColor}
-        </li>
-        <li className="m-1 p-1 border-2 border-primary rounded">
-          subtextCustomColor: {sliderAdv[sliderCurrentIndex].subtextCustomColor}
-        </li>
-        <li className="m-1 p-1 border-2 border-primary rounded">
-          buttontextSpecifiedColor:{" "}
-          {sliderAdv[sliderCurrentIndex].buttontextSpecifiedColor}
-        </li>
-        <li className="m-1 p-1 border-2 border-primary rounded">
-          buttontextCustomColor:{" "}
-          {sliderAdv[sliderCurrentIndex].buttontextCustomColor}
-        </li>
-        <li className="m-1 p-1 border-2 border-primary rounded">
-          buttonSpecifiedBackgroundcolor:{" "}
-          {sliderAdv[sliderCurrentIndex].buttonSpecifiedBackgroundcolor}
-        </li>
-        <li className="m-1 p-1 border-2 border-primary rounded">
-          buttonCustomBackgroundColor:{" "}
-          {sliderAdv[sliderCurrentIndex].buttonCustomBackgroundColor}
-        </li>
-        <li className="m-1 p-1 border-2 border-sky-400 rounded">
-          maintextPosition:
-          {sliderAdv[sliderCurrentIndex].maintextPosition}
-        </li>
-        <li className="m-1 p-1 border-2 border-primary rounded">
-          subtexttextPosition:{" "}
-          {sliderAdv[sliderCurrentIndex].subtexttextPosition}
-        </li>
-        <li className="m-1 p-1 border-2 border-primary rounded">
-          buttontextPosition: {sliderAdv[sliderCurrentIndex].buttontextPosition}
-        </li>
-      </ul> */

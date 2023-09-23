@@ -35,13 +35,13 @@ export const sliderAdvsource =[
         maintextCustomColor:"",
         subtextSpecifiedColor:"",
         subtextCustomColor:"",
-        buttontextSpecifiedColor:" right-2",
+        buttontextSpecifiedColor:" ",
         buttontextCustomColor:"",
         buttonSpecifiedBackgroundcolor:"",
         buttonCustomBackgroundColor:"",
-        maintextPosition:"",
-        subtexttextPosition:"",
-        buttontextPosition:"",
+        maintextPosition:"top-10 left-10",
+        subtexttextPosition:"top-10 left-10",
+        buttontextPosition:"top-10 left-10",
         image:smmain
 
     },
@@ -57,13 +57,34 @@ export const sliderAdvsource =[
         buttontextCustomColor:"",
         buttonSpecifiedBackgroundcolor:"",
         buttonCustomBackgroundColor:"",
-        maintextPosition:"",
-        subtexttextPosition:"",
-        buttontextPosition:"",
+        maintextPosition:"top-10 left-10",
+        subtexttextPosition:"top-10 left-10",
+        buttontextPosition:"top-10 left-10",
         image:SargaButor
 
     },
     {
+        maintext:"Az álmai bútorok!",
+        subtext:"Tökéletes minőségben.",
+        buttontext:"Rendelés most!",
+        maintextSpecifiedcolor:'',
+        maintextCustomColor:"",
+        subtextSpecifiedColor:"",
+        subtextCustomColor:"",
+        buttontextSpecifiedColor:" right-2",
+        buttontextCustomColor:"",
+        buttonSpecifiedBackgroundcolor:"",
+        buttonCustomBackgroundColor:"",
+        maintextPosition:"top-10 left-10",
+        subtexttextPosition:"top-10 left-10",
+        buttontextPosition:"top-10 left-10",
+        image:Scarlet
+
+    },
+    
+]
+/*
+{
         maintext:"Egyedi bútorok a lakásába!",
         subtext:"Képzelje el, mi megvalósítjuk!",
         buttontext:"Vásárlás most!",
@@ -75,9 +96,9 @@ export const sliderAdvsource =[
         buttontextCustomColor:"",
         buttonSpecifiedBackgroundcolor:"",
         buttonCustomBackgroundColor:"",
-        maintextPosition:"",
-        subtexttextPosition:"",
-        buttontextPosition:"",
+        maintextPosition:"left-0 top-0",
+        subtexttextPosition:"left-10 top-10",
+        buttontextPosition:"left-10 top-10",
         image:Scarlet
 
     },
@@ -93,9 +114,9 @@ export const sliderAdvsource =[
         buttontextCustomColor:"",
         buttonSpecifiedBackgroundcolor:"",
         buttonCustomBackgroundColor:"",
-        maintextPosition:"",
-        subtexttextPosition:"",
-        buttontextPosition:"",
+        maintextPosition:"left-0 top-0",
+        subtexttextPosition:"left-10 top-10",
+        buttontextPosition:"left-10 top-10",
         image:smmain
 
     },
@@ -111,10 +132,10 @@ export const sliderAdvsource =[
         buttontextCustomColor:"",
         buttonSpecifiedBackgroundcolor:"",
         buttonCustomBackgroundColor:"",
-        maintextPosition:"",
-        subtexttextPosition:"",
-        buttontextPosition:"",
+        maintextPosition:"left-0 top-0",
+        subtexttextPosition:"left-10 top-10",
+        buttontextPosition:"left-10 top-10",
         image:smmain
 
     }
-]
+*/
