@@ -6,10 +6,16 @@ import {
   deleteObject,
 } from "@firebase/storage";
 import { storage } from "../../../../firebase";
-import { FaCloudUploadAlt } from "react-icons/fa";
+import { FaCloudUploadAlt, FaFileImage } from "react-icons/fa";
 import ProgressBar2 from "../../../../utility/ProgressBar2";
 
-const Fileupload = ({ handleInputChange, url }) => {
+const Fileupload = ({
+  handleInputChange,
+  url,
+  setExistItem,
+  setConfig,
+  submenuStyle,
+}) => {
   const [progress, setProgress] = useState(0);
 
   const formHandler = (e) => {
@@ -51,6 +57,7 @@ const Fileupload = ({ handleInputChange, url }) => {
   };
 
   const deleteImage = () => {
+    console.log("Fileupload deleteImage run");
     if (url) {
       const imageRef = ref(storage, url);
 
@@ -66,23 +73,40 @@ const Fileupload = ({ handleInputChange, url }) => {
         });
     }
   };
+  const pickFileHandler = () => {};
+  const mainStyle =
+    "flex flex-col justify-center items-center border-0 border-red-400 w-100 h-100";
+  const sliderSubmenuStyle = " flex start border-0 border-red-400";
 
   return (
-    <div className="flex flex-col justify-center items-center border-0 border-red-400 w-100 h-100">
+    <div
+      className={`${
+        submenuStyle === "mainstyle" ? mainStyle : sliderSubmenuStyle
+      }`}
+    >
       {!url ? (
         <form
           onSubmit={formHandler}
-          className="justify-center items-center flex flex-col border-0"
+          className="justify-center items-center flex flex-row border-0"
         >
-          <label className="cursor-pointer ">
-            <FaCloudUploadAlt className="w-12 h-12 text-primary" />
-            <input
-              type="file"
-              className="hidden"
-              onChange={handleImageUpload}
+          <div className="flex flex-col justify-center items-center m-5 border-0">
+            <label className="cursor-pointer ">
+              <FaCloudUploadAlt className="w-12 h-12 text-primary" />
+              <input
+                type="file"
+                className="hidden"
+                onChange={handleImageUpload}
+              />
+            </label>
+            <span className="text-center">Kép feltöltése</span>
+          </div>
+          <div className="flex flex-col justify-center items-center border-0 m-5">
+            <FaFileImage
+              className="w-12 h-12 text-primary cursor-pointer"
+              onClick={() => pickFileHandler()}
             />
-          </label>
-          <span>Kép feltöltése</span>
+            <span className="text-center">Meglévő kép </span>
+          </div>
         </form>
       ) : (
         <div className="flex flex-col justify-center items-center m-2 my-10 ">
@@ -94,8 +118,11 @@ const Fileupload = ({ handleInputChange, url }) => {
             Törlés
           </button>
 
-          <ProgressBar2  className="border-4 border-red-400 h-32" progress={progress} />
-       </div>
+          <ProgressBar2
+            className="border-4 border-red-400 h-32"
+            progress={progress}
+          />
+        </div>
       )}
     </div>
   );

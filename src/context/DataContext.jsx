@@ -27,8 +27,9 @@ export const DataContextProvider = ({ children }) => {
     upload: false,
     users: false,
     messages: false,
-    calendar: false,
+    calendar: false,  
     slider: true,
+    gallery:false,
   });
   const [choosenIcon, setChoosenIcon] = useState("slider");
   const [search, setSearch] = useState("");
@@ -38,6 +39,7 @@ export const DataContextProvider = ({ children }) => {
   });
   const [sliderAdv, setSliderAdv] = useState(sliderAdvsource);
   const [sliderCurrentIndex, setSliderCurrentIndex] = useState(0);
+  
 
  // console.log('In DataContext sliderAdv state: ',sliderAdv)
   useEffect(() => {

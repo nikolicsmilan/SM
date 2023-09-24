@@ -21,6 +21,7 @@ const SliderAdv = () => {
           setSliderAdv={setSliderAdv}
           sliderCurrentIndex={sliderCurrentIndex}
           setSliderCurrentIndex={setSliderCurrentIndex}
+         
         />
       </div>
     </div>

@@ -14,7 +14,7 @@ const SliderContent = ({
   useEffect(() => {
     handleSize(contentRef);
   }, [contentRef, size]);
-
+const mobilstyle="top-10 left-10"
 
   return (
     <div className="flex overflow-hidden border-0 border-red-400 h-96 w-full  lg:w-auto">
@@ -47,8 +47,9 @@ const SliderContent = ({
           {/* ITT VALAMI TURPISÁG VAN  left-10 el nem működik left-0 val alig
 righ-10 el múködik right-0 val is működik
 */}
+
           <div
-            className={`${item.maintextPosition} absolute  my-0 border-0 border-lime-400  `}
+            className={`${size.width <667 ?mobilstyle:item.maintextPosition} absolute  my-0 border-0 border-lime-400  `}
             // style={(item.maintextPosition)}
           >
           
@@ -63,7 +64,7 @@ righ-10 el múködik right-0 val is működik
           </div>
 
           <div
-            className={`${item.subtexttextPosition} absolute  my-10 border-0 border-red-400  `}
+            className={`${size.width <667 ?mobilstyle:item.subtexttextPosition} absolute  my-10 border-0 border-red-400  `}
           >
             <p
               className={`${item.subtextSpecifiedColor}  border-0 border-red-400 font-bold text-base mx-2 mt-0 `}
@@ -77,7 +78,7 @@ righ-10 el múködik right-0 val is működik
 
           {item.buttontext ? (
             <div
-              className={`${item.buttontextPosition} absolute  my-10 py-0 border-0  border-sky-400 `}
+              className={`${size.width <667 ?mobilstyle:item.buttontextPosition} absolute  my-10 py-0 border-0  border-sky-400 `}
             >
               <button
                 onClick={handlesSwitchUrlap}

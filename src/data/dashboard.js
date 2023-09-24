@@ -34,6 +34,7 @@ import {
   FaCodeBranch,
   FaEnvelope,
   FaArrowsAlt,
+  FaImage
 
 } from "react-icons/fa";
 import { AiFillDatabase, AiOutlineFontColors,AiOutlineBgColors } from "react-icons/ai";
@@ -107,8 +108,8 @@ export const buttons = [
         to: "/",
       },
       {
-        name: "plusslider",
-        icon: <FaPlus />,
+        name: "gallery",
+        icon: <FaImage />,
         type: "route",
         to: "/",
       },

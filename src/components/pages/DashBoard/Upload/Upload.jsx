@@ -5,7 +5,7 @@ import { myAddGeneral } from "../../../../firebase/Firestore";
 import { MyDataContext } from "../../../../context/DataContext";
 import { FaBackward } from "react-icons/fa";
 
-const Upload = ({ item, setConfig, edit, setEdit }) => {
+const Upload = ({ item, handleConfig, edit, setEdit }) => {
   /* const {  setConfig, } = MyDataContext();*/
   const [localItem, setLocalItem] = useState({
     name: "",
@@ -15,6 +15,7 @@ const Upload = ({ item, setConfig, edit, setEdit }) => {
     category: "Konyha",
     url: "",
   });
+  const [existItem, setExistItem] = useState(false);
   const handleInputChange = (konkretertek, property) => {
     //const { value } = event.target;
     setLocalItem((prevState) => ({
@@ -24,7 +25,23 @@ const Upload = ({ item, setConfig, edit, setEdit }) => {
   };
 
   const sendHandler = () => {
+    // el kell küldenem egy olyan collectionbe is amiből ő nem tud törölni
+    // mivel tudnom kell az urleket
+    //igazából az a legjobb ha minden adat meg van
+
+    // akár meg van a fájl akkár nem kétszer küldi
+    // de az egyik collectiönből nem fog tudni itt törölni.
+
+    // a localitemnél kell eldönteni hogy ebből a meglévő
+    //adatbázisból származik az url
+    //vagy új képet töltök fel és onnan kapok plusz urlt
+
+    // ha új akkor mindkét helyre megy
+
+    // de ha meglévő akkor csak az adott collectiönbe
     myAddGeneral(localItem?.category, localItem?.name, localItem);
+    myAddGeneral("all", localItem?.name, localItem);
+
     console.log("ez a category a myAddGeneral ban: ", localItem?.category);
     setLocalItem({
       name: "",
@@ -35,19 +52,12 @@ const Upload = ({ item, setConfig, edit, setEdit }) => {
     });
 
     // ide kell a visszairányítás a compact módba
-    setConfig((prevState) => ({
-      ...prevState,
-      compact: true, // Update compact to true
-      list: false, // Update other properties
-      upload: false,
-      users: false,
-      messages: false,
-    }));
+    handleConfig("compact");
   };
 
-  const handleBack=()=>{
+  const handleBack = () => {
     setEdit((prevState) => !prevState);
-  }
+  };
 
   useEffect(() => {
     if (item) {
@@ -63,10 +73,10 @@ const Upload = ({ item, setConfig, edit, setEdit }) => {
             <FaBackward
               className=" text-3xl text-info hover:text-primary   bg-transparent rounded cursor-pointer  m-0 p-1 "
               title="Vissza"
-              onClick={()=>{setEdit((prevState) => !prevState);}}
+              onClick={() => {
+                setEdit((prevState) => !prevState);
+              }}
             />{" "}
-          
-            
           </div>
         ) : (
           ""
@@ -83,6 +93,8 @@ const Upload = ({ item, setConfig, edit, setEdit }) => {
           <Fileupload
             handleInputChange={handleInputChange}
             url={localItem?.url}
+            // setExistItem={setExistItem}
+            // setConfig={setConfig}
           />
         </div>
       </div>

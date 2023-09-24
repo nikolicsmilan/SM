@@ -5,6 +5,7 @@ import ColorRadioButtons from "./ColorRadioButtons";
 import BgColorRadioButtons from "./BgColorRadioButtons";
 import SliderOrientationConf from "./SliderOrientationConf";
 import SliderImageConf from "./SliderImageConf";
+import Fileupload from "../Upload/Fileupload";
 
 const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
   const [selectedText, setSelectedText] = useState("maintext");
@@ -56,7 +57,7 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
   );
   const [image, setImage] = useState(sliderAdv[sliderCurrentIndex].image);
 
-  const [config, setConfig] = useState({
+  const [configSubmenu, setConfigSubmenu] = useState({
     color: true,
     bgcolor: false,
     orientation: false,
@@ -185,11 +186,12 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
       <div className="flex flex-col-reverse lg:flex-row-reverse border-0 border-sky-400">
         <div className="flex flex-col  m-4 border-t border-info  lg:w-1/2 ">
           <SliderSubMenu
-            config={config}
-            setConfig={setConfig}
+            configSubmenu={configSubmenu}
+            setConfigSubmenu={setConfigSubmenu}
             selectedText={selectedText}
+           
           />
-          {config.color ? (
+          {configSubmenu.color ? (
             <ColorRadioButtons
               currentColor={currentColor}
               updateColor={updateColor}
@@ -197,7 +199,7 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
           ) : (
             ""
           )}
-          {config.bgcolor ? (
+          {configSubmenu.bgcolor ? (
             <BgColorRadioButtons
               currentColor={currentColor}
               updateBgColor={updateBgColor}
@@ -206,7 +208,7 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
             ""
           )}
 
-          {config.orientation ? (
+          {configSubmenu.orientation ? (
             <SliderOrientationConf
               sliderCurrentIndex={sliderCurrentIndex}
               selectedText={selectedText}
@@ -219,7 +221,7 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
           ) : (
             ""
           )}
-          {config.image ? <SliderImageConf config={config} /> : ""}
+          {configSubmenu.image ? <Fileupload submenuStyle="substyle" /> : ""}
         </div>
         <div className="m-4 lg:w-1/2 border-t border-info">
           <SliderInput

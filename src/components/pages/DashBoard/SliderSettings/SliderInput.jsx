@@ -7,7 +7,7 @@ const SliderInput = ({ onFocus, value, label, updateText }) => {
         {label}
       </label>
       <input
-        className="text-primary bg-primary text-white appearance-none w-full py-2 px-3 leading-tight rounded-lg shadow-md border focus:border-primary "
+        className=" bg-white text-dark appearance-none w-full py-2 px-3 leading-tight rounded-lg shadow-md border  focus:bg-primary "
         onChange={(e) => {
           updateText(e.target.value);
         }}

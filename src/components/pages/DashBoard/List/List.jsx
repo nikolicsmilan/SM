@@ -17,7 +17,8 @@ const List = ({ newimages }) => {
   const handleDeleteItem = async (category, name, url) => {
     try {
       await myDeleteElement(category, name);
-      await deleteImage(url);
+     // await deleteImage(url);
+     console.log("List handleDeleteItem run")
     } catch (error) {
       console.error("Error deleting item in handleDeleteItem function:", error);
     }

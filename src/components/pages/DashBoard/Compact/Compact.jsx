@@ -11,7 +11,8 @@ const Compact = ({ newimages }) => {
   const handleDeleteItem = async (category, name, url) => {
     try {
       await myDeleteElement(category, name);
-      await deleteImage(url);
+      //await deleteImage(url);
+      console.log("List handleDeleteItem run")
     } catch (error) {
       console.error("Error deleting item in handleDeleteItem function:", error);
     }
@@ -57,7 +58,10 @@ const Compact = ({ newimages }) => {
                   alt={item?.name}
                 />
               </div>
-              <div className="text-center my-1 text-info"> {item?.name} </div>
+              <div className="text-center  text-info text-xs"> {item?.name} </div>
+              <div className="text-center  text-info text-xs"> {item?.price} </div>
+              
+
             </div>
           ))}
         </div>

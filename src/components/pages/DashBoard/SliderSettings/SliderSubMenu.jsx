@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { sliderSubmenu } from "../../../../data/dashboard";
-const SliderSubMenu = ({ config, setConfig, selectedText }) => {
+const SliderSubMenu = ({ configSubmenu, setConfigSubmenu, selectedText }) => {
   const [buttons, setButtons] = useState(sliderSubmenu);
   const [choosenIcon, setChoosenIcon] = useState("color");
 
   const handleConfig = (property) => {
-    setConfig((prevConfig) => ({
+    setConfigSubmenu((prevConfig) => ({
       ...prevConfig,
       [property]: !prevConfig[property],
      
     }));
 
-    if (!config[property]) {
+    if (!configSubmenu[property]) {
       // Check if the property is not already true
       setChoosenIcon(property); // Set the chosen icon based on the property
-      setConfig((prevConfig) => {
+      setConfigSubmenu((prevConfig) => {
         const updatedConfig = { ...prevConfig };
         // Set the property being toggled to true
         updatedConfig[property] = true;
