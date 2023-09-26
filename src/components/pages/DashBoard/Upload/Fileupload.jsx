@@ -8,6 +8,7 @@ import {
 import { storage } from "../../../../firebase";
 import { FaCloudUploadAlt, FaFileImage } from "react-icons/fa";
 import ProgressBar2 from "../../../../utility/ProgressBar2";
+import {MyDataContext} from "../../../../context/DataContext"
 
 const Fileupload = ({
   handleInputChange,
@@ -16,6 +17,9 @@ const Fileupload = ({
   setConfig,
   submenuStyle,
 }) => {
+
+  const { handleConfig } =
+  MyDataContext();
   const [progress, setProgress] = useState(0);
 
   const formHandler = (e) => {
@@ -73,7 +77,10 @@ const Fileupload = ({
         });
     }
   };
-  const pickFileHandler = () => {};
+  const pickFileHandler = () => {
+    handleConfig('gallery')
+
+  };
   const mainStyle =
     "flex flex-col justify-center items-center border-0 border-red-400 w-100 h-100";
   const sliderSubmenuStyle = " flex start border-0 border-red-400";
@@ -91,21 +98,25 @@ const Fileupload = ({
         >
           <div className="flex flex-col justify-center items-center m-5 border-0">
             <label className="cursor-pointer ">
-              <FaCloudUploadAlt className="w-12 h-12 text-primary" />
+              <FaCloudUploadAlt  className={`hover:text-primary cursor-pointer text-info ${
+                submenuStyle === "mainstyle" ? " w-12 h-12" : "w-8 h-8"
+              }`} />
               <input
                 type="file"
                 className="hidden"
                 onChange={handleImageUpload}
               />
             </label>
-            <span className="text-center">Kép feltöltése</span>
+         
           </div>
-          <div className="flex flex-col justify-center items-center border-0 m-5">
+          <div className="flex flex-col justify-center items-center border-0 m-0">
             <FaFileImage
-              className="w-12 h-12 text-primary cursor-pointer"
+              className={`hover:text-primary cursor-pointer text-info ${
+                submenuStyle === "mainstyle" ? " w-8 h-8" : "w-6 h-6"
+              }`}
               onClick={() => pickFileHandler()}
             />
-            <span className="text-center">Meglévő kép </span>
+           
           </div>
         </form>
       ) : (

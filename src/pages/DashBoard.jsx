@@ -8,40 +8,16 @@ import Users from "../components/pages/DashBoard/Users/Users";
 import Calendar from "../components/pages/DashBoard/Calendar/Calendar";
 import Messages from "../components/pages/DashBoard/Messages/Messages";
 import SliderAdv from "../components/pages/DashBoard/SliderSettings/SliderAdv";
+import Gallery from "../components/pages/DashBoard/Gallery/Gallery";
 import { MyDataContext } from "../context/DataContext";
 
 import useErrorModal from "../hooks/useErrorModal";
 const DashBoard = () => {
-  const { config, setConfig, choosenIcon, setChoosenIcon, newimages, error2 } =
+  const { config, setConfig, choosenIcon, setChoosenIcon, newimages, error2,handleConfig } =
     MyDataContext();
   const { error, showErrorModal, hideErrorModal } = useErrorModal();
 
-  const handleConfig = (property, akarmi) => {
-    /*setConfig((prevConfig) => ({
-   ...prevConfig,
-   [property]: !prevConfig[property],
-   [property]: akarmi,
- }));*/
- if (!config[property]) { // Check if the property is not already true
-   setChoosenIcon(property); // Set the chosen icon based on the property
-   
-   setConfig((prevConfig) => {
-     const updatedConfig = { ...prevConfig };
 
-     // Set the property being toggled to true
-     updatedConfig[property] = true;
-
-     // Set all other properties to false
-     for (const prop in updatedConfig) {
-       if (prop !== property) {
-         updatedConfig[prop] = false;
-       }
-     }
-
-     return updatedConfig;
-   });
- }
-};
   return (
     <div className="border-0 border-lime-400">
       <DashboardMenu
@@ -56,6 +32,7 @@ const DashBoard = () => {
       {config?.calendar && <Calendar />}
       {config?.messages && <Messages />}
       {config?.slider && <SliderAdv  />}
+      {config?.gallery && <Gallery  />}
     </div>
   );
 };

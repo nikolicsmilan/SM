@@ -174,7 +174,7 @@ const SliderSettings = ({ sliderAdv, setSliderAdv, sliderCurrentIndex }) => {
         </li>
         <li className="m-1 p-1 border-2 border-sky-400 rounded">
         maintextPosition:
-          {sliderAdv[sliderCurrentIndex].maintextPosition}
+          {sliderAdv[sliderCurrentIndex]?.maintextPosition}
         </li>
         <li className="m-1 p-1 border-2 border-primary rounded">
         subtexttextPosition:{" "}

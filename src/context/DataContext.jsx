@@ -1,6 +1,11 @@
 import { useContext, createContext, useEffect, useState } from "react";
 import Scarlet from "../assets/konyhabutor/Scarlet.jpg";
-import { myOnSnapshotGeneral } from "../firebase/Firestore";
+import {
+  myOnSnapshotGeneral,
+  myOnSnapshotGeneralIndexZero,
+  mySliderAdv,
+  watchDataChanges,
+} from "../firebase/Firestore";
 import { sliderAdvsource } from "../data/reklam";
 import { sliderSubmenu } from "../data/dashboard";
 const DataContext = createContext();
@@ -27,9 +32,9 @@ export const DataContextProvider = ({ children }) => {
     upload: false,
     users: false,
     messages: false,
-    calendar: false,  
+    calendar: false,
     slider: true,
-    gallery:false,
+    gallery: false,
   });
   const [choosenIcon, setChoosenIcon] = useState("slider");
   const [search, setSearch] = useState("");
@@ -37,11 +42,80 @@ export const DataContextProvider = ({ children }) => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  const [sliderAdv, setSliderAdv] = useState(sliderAdvsource);
-  const [sliderCurrentIndex, setSliderCurrentIndex] = useState(0);
-  
+  const sample = [
+    {
+      id: 1,
+      maintext: "Ön megálmodja! ",
+      subtext: "Mi megvalósítjuk!",
+      buttontext: "Vásárlás most!",
+      maintextSpecifiedcolor: "",
+      maintextCustomColor: "",
+      subtextSpecifiedColor: "",
+      subtextCustomColor: "",
+      buttontextSpecifiedColor: " ",
+      buttontextCustomColor: "",
+      buttonSpecifiedBackgroundcolor: "",
+      buttonCustomBackgroundColor: "",
+      maintextPosition: "top-10 left-10",
+      subtexttextPosition: "top-10 left-10",
+      buttontextPosition: "top-10 left-10",
+      image: "",
+    },
+  ];
 
- // console.log('In DataContext sliderAdv state: ',sliderAdv)
+  const othersample = {
+    id: 1,
+    maintext: "Ön nem álmodozon? ",
+    subtext: "Mi megvalósítjuk!",
+    buttontext: "Vásárlás most!",
+    maintextSpecifiedcolor: "",
+    maintextCustomColor: "",
+    subtextSpecifiedColor: "",
+    subtextCustomColor: "",
+    buttontextSpecifiedColor: " ",
+    buttontextCustomColor: "",
+    buttonSpecifiedBackgroundcolor: "",
+    buttonCustomBackgroundColor: "",
+    maintextPosition: "top-10 left-10",
+    subtexttextPosition: "top-10 left-10",
+    buttontextPosition: "top-10 left-10",
+    image: "",
+  };
+  const [currentSlider, setCurrentSlider] = useState(othersample);
+  const [sliderAdv, setSliderAdv] = useState(sample);
+  const [sliderCurrentIndex, setSliderCurrentIndex] = useState(0);
+
+  console.log("DataContext sliderAdv", sliderAdv);
+  console.log("DataContext currentSlider", currentSlider);
+
+  const handleConfig = (property, akarmi) => {
+    /*setConfig((prevConfig) => ({
+   ...prevConfig,
+   [property]: !prevConfig[property],
+   [property]: akarmi,
+ }));*/
+    if (!config[property]) {
+      // Check if the property is not already true
+      setChoosenIcon(property); // Set the chosen icon based on the property
+
+      setConfig((prevConfig) => {
+        const updatedConfig = { ...prevConfig };
+
+        // Set the property being toggled to true
+        updatedConfig[property] = true;
+
+        // Set all other properties to false
+        for (const prop in updatedConfig) {
+          if (prop !== property) {
+            updatedConfig[prop] = false;
+          }
+        }
+
+        return updatedConfig;
+      });
+    }
+  };
+  // console.log('In DataContext sliderAdv state: ',sliderAdv)
   useEffect(() => {
     //Kitchen
     const unsubscribe = myOnSnapshotGeneral(setKitchen, "Konyha");
@@ -81,6 +155,26 @@ export const DataContextProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
+
+  useEffect(() => {
+    //SliderAdv
+    const unsubscribe = watchDataChanges("SliderAdv", setSliderAdv);
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  useEffect(() => {
+    setSliderAdv([]); // Clear state initially
+
+    // Start listening for changes in the "SliderAdv" collection
+    const unsubscribe = watchDataChanges("SliderAdv", setSliderAdv);
+
+    // Clean up the listener when the component unmounts
+    return () => {
+      unsubscribe();
+    };
+  }, []); // Run this effect only once on component mount
 
   useEffect(() => {
     const handleResize = () => {
@@ -147,6 +241,9 @@ export const DataContextProvider = ({ children }) => {
         setSliderAdv,
         sliderCurrentIndex,
         setSliderCurrentIndex,
+        handleConfig,
+        currentSlider,
+        setCurrentSlider,
       }}
     >
       {children}

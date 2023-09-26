@@ -46,7 +46,7 @@ const ColorRadioButtons = ({
   };
 
   return (
-    <div className="flex m-0 border-2">
+    <div className="flex m-0 border-0">
       {Object.keys(colors).map((color) => (
         <div key={color} className="m-2 border-0 h-8">
     

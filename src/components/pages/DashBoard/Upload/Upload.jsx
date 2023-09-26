@@ -93,6 +93,7 @@ const Upload = ({ item, handleConfig, edit, setEdit }) => {
           <Fileupload
             handleInputChange={handleInputChange}
             url={localItem?.url}
+            submenuStyle="mainstyle"
             // setExistItem={setExistItem}
             // setConfig={setConfig}
           />
