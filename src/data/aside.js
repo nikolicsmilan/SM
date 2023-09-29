@@ -53,7 +53,7 @@ export const links = [
         to: "/Contact",
       },
       {
-        name: "Admin",
+        name: "Beállítások",
         icon: <FaTools />,
         type: "route",
         to: "/dashboard",

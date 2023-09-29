@@ -19,6 +19,7 @@ const SliderOrientation = ({
   setSelectedAttribute,
   selectedPosition,
   setSelectedPosition,
+  style
 }) => {
   /*
   const updateOrioentation = (x, y) => {
@@ -62,24 +63,24 @@ const SliderOrientation = ({
       return updatedConfig;
     });
   }, [selectedAttribute, selectedPosition, setSliderAdv, sliderCurrentIndex]);
-
+//
   return (
-    <div className="border-2  h-auto">
+    <div className={`  ${style==="narancs"?"border-2":"border-0"}`}>
       <div className="flex p-2">
         <BsBoxArrowInUpLeft
-          className="text-2xl m-2 cursor-pointer hover:text-primary"
+          className="text-2xl text-info m-2 cursor-pointer hover:text-primary"
           onClick={() => {
             updateOrioentation("left-10 top-10");
           }}
         />
         <BsBoxArrowInUp
-          className="text-2xl m-2 cursor-pointer hover:text-primary"
+          className="text-2xl text-info m-2 cursor-pointer hover:text-primary"
           onClick={() => {
             updateOrioentation("top-10 left-1/2 transform -translate-x-1/2");
           }}
         />
         <BsBoxArrowInUpRight
-          className="text-2xl m-2 cursor-pointer hover:text-primary"
+          className="text-2xl text-info m-2 cursor-pointer hover:text-primary"
           onClick={() => {
             updateOrioentation("right-10 top-10");
           }}
@@ -87,13 +88,13 @@ const SliderOrientation = ({
       </div>
       <div className="flex p-2">
         <BsBoxArrowLeft
-          className="text-2xl m-2 cursor-pointer hover:text-primary"
+          className="text-2xl text-info m-2 cursor-pointer hover:text-primary"
           onClick={() => {
             updateOrioentation("top-1/2 left-10 transform -translate-y-1/2 -translate-y-10");
           }}
         />
         <BsArrowsMove
-          className="text-2xl m-2 cursor-pointer hover:text-primary"
+          className="text-2xl text-info m-2 cursor-pointer hover:text-primary"
           onClick={() => {
            /* updateOrioentation(
               "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
@@ -105,7 +106,7 @@ const SliderOrientation = ({
           }}
         />
         <BsBoxArrowRight
-          className="text-2xl m-2 cursor-pointer hover:text-primary"
+          className="text-2xl text-info m-2 cursor-pointer hover:text-primary"
           onClick={() => {
             updateOrioentation("top-1/2 right-10 transform -translate-y-1/2 -translate-y-10");
           }}
@@ -113,19 +114,19 @@ const SliderOrientation = ({
       </div>
       <div className="flex p-2">
         <BsBoxArrowInDownLeft
-          className="text-2xl m-2 cursor-pointer hover:text-primary"
+          className="text-2xl text-info m-2 cursor-pointer hover:text-primary"
           onClick={() => {
             updateOrioentation("top-3/4 transfrom -translate-y-10 translate-x-10");
           }}
         />
         <BsBoxArrowInDown
-          className="text-2xl m-2 cursor-pointer hover:text-primary"
+          className="text-2xl text-info m-2 cursor-pointer hover:text-primary"
           onClick={() => {
             updateOrioentation("bottom-10 left-1/2 transform -translate-x-1/2");
           }}
         />
         <BsBoxArrowInDownRight
-          className="text-2xl m-2 cursor-pointer hover:text-primary"
+          className="text-2xl text-info m-2 cursor-pointer hover:text-primary"
           onClick={() => {
            // updateOrioentation("right-10 bottom-10");
            updateOrioentation("top-3/4 left-3/4 transfrom -translate-y-10");

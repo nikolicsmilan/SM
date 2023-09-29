@@ -6,7 +6,7 @@ const NavButtons = ({
   setStep,
   max,
   formData,
-  showErrorModal,
+  showGeneralModal,
   handleSendData,
 }) => {
   const telPattern =
@@ -15,7 +15,7 @@ const NavButtons = ({
 
   const handleIncrease = () => {
     if (
-      validateForm(formData, step, telPattern, emailPattern, showErrorModal)
+      validateForm(formData, step, telPattern, emailPattern, showGeneralModal)
     ) {
       if (step.num < max) {
         setStep((prevState) => ({ ...prevState, num: prevState.num + 1 }));

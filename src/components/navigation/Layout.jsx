@@ -5,14 +5,13 @@ import BottomNavBar from "./BottomNavBar";
 import { Outlet } from "react-router-dom";
 import useWindowSize from "../../hooks/use-windowsize";
 import { useStyleContext } from "../../context/StyleContext";
-import useErrorModal from "../../hooks/useErrorModal";
-import ErrorModal from "../../utility/ErrorModal";
+
 
 const Layout = () => {
   const { width, height } = useWindowSize();
   const { activeAside, setActiveAside, setAppearUser, navBarHeight } =
     useStyleContext();
-  const { error, showErrorModal, hideErrorModal } = useErrorModal();
+
 
   // const dynamicMaxHeight = `${height - navBarHeight}px`;
   //add static only this work

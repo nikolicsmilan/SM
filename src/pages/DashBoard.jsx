@@ -11,7 +11,7 @@ import SliderAdv from "../components/pages/DashBoard/SliderSettings/SliderAdv";
 import Gallery from "../components/pages/DashBoard/Gallery/Gallery";
 import { MyDataContext } from "../context/DataContext";
 
-import useErrorModal from "../hooks/useErrorModal";
+import useErrorModal from "../hooks/useGeneralModal";
 const DashBoard = () => {
   const { config, setConfig, choosenIcon, setChoosenIcon, newimages, error2,handleConfig } =
     MyDataContext();

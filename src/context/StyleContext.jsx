@@ -8,7 +8,7 @@ export const StyleContextProvider = ({ children }) => {
   //hatnak mindenhol ahol felhasználásra kerülnek.
   const [style, setStyle] = useState("dio");
   const [activeAside, setActiveAside] = useState(false);
-  const [errorModel, setErrorModel] = useState(false);
+  const [generalModel, setGeneralModel] = useState(false);
   const [appearUser, setAppearUser] = useState(false);
   const [navBarHeight, setNavBarHeight] = useState(0); // Local state for NavBar height
   const [snap, setSnap] = useState({
@@ -40,10 +40,12 @@ export const StyleContextProvider = ({ children }) => {
         setSnap,
         menu3D,
         setMenu3D,
-        errorModel,
-        setErrorModel,
+        generalModel,
+        setGeneralModel,
         appearUser,
-        setAppearUser,navBarHeight, setNavBarHeight
+        setAppearUser,
+        navBarHeight,
+        setNavBarHeight,
       }}
     >
       {children}

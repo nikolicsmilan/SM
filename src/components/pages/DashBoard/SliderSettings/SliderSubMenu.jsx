@@ -50,7 +50,7 @@ const SliderSubMenu = ({ configSubmenu, setConfigSubmenu, selectedText }) => {
         {filteredButtons.map((item, index) => (
           <div
             key={index}
-            className="p-2 shadow-xl m-1 mt-0 text-dark border-0 h-10 flex flex-col border-sky-400"
+            className="p-2 shadow-xl m-1 mx-0 mt-0 text-dark border-0 h-10 flex flex-col border-sky-400"
           >
             <div className="flex">
               {item.items.map((link) => (

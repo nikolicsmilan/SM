@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useStyleContext } from "../../../../../context/StyleContext";
 import team from "../../../../../assets/slider/team3.jpg";
-const Articels = () => {
+const SliderSuplement = () => {
   const { style } = useStyleContext();
   const navigate = useNavigate();
   function handleSwitchCalculator() {
@@ -39,4 +39,4 @@ const Articels = () => {
   );
 };
 
-export default Articels;
+export default SliderSuplement;

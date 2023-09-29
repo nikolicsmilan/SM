@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MyDataContext } from "../../../../../context/DataContext";
 import { myAddGeneral } from "../../../../../firebase/Firestore";
-import { FaPlus } from "react-icons/fa";
+import SliderPlus from "./SliderPlus";
 
 const SliderPagination = ({ sliderCurrentIndex, numberHandler }) => {
   const { config, sliderAdv, currentSlider, setCurrentSlider } =
@@ -64,16 +64,7 @@ const SliderPagination = ({ sliderCurrentIndex, numberHandler }) => {
           {index + 1}
         </div>
       ))}
-      {config.slider ? (
-        <FaPlus
-          className="mx-2 m-1 cursor-pointer hover:text-primary"
-          onClick={() => {
-            plusHandler();
-          }}
-        />
-      ) : (
-        ""
-      )}
+     <SliderPlus config={config} plusHandler={plusHandler}/>
     </div>
   );
 };

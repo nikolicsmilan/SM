@@ -34,15 +34,58 @@ import {
   FaCodeBranch,
   FaEnvelope,
   FaArrowsAlt,
-  FaImage
-
+  FaImage,
+  FaAdversal,
+  FaCloudUploadAlt
 } from "react-icons/fa";
-import { AiFillDatabase, AiOutlineFontColors,AiOutlineBgColors } from "react-icons/ai";
+import {
+  AiFillDatabase,
+  AiOutlineFontColors,
+  AiOutlineBgColors,
+} from "react-icons/ai";
 import { TfiLayoutSlider } from "react-icons/tfi";
+import { MdOutlineArticle } from "react-icons/md";
 
 export const buttons = [
   {
-    title: "Elemek",
+    title: "Reklám",
+    items: [
+      {
+        name: "slider",
+        icon: <TfiLayoutSlider />,
+        type: "route",
+        to: "/",
+      },
+      {
+        name: "slider",
+        icon: <FaAdversal />,
+        type: "route",
+        to: "/",
+      },
+
+      {
+        name: "article",
+        icon: <MdOutlineArticle />,
+        type: "route",
+        to: "/",
+      },
+
+      {
+        name: "gallery",
+        icon: <FaImage />,
+        type: "route",
+        to: "/",
+      },
+      {
+        name: "upload",
+        icon: <FaPlus />,
+        type: "route",
+        to: "/sendmessages",
+      },
+    ],
+  },
+  {
+    title: "Képnézegető",
     items: [
       {
         name: "compact",
@@ -99,19 +142,19 @@ export const buttons = [
     ],
   },
   {
-    title: "Reklám",
+    title: "Galéria",
     items: [
-      {
-        name: "slider",
-        icon: <TfiLayoutSlider />,
-        type: "route",
-        to: "/",
-      },
       {
         name: "gallery",
         icon: <FaImage />,
         type: "route",
         to: "/",
+      },
+      {
+        name: "upload",
+        icon: <FaCloudUploadAlt />,
+        type: "route",
+        to: "/sendmessages",
       },
     ],
   },
@@ -163,7 +206,6 @@ export const sliderSubmenu = [
     ],
   },
 ];
-
 
 /* {
     title: "Kategóriák",

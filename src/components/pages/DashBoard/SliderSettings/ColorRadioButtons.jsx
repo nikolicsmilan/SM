@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import { SketchPicker } from "react-color";
 
-const ColorRadioButtons = ({
-  currentColor,
- /* setCurrentColor,
-  handleColorChange,
-  setProperty,
-  property,
-  config,
-  updateProperty,*/
-  updateColor,
-}) => {
+const ColorRadioButtons = ({ updateColor, style }) => {
+  console.log('ColorRadioButtons RUNNNNNNNNNNNNNNNNNNNNNN')
   const [selectedColor, setSelectedColor] = useState("E");
   const [showSketchPicker, setShowSketchPicker] = useState(false);
 
@@ -25,6 +17,7 @@ const ColorRadioButtons = ({
   //stylemaintext legyen a color és maintextcolor legyen üres
   //Ha egyéni akkor maintextcolor
   const handleColorOptionChange = (color) => {
+    console.log('handleColorOptionChange RUNNNNNNNNNNNNNNNNNNNNNN')
     if (color === "custom") {
       setShowSketchPicker(true);
     } else {
@@ -33,25 +26,34 @@ const ColorRadioButtons = ({
     }
   };
 
-  const newColorChange = (type,color) => {
-    console.log("newColorChange type",type,"color: ",color)
-    if(type==='specified'){
-      console.log("newColorChange run  specified branch","type: ",type,"color: ",colors[color])
-      updateColor(type,colors[color]);
-    }else{
-      console.log("newColorChange run  custom branch")
-      updateColor(type,`#${color.hex.substr(1)}`);
+  const newColorChange = (type, color) => {
+    console.log("newColorChange type", type, "color: ", color);
+    if (type === "specified") {
+      console.log(
+        "newColorChange run  specified branch",
+        "type: ",
+        type,
+        "color: ",
+        colors[color]
+      );
+      console.log('updateColor BEFORE RUNNNNNNNNNNNNNNNNNNNNNN')
+     // updateColor()
+     updateColor(type, colors[color]);
+      console.log('updateColor AFTER RUNNNNNNNNNNNNNNNNNNNNNN')
+    } else {
+      console.log("newColorChange run  custom branch");
+      updateColor(type, `#${color.hex.substr(1)}`);
     }
-    
   };
 
   return (
-    <div className="flex m-0 border-0">
+    <div
+      className={`flex m-0  ${style === "narancs" ? "border-2" : "border-0"}`}
+    >
       {Object.keys(colors).map((color) => (
         <div key={color} className="m-2 border-0 h-8">
-    
           <input
-            className="m-2"
+            className="m-2 text-info"
             type="radio"
             id={color}
             name="colorOptions"
@@ -62,14 +64,18 @@ const ColorRadioButtons = ({
               newColorChange("specified", color);
             }}
           />
-          <label htmlFor={color} style={{ backgroundColor: colors[color] }}>
+          <label
+            className="text-info font-bold"
+            htmlFor={color}
+            style={{ backgroundColor: colors[color] }}
+          >
             {color}
           </label>
         </div>
       ))}
       <div className="m-2 border-0 h-8">
         <input
-          className="m-2"
+          className="m-2 text-info"
           type="radio"
           id="custom"
           name="colorOptions"
@@ -77,12 +83,15 @@ const ColorRadioButtons = ({
           checked={showSketchPicker}
           onChange={() => handleColorOptionChange("custom")}
         />
-        <label htmlFor="custom">Egyedi</label>
+        <label className="text-info font-bold" htmlFor="custom">
+          Egyedi
+        </label>
         {showSketchPicker && (
           <SketchPicker
-            color={currentColor}
+            color={selectedColor}
             onChangeComplete={(color) => {
               newColorChange("custom", color);
+              setSelectedColor(color);
             }}
           />
         )}
@@ -92,58 +101,3 @@ const ColorRadioButtons = ({
 };
 
 export default ColorRadioButtons;
-/*  onChangeComplete={(color) => {updateProperty(property,`#${color.hex.substr(1)}`);setCurrentColor(`#${color.hex.substr(1)}`)}} */
-/**  const kulonColorChange = (property, value) => {
-    console.log("kulonColorChange: property", property);
-    let updatedProperty = property; // Initialize with the current property value
-
-    if (config.bgcolor) {
-      console.log("Ág: 1");
-      updatedProperty = "buttonbackgroundcolor";
-    } else if (property === "maintext") {
-      console.log("Ág: 2");
-      updatedProperty = "maintextcolor";
-    } else if (property === "subtext") {
-      console.log("Ág: 3");
-      updatedProperty = "subtextcolor";
-    } else if (property === "buttontext") {
-      console.log("Ág: 4");
-      updatedProperty = "buttoncolor";
-    }
-    setCurrentColor(value);
-    updateProperty(updatedProperty, value);
-  }; */
-
-/** const handleColorOptionChange = (color) => {
-    console.log(
-      "handleColorOptionChange color:",
-      colors[color],
-      "property: ",
-      property
-    );
-
-    let updatedProperty = property; // Initialize with the current property value
-
-    if (config.bgcolor) {
-      console.log("Ág: 1");
-      updatedProperty = "buttonbackgroundcolor";
-    } else if (property === "maintext") {
-      console.log("Ág: 2");
-      updatedProperty = "maintextcolor";
-    } else if (property === "subtext") {
-      console.log("Ág: 3");
-      updatedProperty = "subtextcolor";
-    } else if (property === "buttontext") {
-      console.log("Ág: 4");
-      updatedProperty = "buttoncolor";
-    }
-
-    if (color === "custom") {
-      setShowSketchPicker(true);
-    } else {
-      setSelectedColor(color);
-      setShowSketchPicker(false);
-      const tailwindColorClass = `#${colors[color]}`;
-      updateProperty(updatedProperty, tailwindColorClass);
-    }
-  }; */

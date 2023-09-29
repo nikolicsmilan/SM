@@ -5,8 +5,8 @@ import Unauthorized from "./pages/Unathorized";
 import { UserAuth } from "./context/AuthContext";
 import { useStyleContext } from "./context/StyleContext";
 import ProgresBar from "./utility/ProgressBar";
-import ErrorModal from "./utility/ErrorModal";
-import useErrorModal from "./hooks/useErrorModal";
+import GeneralModal from "./utility/GeneralModal";
+import useGeneralModal from "./hooks/useGeneralModal";
 
 import "./App.css";
 
@@ -21,8 +21,8 @@ const NotReady = lazy(() => import("./pages/NotReady"));
 const ThreeD = lazy(() => import("./pages/ThreeD"));
 
 function App() {
-  const { style, errorModel,setAppearUser } = useStyleContext();
-  const { hideErrorModal } = useErrorModal();
+  const { style, generalModel,setAppearUser } = useStyleContext();
+  const { hideGeneralModal } = useGeneralModal();
 
   return (
     <div
@@ -44,7 +44,7 @@ function App() {
       </Suspense>
 
       {/* Show the ErrorModal if there's an error */}
-      {errorModel && <ErrorModal error={errorModel} onClose={hideErrorModal} />}
+      {generalModel && <GeneralModal generalModel={generalModel} onClose={hideGeneralModal} />}
     </div>
   );
 }

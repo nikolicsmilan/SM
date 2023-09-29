@@ -223,6 +223,21 @@ export const DataContextProvider = ({ children }) => {
     // set the newImages state to the array of furniture items
     setNewImages(filteredResults);
   }, [search, kitchen, hall, wardrobe, bath, slidingDoor]);
+  /*
+  useEffect(() => {
+    setCurrentSlider(sliderAdv[sliderCurrentIndex]);
+  }, [sliderCurrentIndex]);*/
+
+  useEffect(() => {
+    setCurrentSlider((prevSlider) => {
+      const newSlider = sliderAdv[sliderCurrentIndex];
+      if (newSlider !== undefined) {
+        return newSlider;
+      } else {
+        return prevSlider;
+      }
+    });
+  }, [sliderCurrentIndex, sliderAdv]);
 
   return (
     <DataContext.Provider

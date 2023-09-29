@@ -3,11 +3,11 @@ import Intro from "../components/pages/pricemaker/Intro";
 import Formnavigation from "../components/pages/pricemaker/FormNavigation/Formnavigation";
 import NavButtons from "../components/pages/pricemaker/FormNavigation/NavButtons";
 import FormBody from "../components/pages/pricemaker/FormBody/FormBody";
-import useErrorModal from "../hooks/useErrorModal";
+import useGeneralModal from "../hooks/useGeneralModal";
 import { addMessage2 } from "../firebase/Firestore";
 
 const SendMessage = () => {
-  const { showErrorModal } = useErrorModal();
+  const {showGeneralModal } = useGeneralModal();
   const [step, setStep] = useState({
     num: 1,
     isClicked: false,
@@ -93,7 +93,7 @@ const SendMessage = () => {
       alert("Elküldve! Jó még nem mert ez csak teszt!");
       addMessage2("messages", "", formData);
     } else {
-      showErrorModal("Küldéshez fogad el az adatvédelmi tájékotatónkat! ");
+      showGeneralModal("Küldéshez fogad el az adatvédelmi tájékotatónkat! ");
     }
   };
 
@@ -120,7 +120,7 @@ const SendMessage = () => {
             setStep={setStep}
             max={Object.keys(formDataNavigation).length}
             formData={formData}
-            showErrorModal={showErrorModal}
+            showGeneralModal={showGeneralModal}
             handleSendData={handleSendData}
           />
         </div>
